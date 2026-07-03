@@ -1,5 +1,5 @@
 /* =====================================================================
-   AIPress — Landing Page Scripts
+   WPilot AI — Landing Page Scripts
    ---------------------------------------------------------------------
    - Scroll-triggered reveal animations (GSAP + ScrollTrigger)
    - Count-up number animations
