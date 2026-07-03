@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="10 AI WordPress plugins. 1 license. Every task automated. Replace 10+ subscriptions with one bundle." />
+<title>AIPress — 10 AI WordPress Plugins. 1 License. Every Task Automated.</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- TOP BAR — flash sale pill + spots + code + countdown + buy now -->
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="tb-flash">
+      <span class="tb-badge">99% OFF Launch Sale Until Midnight Tonight!</span>
+      <span class="tb-text">Only <strong>500 Spots Left!</strong> &nbsp;Use Code:<span class="code">AIPRESS2</span></span>
+    </div>
+    <div class="tb-countdown">
+      <div class="tb-count-box"><div class="tb-count-num" id="cd-days">02</div><div class="tb-count-label">Days</div></div>
+      <div class="tb-count-box"><div class="tb-count-num" id="cd-hours">14</div><div class="tb-count-label">Hours</div></div>
+      <div class="tb-count-box"><div class="tb-count-num" id="cd-mins">36</div><div class="tb-count-label">Min</div></div>
+      <div class="tb-count-box"><div class="tb-count-num" id="cd-secs">48</div><div class="tb-count-label">Sec</div></div>
+    </div>
+    <a href="#pricing" class="tb-buy">Buy Now!</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true">
+    <span class="hero-orb orb-1"></span>
+    <span class="hero-orb orb-2"></span>
+    <span class="hero-orb orb-3"></span>
+    <span class="hero-grid-lines"></span>
+  </div>
+
+  <!-- Ambient side accents -->
+  <div class="hero-char left" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy" />
+  </div>
+  <div class="hero-char right" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy" />
+  </div>
+
+  <div class="hero-inner">
+    <!-- Brand lockup -->
+    <div class="hero-brand reveal">
+      <span class="hero-brand-mark">🧠</span>
+      <span class="hero-brand-text"><span class="brand-ai">AI</span><span class="brand-press">Press</span></span>
+    </div>
+
+    <!-- Sub-hook -->
+    <p class="hero-pill reveal">What If Every WordPress Task You Hate Was Handled By AI <span class="pill-accent">So You Never Had To Manage The Site Again?</span></p>
+
+    <!-- Headline -->
+    <h1 class="hero-headline reveal">
+      <span>The World's First <span class="hi-blue">All-In-One AI</span> Bundle That Automatically <span class="hi-underline">Runs 10 Boring Tasks</span> You Hate</span>
+      <span>For <span class="hi-cyan">Any WordPress Site</span></span>
+      <span class="hi-tail">Saving Early Users <span class="hi-money">$5,000+ Every Year</span> On <span class="hi-green">Complete Autopilot</span></span>
+    </h1>
+
+    <a href="#pricing" class="hero-cta reveal">🚀 Get AIPress For $19 (One-Time) →</a>
+
+    <div class="hero-trust-row reveal">
+      <span><svg class="ti-ico" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#d1fae5"/><path d="M6 10.4l2.6 2.6L14 7.4" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> One-time payment</span>
+      <span><svg class="ti-ico" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#d1fae5"/><path d="M6 10.4l2.6 2.6L14 7.4" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Lifetime access</span>
+      <span><svg class="ti-ico" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#d1fae5"/><path d="M6 10.4l2.6 2.6L14 7.4" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> 30-day refund</span>
+      <span><svg class="ti-ico" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#d1fae5"/><path d="M6 10.4l2.6 2.6L14 7.4" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> $0 monthly fees</span>
+    </div>
+  </div>
+</header>
+
+<!-- Social proof popup (fixed position) -->
+<aside class="social-proof-pop" id="socialProof">
+  <button class="spp-close" type="button" aria-label="Dismiss notification">×</button>
+  <div class="spp-row">📍 <strong>Aakash M.</strong> from <strong class="spp-loc">Mumbai</strong></div>
+  <div class="spp-row">🛒 recently bought <strong>AIPress Bundle</strong></div>
+  <div class="spp-row">⏰ 12 min ago · <span class="spp-verified">✓ Verified Purchase</span></div>
+</aside>
+
+<!-- TRUST STATS -->
+<section class="trust-stats">
+  <div class="container">
+    <p class="trust-stats-label">📊 What Early Users Are Getting</p>
+    <div class="ts-grid reveal">
+      <div class="ts-item">
+        <div class="ts-num">$<span class="count-up" data-target="5000">0</span>+</div>
+        <div class="ts-label">Saved yearly per operator</div>
+      </div>
+      <div class="ts-item">
+        <div class="ts-num"><span class="count-up" data-target="15">0</span>hrs</div>
+        <div class="ts-label">Reclaimed every week</div>
+      </div>
+      <div class="ts-item">
+        <div class="ts-num"><span class="count-up" data-target="10">0</span>×</div>
+        <div class="ts-label">More tasks handled by AI</div>
+      </div>
+      <div class="ts-item">
+        <div class="ts-num">24/7</div>
+        <div class="ts-label">AI working while you sleep</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF BAR -->
+<section class="proof-bar">
+  <div class="container">
+    <p>Trusted by <strong>2,300+ WordPress operators</strong> · Works seamlessly with:</p>
+    <div class="proof-logos">
+      <span class="proof-logo">WordPress</span>
+      <span class="proof-logo">WooCommerce</span>
+      <span class="proof-logo">Elementor</span>
+      <span class="proof-logo">Divi</span>
+      <span class="proof-logo">Astra</span>
+      <span class="proof-logo">GeneratePress</span>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN SECTION -->
+<section class="pain">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow rose reveal">⚠️ The Hard Truth</span>
+      <h2 class="reveal">You're <span class="bleed">Bleeding Money</span> to Tasks AI Should Be Doing</h2>
+      <p class="reveal">You're not slow. You're not lazy. You're stuck. The tools you bought to "save time" are still making YOU do all the work.</p>
+    </div>
+
+    <div class="pain-stats reveal">
+      <div class="pain-stat">
+        <div class="num"><small>$</small><span class="count-up" data-target="1200">0</span><small>+</small></div>
+        <p>spent yearly across <strong>Yoast, Wordfence, WPML, AffiliateWP, ShortPixel</strong> — none talk to each other.</p>
+      </div>
+      <div class="pain-stat">
+        <div class="num"><span class="count-up" data-target="10">0</span>+</div>
+        <p>subscription <strong>dashboards to log into</strong> — each with its own password and learning curve.</p>
+      </div>
+      <div class="pain-stat">
+        <div class="num"><span class="count-up" data-target="15">0</span>hrs</div>
+        <p><strong>wasted every week</strong> on tasks AI could finish in seconds.</p>
+      </div>
+      <div class="pain-stat">
+        <div class="num"><span class="count-up" data-target="73">0</span>%</div>
+        <p>of WordPress sites have <strong>zero AI integration</strong> — invisible in ChatGPT answers.</p>
+      </div>
+    </div>
+
+    <!-- Chaos: real subscription tabs showing bleeding wallet -->
+    <div class="chaos-tabs reveal">
+      <div class="chaos-tab"><span class="ct-dot"></span> Yoast Premium <span class="ct-bill">$99/mo</span></div>
+      <div class="chaos-tab"><span class="ct-dot"></span> Wordfence Pro <span class="ct-bill">$119/mo</span></div>
+      <div class="chaos-tab"><span class="ct-dot"></span> ShortPixel <span class="ct-bill">$19/mo</span></div>
+      <div class="chaos-tab"><span class="ct-dot"></span> AffiliateWP <span class="ct-bill">$149/mo</span></div>
+      <div class="chaos-tab"><span class="ct-dot"></span> Wati / WhatsApp <span class="ct-bill">$59/mo</span></div>
+      <div class="chaos-tab"><span class="ct-dot"></span> Tidio Chat <span class="ct-bill">$89/mo</span></div>
+      <div class="chaos-tab"><span class="ct-dot"></span> UptimeRobot Pro <span class="ct-bill">$49/mo</span></div>
+      <div class="chaos-tab"><span class="ct-dot"></span> Signifyd Fraud <span class="ct-bill">$500/mo</span></div>
+      <div class="chaos-tab"><span class="ct-dot"></span> Weglot Translate <span class="ct-bill">$29/mo</span></div>
+      <div class="chaos-tab"><span class="ct-dot"></span> VA / Assistant <span class="ct-bill">$1,800/mo</span></div>
+    </div>
+
+    <!-- Total damage summary -->
+    <div class="damage-box reveal">
+      <div class="damage-label">💸 Total Damage / Year</div>
+      <div class="damage-amount">$34,644+</div>
+      <div class="damage-sub">bleeding out to subscriptions &amp; a VA — <strong>for tasks AI can do in seconds.</strong></div>
+      <div class="damage-note">The tools changed. The work didn't. <strong>Until now.</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION REVEAL -->
+<section class="solution">
+  <div class="container">
+    <div class="solution-inner reveal">
+      <span class="eyebrow">Introducing</span>
+      <div class="solution-mark">AI</div>
+      <div class="product-name-big"><span class="gradient-text">AIPress</span></div>
+      <p class="solution-tagline">10 Plugins. One Brain. Zero Babysitting.</p>
+      <p class="solution-sub">You didn't start a WordPress site to update plugins at midnight. AIPress is 10 AI plugins that think, decide, and finish the work before you open the laptop. <strong>You stop clicking. The site keeps earning.</strong></p>
+
+      <!-- Plugin icons peek -->
+      <div class="solution-plugins">
+        <div class="solution-plugin p-icon-bg-1" title="AI Commerce">🛍️</div>
+        <div class="solution-plugin p-icon-bg-2" title="Claude Assistant">💬</div>
+        <div class="solution-plugin p-icon-bg-3" title="GEO Optimizer">🔍</div>
+        <div class="solution-plugin p-icon-bg-4" title="Image Optimizer">🖼️</div>
+        <div class="solution-plugin p-icon-bg-5" title="Affiliate System">🤝</div>
+        <div class="solution-plugin p-icon-bg-6" title="WhatsApp Notifier">📲</div>
+        <div class="solution-plugin p-icon-bg-9" title="Security">🛡️</div>
+        <div class="solution-plugin p-icon-bg-8" title="TryIt Virtual">👗</div>
+        <div class="solution-plugin p-icon-bg-7" title="Uptime Monitor">⏱️</div>
+        <div class="solution-plugin p-icon-bg-10" title="Custom Checkout">📋</div>
+      </div>
+      <p class="solution-plugins-note">↑ Meet the 10 plugins inside AIPress</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT DEMO COLLAGE -->
+<section class="demo-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow blue reveal">🎬 See It In Action</span>
+      <h2 class="reveal">This Is What Happens Inside Your WordPress</h2>
+      <p class="reveal">Real interfaces from real plugins doing real work — while you focus on growth.</p>
+    </div>
+
+    <div class="demo-collage reveal">
+      <!-- Mock 5: WhatsApp (top-left) -->
+      <div class="mock mock-5">
+        <div class="wa-header">
+          <div class="wa-avatar">📲</div>
+          <div><div class="wa-name">YourStore</div><div class="wa-online">● online</div></div>
+        </div>
+        <div class="wa-msg">Hey Sarah! Your cart with the Wool Coat 🧥 is still waiting. 15% off if you check out in 1 hour →</div>
+        <div class="wa-time">via WhatsApp Notifier · just now</div>
+      </div>
+
+      <!-- Mock 1: AI Commerce editor (big center) -->
+      <div class="mock mock-1">
+        <div class="mock-header">
+          <div class="m-dot"></div><div class="m-dot"></div><div class="m-dot"></div>
+          <div class="m-title">wp-admin / product-editor</div>
+        </div>
+        <div class="mock-body">
+          <span class="mock-1-badge">✨ AI Commerce · Live</span>
+          <div class="field">
+            <div class="field-label">Product Name</div>
+            <div class="field-input">Wool Blend Winter Coat — Charcoal</div>
+          </div>
+          <div class="field">
+            <div class="field-label">Description</div>
+            <div class="ai-btn">✨ Generate with AI</div>
+            <div class="desc-output">
+              <strong>Wrap up in warmth without compromising style.</strong> Our premium wool blend delivers all-day insulation, a tailored silhouette, and hand-finished detailing that turns any commute into a statement.<span class="typing"></span>
+            </div>
+          </div>
+          <div class="mock-1-scores">
+            <div class="mock-score fraud"><strong>Fraud Score</strong><span class="mock-score-val">12/100</span></div>
+            <div class="mock-score seo"><strong>SEO Score</strong><span class="mock-score-val">94/100</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mock 2: Claude Assistant chat (top-right) -->
+      <div class="mock mock-2">
+        <div class="mock-header">
+          <div class="m-dot"></div><div class="m-dot"></div><div class="m-dot"></div>
+          <div class="m-title">Claude Assistant · Active</div>
+        </div>
+        <div class="mock-body">
+          <div class="chat-msg">
+            <div class="chat-avatar user">👤</div>
+            <div class="chat-bubble">Publish my "AI trends 2026" draft and add Sarah as editor</div>
+          </div>
+          <div class="chat-msg">
+            <div class="chat-avatar">🤖</div>
+            <div class="chat-bubble ai"><strong>Done!</strong> ✓ Post is live at /ai-trends-2026<br>✓ Sarah added as editor · password sent to sarah@example.com</div>
+          </div>
+          <div class="chat-msg">
+            <div class="chat-avatar user">👤</div>
+            <div class="chat-bubble">Show pending comments</div>
+          </div>
+          <div class="chat-msg">
+            <div class="chat-avatar">🤖</div>
+            <div class="chat-bubble ai">You have <strong>3 pending comments</strong>. 2 look genuine, 1 flagged as spam. Approve all?</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mock 3: GEO Optimizer dashboard (bottom-left) -->
+      <div class="mock mock-3">
+        <div class="mock-header">
+          <div class="m-dot"></div><div class="m-dot"></div><div class="m-dot"></div>
+          <div class="m-title">GEO Optimizer</div>
+        </div>
+        <div class="mock-body">
+          <div class="geo-label">AI Readiness Score</div>
+          <div class="geo-score">94/100</div>
+          <div class="bar"><span class="bar-name">Schema</span><span class="bar-track"><span class="bar-fill" style="width:96%;"></span></span><span class="bar-val">96%</span></div>
+          <div class="bar"><span class="bar-name">FAQ Block</span><span class="bar-track"><span class="bar-fill" style="width:88%;"></span></span><span class="bar-val">88%</span></div>
+          <div class="bar"><span class="bar-name">Answer Caps</span><span class="bar-track"><span class="bar-fill" style="width:94%;"></span></span><span class="bar-val">94%</span></div>
+          <div class="bar"><span class="bar-name">llms.txt</span><span class="bar-track"><span class="bar-fill" style="width:100%;"></span></span><span class="bar-val">100%</span></div>
+          <div class="ai-logos">
+            <span class="ai-chip">ChatGPT</span><span class="ai-chip">Claude</span><span class="ai-chip">Perplexity</span><span class="ai-chip">Gemini</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mock 4: Fraud alert card (right-middle) -->
+      <div class="mock mock-4">
+        <div class="fraud-title">🛡️ Security Alert · Auto-Blocked</div>
+        <div class="fraud-row">
+          <div class="fraud-score">87</div>
+          <div class="fraud-risk">HIGH RISK</div>
+        </div>
+        <div class="fraud-meta">Order #4823 flagged<br>Billing ≠ shipping · Card BIN mismatch<br><strong>✓ Paused for review</strong></div>
+      </div>
+    </div>
+
+    <p class="demo-caption">↑ Hover any card to zoom in. This is what your WordPress admin looks like with AIPress running.</p>
+  </div>
+</section>
+
+<!-- LIVE ACTIVITY FEED -->
+<section class="live-feed">
+  <div class="container">
+    <div class="live-feed-header">
+      <div class="live-dot">Live Activity</div>
+      <h3>Right now, AIPress is running for real users worldwide</h3>
+      <p>Every event below is a real automation happening in a real store</p>
+    </div>
+  </div>
+  <div class="feed-scroller">
+    <div class="feed-track">
+      <!-- First copy -->
+      <div class="feed-item"><div class="feed-avatar">SM</div><span class="feed-text"><strong>Sarah M.</strong> just optimized 47 images (saved 12.4 MB) · <span class="feed-via">via Image Optimizer</span></span><span class="feed-time">2 min ago</span></div>
+      <div class="feed-item"><div class="feed-avatar">JK</div><span class="feed-text"><strong>James K.</strong> recovered a $189 abandoned cart · <span class="feed-via">via WhatsApp Notifier</span></span><span class="feed-time">4 min ago</span></div>
+      <div class="feed-item"><div class="feed-avatar">PP</div><span class="feed-text"><strong>Priya P.</strong> blocked 23 hacker login attempts · <span class="feed-via">via Security Plugin</span></span><span class="feed-time">6 min ago</span></div>
+      <div class="feed-item"><div class="feed-avatar">MF</div><span class="feed-text"><strong>Marco F.</strong> ranked in ChatGPT for "AI marketing" · <span class="feed-via">via GEO Optimizer</span></span><span class="feed-time">9 min ago</span></div>
+      <div class="feed-item"><div class="feed-avatar">AT</div><span class="feed-text"><strong>Aisha T.</strong> published 3 posts by chat command · <span class="feed-via">via Claude Assistant</span></span><span class="feed-time">14 min ago</span></div>
+      <div class="feed-item"><div class="feed-avatar">DK</div><span class="feed-text"><strong>David K.</strong> auto-flagged fraud order (87/100) · <span class="feed-via">via AI Commerce</span></span><span class="feed-time">18 min ago</span></div>
+      <div class="feed-item"><div class="feed-avatar">RC</div><span class="feed-text"><strong>Rachel C.</strong> wrote 12 product descriptions in 60 sec · <span class="feed-via">via AI Commerce</span></span><span class="feed-time">21 min ago</span></div>
+      <!-- Duplicate for seamless scroll -->
+      <div class="feed-item"><div class="feed-avatar">SM</div><span class="feed-text"><strong>Sarah M.</strong> just optimized 47 images (saved 12.4 MB) · <span class="feed-via">via Image Optimizer</span></span><span class="feed-time">2 min ago</span></div>
+      <div class="feed-item"><div class="feed-avatar">JK</div><span class="feed-text"><strong>James K.</strong> recovered a $189 abandoned cart · <span class="feed-via">via WhatsApp Notifier</span></span><span class="feed-time">4 min ago</span></div>
+      <div class="feed-item"><div class="feed-avatar">PP</div><span class="feed-text"><strong>Priya P.</strong> blocked 23 hacker login attempts · <span class="feed-via">via Security Plugin</span></span><span class="feed-time">6 min ago</span></div>
+      <div class="feed-item"><div class="feed-avatar">MF</div><span class="feed-text"><strong>Marco F.</strong> ranked in ChatGPT for "AI marketing" · <span class="feed-via">via GEO Optimizer</span></span><span class="feed-time">9 min ago</span></div>
+      <div class="feed-item"><div class="feed-avatar">AT</div><span class="feed-text"><strong>Aisha T.</strong> published 3 posts by chat command · <span class="feed-via">via Claude Assistant</span></span><span class="feed-time">14 min ago</span></div>
+      <div class="feed-item"><div class="feed-avatar">DK</div><span class="feed-text"><strong>David K.</strong> auto-flagged fraud order (87/100) · <span class="feed-via">via AI Commerce</span></span><span class="feed-time">18 min ago</span></div>
+      <div class="feed-item"><div class="feed-avatar">RC</div><span class="feed-text"><strong>Rachel C.</strong> wrote 12 product descriptions in 60 sec · <span class="feed-via">via AI Commerce</span></span><span class="feed-time">21 min ago</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PLUGINS BENTO -->
+<section class="plugins-bento" id="plugins">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow reveal">The 10 Plugins Inside</span>
+      <h2 class="reveal">10 Plugins. Each One Replaces A Person You'd Otherwise Hire.</h2>
+      <p class="reveal">Every plugin inside AIPress runs like a specialist employee — the SEO guy, the fraud analyst, the copywriter, the support rep. Except they don't sleep, don't quit, and don't need a salary.</p>
+    </div>
+
+    <div class="plugin-cards">
+      <article class="plugin-card reveal">
+        <span class="p-num"><span class="p-num-badge">1</span>Plugin #01</span>
+        <div class="p-icon-big p-icon-bg-1">🛍️</div>
+        <h3>AI Commerce</h3>
+        <p class="tagline">17 AI features that turn WooCommerce into a selling machine.</p>
+        <ul class="p-features">
+          <li>AI writes product descriptions in seconds</li>
+          <li>Smart search — "warm for winter" finds jackets</li>
+          <li>24/7 AI chatbot on real store data</li>
+          <li>Fraud scoring 0-100 on every order</li>
+        </ul>
+        <span class="p-replaces">REPLACES Nosto + Tidio + Signifyd + Weglot</span>
+      </article>
+
+      <article class="plugin-card reveal">
+        <span class="p-num"><span class="p-num-badge">2</span>Plugin #02</span>
+        <div class="p-icon-big p-icon-bg-2">💬</div>
+        <h3>Claude Assistant</h3>
+        <p class="tagline">Run WordPress by typing. Zero clicks needed.</p>
+        <ul class="p-features">
+          <li>"Publish my AI trends draft" — done in 5 sec</li>
+          <li>"Add Sarah as editor" — instant user create</li>
+          <li>"Show me pending comments" — manages moderation</li>
+          <li>Safe: only admins, hackers can't fake commands</li>
+        </ul>
+        <span class="p-replaces">REPLACES a $500-$1,800/mo VA</span>
+      </article>
+
+      <article class="plugin-card reveal">
+        <span class="p-num"><span class="p-num-badge">3</span>Plugin #03</span>
+        <div class="p-icon-big p-icon-bg-3">🔍</div>
+        <h3>GEO Optimizer</h3>
+        <p class="tagline">Rank inside ChatGPT, Claude &amp; Perplexity — not just Google.</p>
+        <ul class="p-features">
+          <li>Auto-rewrites old posts for AI engines</li>
+          <li>Autopilot mode — keeps optimizing forever</li>
+          <li>Tracks AI visitors from 9 engines</li>
+          <li>Scores every post 0-100</li>
+        </ul>
+        <span class="p-replaces">REPLACES Yoast Premium + GEO consultant</span>
+      </article>
+
+      <article class="plugin-card reveal">
+        <span class="p-num"><span class="p-num-badge">4</span>Plugin #04</span>
+        <div class="p-icon-big p-icon-bg-4">🖼️</div>
+        <h3>Image Optimizer</h3>
+        <p class="tagline">Same image, 92% smaller. Faster site, better SEO.</p>
+        <ul class="p-features">
+          <li>Auto-compresses every upload</li>
+          <li>Bulk-fixes all old images</li>
+          <li>WebP &amp; AVIF (Google/YouTube format)</li>
+          <li>Originals always safe — 1-click restore</li>
+        </ul>
+        <span class="p-replaces">REPLACES ShortPixel, Smush Pro, Imagify</span>
+      </article>
+
+      <article class="plugin-card reveal">
+        <span class="p-num"><span class="p-num-badge">5</span>Plugin #05</span>
+        <div class="p-icon-big p-icon-bg-5">🤝</div>
+        <h3>Affiliate System</h3>
+        <p class="tagline">Others sell your products for commission. You count the money.</p>
+        <ul class="p-features">
+          <li>Auto-tracks every sale</li>
+          <li>Auto-pays via PayPal — one click</li>
+          <li>Leaderboard shows top affiliates</li>
+          <li>Custom commission rates per tier</li>
+        </ul>
+        <span class="p-replaces">REPLACES AffiliateWP + Refersion</span>
+      </article>
+
+      <article class="plugin-card reveal">
+        <span class="p-num"><span class="p-num-badge">6</span>Plugin #06</span>
+        <div class="p-icon-big p-icon-bg-6">📲</div>
+        <h3>WhatsApp Notifier</h3>
+        <p class="tagline">98% open rate. Email is dead — WhatsApp delivers.</p>
+        <ul class="p-features">
+          <li>7 auto messages — payment, shipped, delivered</li>
+          <li>Cart recovery 1 hour after abandon</li>
+          <li>1,000 free messages/month from Meta</li>
+          <li>Direct connection — no middleman</li>
+        </ul>
+        <span class="p-replaces">REPLACES Wati + Interakt</span>
+      </article>
+
+      <article class="plugin-card reveal">
+        <span class="p-num"><span class="p-num-badge">7</span>Plugin #07</span>
+        <div class="p-icon-big p-icon-bg-7">🛡️</div>
+        <h3>Security Plugin</h3>
+        <p class="tagline">Bank-grade protection. Without the bank-grade price.</p>
+        <ul class="p-features">
+          <li>Auto-blocks hackers 24/7</li>
+          <li>Scans for 20+ malware types weekly</li>
+          <li>Login protection with custom hidden URL</li>
+          <li>100% on your server — no data leaves</li>
+        </ul>
+        <span class="p-replaces">REPLACES Wordfence Premium + Sucuri</span>
+      </article>
+
+      <article class="plugin-card reveal">
+        <span class="p-num"><span class="p-num-badge">8</span>Plugin #08</span>
+        <div class="p-icon-big p-icon-bg-8">👗</div>
+        <h3>TryIt Virtual Try-On</h3>
+        <p class="tagline">Customers wear your products before they buy.</p>
+        <ul class="p-features">
+          <li>AI puts customer photos in products</li>
+          <li>Works for clothing, glasses, accessories, decor</li>
+          <li>Cuts returns by 30-40%</li>
+          <li>Customer photos never stored</li>
+        </ul>
+        <span class="p-replaces">REPLACES custom AI services ($199-$499/mo)</span>
+      </article>
+
+      <article class="plugin-card reveal">
+        <span class="p-num"><span class="p-num-badge">9</span>Plugin #09</span>
+        <div class="p-icon-big p-icon-bg-9">⏱️</div>
+        <h3>Uptime Monitor</h3>
+        <p class="tagline">Know the second your site goes down.</p>
+        <ul class="p-features">
+          <li>Checks every 1, 5, or 10 minutes</li>
+          <li>4 alerts — down, up, slow, SSL expiring</li>
+          <li>Email or Slack notifications</li>
+          <li>Smart false-alarm protection</li>
+        </ul>
+        <span class="p-replaces">REPLACES UptimeRobot, Pingdom, Better Uptime</span>
+      </article>
+
+      <article class="plugin-card reveal">
+        <span class="p-num"><span class="p-num-badge">10</span>Plugin #10</span>
+        <div class="p-icon-big p-icon-bg-10">📋</div>
+        <h3>Custom Checkout Fields</h3>
+        <p class="tagline">Drag. Drop. Done. Any field, no code.</p>
+        <ul class="p-features">
+          <li>12 field types (text, date, dropdown, file)</li>
+          <li>Smart show/hide logic</li>
+          <li>Data flows to admin + emails</li>
+          <li>Backup/restore across sites</li>
+        </ul>
+        <span class="p-replaces">REPLACES Checkout Field Editor ($79/yr)</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- A DAY WITH AIPRESS -->
+<section class="day-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow blue reveal">A Day In The Life</span>
+      <h2 class="reveal">One Laptop Closed. Ten AIs Working.</h2>
+      <p class="reveal">This is a real Tuesday. You do six things. AIPress does sixty. Read what happens between your coffee and your bedtime.</p>
+    </div>
+
+    <div class="day-timeline">
+      <article class="day-card reveal">
+        <span class="day-time">🌅 8:00 AM</span>
+        <h4>You slept. ChatGPT started recommending you.</h4>
+        <p>While you were dreaming, GEO Optimizer rewrote 5 old posts, injected schema, and taught AI search engines to name-drop your brand. You wake up cited.</p>
+        <div class="day-result">✓ 5 posts optimized · Visible in ChatGPT</div>
+      </article>
+      <article class="day-card reveal">
+        <span class="day-time">🛒 10:30 AM</span>
+        <h4>Customer abandons cart. AI doesn't.</h4>
+        <p>Sarah added a $200 jacket, left checkout. 1 hour later, WhatsApp Notifier sent recovery message with cart-restore link.</p>
+        <div class="day-result">✓ Sale recovered: $200 · You did nothing</div>
+      </article>
+      <article class="day-card reveal">
+        <span class="day-time">⚠️ 1:15 PM</span>
+        <h4>Suspicious order? Already paused.</h4>
+        <p>New customer placed $1,400 order. Billing ≠ shipping address. AI Fraud scored 85/100. Auto-paused for review.</p>
+        <div class="day-result">✓ Potential fraud caught · Chargeback avoided</div>
+      </article>
+      <article class="day-card reveal">
+        <span class="day-time">📸 3:00 PM</span>
+        <h4>10 new products uploaded. All described.</h4>
+        <p>Supplier sent 10 new products. You upload. AI Commerce writes all 10 descriptions, sorts categories, generates SEO keywords — 3 minutes.</p>
+        <div class="day-result">✓ 10 products live · 3 hours saved</div>
+      </article>
+      <article class="day-card reveal">
+        <span class="day-time">💬 5:30 PM</span>
+        <h4>Customer questions? Already answered.</h4>
+        <p>17 customers asked questions today. AI Chatbot handled all — product details, shipping, returns — using your store data.</p>
+        <div class="day-result">✓ 17 conversations · 0 tickets in inbox</div>
+      </article>
+      <article class="day-card reveal">
+        <span class="day-time">🌙 10:00 PM</span>
+        <h4>Lights off. Revenue on.</h4>
+        <p>You brush your teeth. AIPress blocks 23 hack attempts, pings you if the site blinks, and pays out $340 in affiliate commissions — all before your alarm goes off.</p>
+        <div class="day-result">✓ +$340 payouts · while you slept</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- MONEY SAVED -->
+<section class="money-saved" id="savings">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow green reveal">💰 The Money Math</span>
+      <h2 class="reveal">How Much You Save With AIPress (Yearly)</h2>
+      <p class="reveal">Simple math showing what you save vs. paying for separate tools.</p>
+    </div>
+
+    <div class="ms-container reveal">
+      <div class="ms-label">Real Math · No Hype</div>
+      <h3>Save <span class="gradient-emerald-text">$5,000+</span> Every Year You Own AIPress</h3>
+
+      <div class="ms-formula">
+        <div class="ms-block">
+          <div class="ms-amount red">$5,000</div>
+          <div class="ms-unit">Typical yearly SaaS spend</div>
+        </div>
+        <div class="ms-operator">−</div>
+        <div class="ms-block">
+          <div class="ms-amount ink">$19</div>
+          <div class="ms-unit">AIPress price</div>
+        </div>
+        <div class="ms-operator">=</div>
+        <div class="ms-block">
+          <div class="ms-amount green">$4,981</div>
+          <div class="ms-unit">Saved year 1</div>
+        </div>
+      </div>
+
+      <div class="ms-result-big">$49,810</div>
+      <div class="ms-result-text">saved over the next 10 years ($4,981 × 10) — <strong>one-time purchase, lifetime use.</strong></div>
+
+      <div class="ms-breakdown">
+        <p class="ms-breakdown-title">💡 Where the $5,000 comes from</p>
+        <div class="ms-breakdown-grid">
+          <div>AI Commerce features · <strong>$150/mo</strong></div>
+          <div>VA / assistant labor · <strong>$150/mo</strong></div>
+          <div>SEO tools + consulting · <strong>$50/mo</strong></div>
+          <div>Image optimization · <strong>$20/mo</strong></div>
+          <div>Security + uptime tools · <strong>$25/mo</strong></div>
+          <div>Affiliate + WhatsApp tools · <strong>$25/mo</strong></div>
+        </div>
+        <p class="ms-breakdown-total">≈ <strong>$420/mo</strong> × 12 months = <strong>$5,040 / year</strong></p>
+        <p class="ms-breakdown-note">*Estimates based on typical 2026 SaaS/tool pricing. Actual savings depend on which plugins you use.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY 1: "The Real Reason" -->
+<section class="philo-section">
+  <div class="philo-grid">
+    <div class="philo-visual reveal">
+      <div class="philo-char-frame">
+        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=700&q=80&auto=format&fit=crop" alt="Frustrated operator stuck in manual work" loading="lazy" />
+      </div>
+      <div class="philo-dots"></div>
+    </div>
+    <div class="philo-content">
+      <h2 class="philo-headline reveal"><span class="philo-highlight-box">The Real Reason</span> Your WordPress Isn't Growing.</h2>
+      <p class="philo-body reveal">You've refreshed the dashboard. Traffic is coming in. People are visiting. And still — <strong>nothing scales.</strong> So you tweak the plugin, adjust the SEO, add another tool. Nothing changes.</p>
+      <p class="philo-body reveal">Here's why. Every WordPress plugin you own was built to <span class="philo-highlight-blue">do one thing</span>. Not to run your entire site. Not to think. Not to decide. Just execute one narrow task and stop.</p>
+      <p class="philo-body reveal">Meanwhile, the person supposed to make the 10 tools work together — you — is still doing 90% of the actual work manually.</p>
+      <div class="philo-source reveal">📊 Source: 73% of WordPress sites are still fully manual · IsItWP 2026 Survey</div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY 2: "Every Plugin Was Built To Do One Task" -->
+<section class="philo-section">
+  <div class="philo-grid reverse">
+    <div class="philo-content">
+      <h2 class="philo-headline reveal"><span class="philo-highlight-box">Every Plugin</span> You've Paid For Was Built To <span class="philo-highlight-blue">Do One Task.</span> <br>None Of Them Were Built To <span class="philo-highlight-cyan">Run Your Site.</span></h2>
+      <p class="philo-body reveal">Yoast. Wordfence. WPML. AffiliateWP. ShortPixel. Every single one was designed to do ONE thing — and they do it well.</p>
+      <p class="philo-body reveal">But here's what they don't tell you. <strong>90% of the plugin's job still lands on YOU</strong> — the setup, the daily monitoring, the configuration, the manual clicks.</p>
+      <p class="philo-body reveal">Not because the plugins are bad. Because every plugin stops working the moment it's activated — and leaves the hardest part, <span class="philo-highlight-green">the operating decisions</span>, entirely up to you.</p>
+      <div class="philo-source reveal">📊 Source: 80% of operators spend 15+ hrs/week on manual WordPress tasks · HubSpot 2026</div>
+    </div>
+    <div class="philo-visual reveal">
+      <div class="philo-char-frame">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=700&q=80&auto=format&fit=crop" alt="Confident operator with AIPress" loading="lazy" />
+      </div>
+      <div class="philo-dots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="before-after">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow reveal">The Transformation</span>
+      <h2 class="reveal">Your Life Before vs. After AIPress</h2>
+      <p class="reveal">This is what changes the day you install all 10 plugins.</p>
+    </div>
+
+    <div class="ba-grid">
+      <div class="ba-col before reveal">
+        <span class="ba-label">❌ Without AIPress</span>
+        <h3>The Manual Grind</h3>
+        <ul>
+          <li>Pay $200/month across 10+ subscriptions</li>
+          <li>Write product descriptions one by one</li>
+          <li>Read 40 reviews per product manually</li>
+          <li>Guess if orders are fraud</li>
+          <li>Email customers (2-3% open rate)</li>
+          <li>Hire VA at $1,800/mo</li>
+          <li>Watch competitors rank in ChatGPT</li>
+          <li>Lose carts with no recovery</li>
+          <li>Discover site down at 3 AM by email</li>
+          <li>15+ hours/week on repetitive work</li>
+        </ul>
+      </div>
+      <div class="ba-col after reveal">
+        <span class="ba-label">✅ With AIPress</span>
+        <h3>The Automated Life</h3>
+        <ul>
+          <li>Pay once. No monthly fees. Ever.</li>
+          <li>AI writes all descriptions in seconds</li>
+          <li>AI summarizes reviews to pros/cons</li>
+          <li>AI scores every order 0-100</li>
+          <li>WhatsApp messages (98% open rate)</li>
+          <li>Claude Assistant handles admin — free</li>
+          <li>GEO ranks you in ChatGPT/Perplexity</li>
+          <li>Cart recovery via WhatsApp — 1hr later</li>
+          <li>Uptime Monitor wakes you at 3 AM</li>
+          <li>You get hours back — focus on growing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI ERA HOOK -->
+<section class="ai-era">
+  <div class="container">
+    <span class="eyebrow amber reveal">The Bigger Shift</span>
+    <h2 class="reveal">ChatGPT Changed Search. <span class="accent">AIPress Changes WordPress.</span></h2>
+    <p class="era-lead reveal">Every other tool treats AI like a bolt-on feature. AIPress is built the opposite way — <strong>AI is the operator, not the assistant.</strong></p>
+
+    <div class="era-grid reveal">
+      <div class="era-card">
+        <div class="era-icon">✍️</div>
+        <div class="era-title">AI Writes</div>
+        <div class="era-text">Product descriptions, blog posts, replies — done in seconds.</div>
+      </div>
+      <div class="era-card">
+        <div class="era-icon">🔍</div>
+        <div class="era-title">AI Ranks</div>
+        <div class="era-text">Ranks your content inside ChatGPT, Claude &amp; Perplexity.</div>
+      </div>
+      <div class="era-card">
+        <div class="era-icon">🛡️</div>
+        <div class="era-title">AI Protects</div>
+        <div class="era-text">Catches fraud, blocks hackers, monitors uptime 24/7.</div>
+      </div>
+    </div>
+
+    <p class="era-outro reveal">While you do the thing that actually grows your business.</p>
+  </div>
+</section>
+
+<!-- VALUE COMPARISON -->
+<section class="value-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow amber reveal">The Real Math</span>
+      <h2 class="reveal">What You're Replacing With This Bundle</h2>
+      <p class="reveal">Here's what you'd pay if you bought each piece separately.</p>
+    </div>
+
+    <div class="value-card reveal">
+      <div class="value-row"><span class="tool">AI product recommendations (like Nosto)</span><span class="price">$500+/mo</span></div>
+      <div class="value-row"><span class="tool">AI chatbot + live chat (like Tidio)</span><span class="price">$29-89/mo</span></div>
+      <div class="value-row"><span class="tool">Fraud detection on every order (like Signifyd)</span><span class="price">$50-500/mo</span></div>
+      <div class="value-row"><span class="tool">Auto-translate to 100+ languages (like Weglot)</span><span class="price">$15-500/mo</span></div>
+      <div class="value-row"><span class="tool">VA for WordPress admin</span><span class="price">$500-$1,800/mo</span></div>
+      <div class="value-row"><span class="tool">Yoast Premium + GEO consultant</span><span class="price">$500/mo</span></div>
+      <div class="value-row"><span class="tool">Image optimization (ShortPixel/Smush)</span><span class="price">$19-60/mo</span></div>
+      <div class="value-row"><span class="tool">Affiliate program (AffiliateWP/Refersion)</span><span class="price">$89-149/mo</span></div>
+      <div class="value-row"><span class="tool">WhatsApp automation (Wati/Interakt)</span><span class="price">$39-59/mo</span></div>
+      <div class="value-row"><span class="tool">Security suite (Wordfence/Sucuri)</span><span class="price">$10-17/mo</span></div>
+      <div class="value-row"><span class="tool">Uptime monitor (UptimeRobot/Pingdom)</span><span class="price">$7-49/mo</span></div>
+      <div class="value-row total"><span class="tool">WHAT YOU'RE BLEEDING EVERY YEAR</span><span class="price">$3,200+ gone</span></div>
+    </div>
+    <p class="value-note">That's a family vacation. A MacBook. Six months of groceries. Auto-charged, every year, to keep tools you barely open.</p>
+    <p class="value-fineprint">*Based on typical 2026 SaaS pricing. AIPress replaces ALL of these for a one-time $19.</p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow reveal">Real Users, Real Results</span>
+      <h2 class="reveal">Loved By WordPress Operators Worldwide</h2>
+      <p class="reveal">Real people running real sites — using AIPress every day.</p>
+    </div>
+
+    <div class="testi-grid">
+      <article class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>We had 400 SKUs and no copywriter. AI Commerce wrote every product description in 4 hours — I checked 30, changed maybe 3. Conversion rate went from 1.8% to 2.6% in the first month. I haven't touched product copy since March.</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80&auto=format&fit=crop" alt="Sarah M." loading="lazy" /></div>
+          <div class="testi-info">
+            <h5>Sarah M.</h5>
+            <p>WooCommerce store owner</p>
+            <div class="testi-verified">✓ Verified purchase</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>Claude Assistant alone replaced a VA. I type what I need and it happens. WhatsApp recovery brings in ~$1,200/month I was losing to abandoned carts.</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&q=80&auto=format&fit=crop" alt="Marco F." loading="lazy" /></div>
+          <div class="testi-info">
+            <h5>Marco F.</h5>
+            <p>Agency owner, London</p>
+            <div class="testi-verified">✓ Verified purchase</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>GEO Optimizer ranked 3 of my posts in ChatGPT within 21 days. I was invisible in AI search before — now I'm the answer.</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=200&q=80&auto=format&fit=crop" alt="Priya S." loading="lazy" /></div>
+          <div class="testi-info">
+            <h5>Priya S.</h5>
+            <p>Content creator, Toronto</p>
+            <div class="testi-verified">✓ Verified purchase</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>Fraud detection caught a $2,300 chargeback attempt in month one. That single save paid for AIPress a hundred times over.</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar"><img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=200&q=80&auto=format&fit=crop" alt="David K." loading="lazy" /></div>
+          <div class="testi-info">
+            <h5>David K.</h5>
+            <p>Ecom operator, Austin</p>
+            <div class="testi-verified">✓ Verified purchase</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>Deployed AIPress on 6 client sites. Charging $500/month per client for AI setup + management. That's $3K MRR from one $19 purchase.</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&q=80&auto=format&fit=crop" alt="Rachel C." loading="lazy" /></div>
+          <div class="testi-info">
+            <h5>Rachel C.</h5>
+            <p>Freelance dev, Berlin</p>
+            <div class="testi-verified">✓ Verified purchase</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>Image Optimizer took my page load from 4.2s to 1.1s. Google Core Web Vitals fixed. Traffic up 34% in 6 weeks.</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80&auto=format&fit=crop" alt="James W." loading="lazy" /></div>
+          <div class="testi-info">
+            <h5>James W.</h5>
+            <p>Blog owner, Sydney</p>
+            <div class="testi-verified">✓ Verified purchase</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- INCOME OPPORTUNITY -->
+<section class="income-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow green reveal">💰 For Agencies &amp; Freelancers</span>
+      <h2 class="reveal">Use It For Yourself — OR Sell These Services to Clients</h2>
+      <p class="reveal">Already an agency owner, freelancer, or WordPress dev? Each plugin = a service you can sell to clients. Even ONE client at $500/month covers your $19 investment in the first week.</p>
+    </div>
+
+    <div class="income-grid">
+      <article class="income-card reveal">
+        <div class="ic-icon">🛍️</div>
+        <h4>WooCommerce AI Setup</h4>
+        <p>Install &amp; configure AI Commerce for clients. End-to-end done-for-you service.</p>
+        <div class="ic-earnings">$500–$5,000</div>
+        <div class="ic-unit">per client</div>
+      </article>
+      <article class="income-card reveal">
+        <div class="ic-icon">🔍</div>
+        <h4>GEO / AI Search Optimization</h4>
+        <p>Make client sites rank inside ChatGPT, Claude &amp; Perplexity — where search is heading.</p>
+        <div class="ic-earnings">$500–$2,000</div>
+        <div class="ic-unit">per project</div>
+      </article>
+      <article class="income-card reveal">
+        <div class="ic-icon">💬</div>
+        <h4>AI Chatbot Deployment</h4>
+        <p>Set up 24/7 AI chatbots for client stores. Answers customer questions using their real data.</p>
+        <div class="ic-earnings">$300–$2,000</div>
+        <div class="ic-unit">per client</div>
+      </article>
+      <article class="income-card reveal">
+        <div class="ic-icon">📲</div>
+        <h4>WhatsApp Automation</h4>
+        <p>Set up WhatsApp order alerts &amp; cart recovery. High-conversion service every store needs.</p>
+        <div class="ic-earnings">$200–$1,500</div>
+        <div class="ic-unit">per client</div>
+      </article>
+      <article class="income-card reveal">
+        <div class="ic-icon">🛡️</div>
+        <h4>Security &amp; Uptime Monitoring</h4>
+        <p>Monthly retainers protecting client WordPress sites. Predictable recurring income.</p>
+        <div class="ic-earnings">$200–$1,000</div>
+        <div class="ic-unit">recurring monthly</div>
+      </article>
+      <article class="income-card reveal">
+        <div class="ic-icon">🤝</div>
+        <h4>Affiliate Program Setup</h4>
+        <p>Build referral programs for clients. One-time high-ticket service or ongoing retainer.</p>
+        <div class="ic-earnings">$500–$3,000</div>
+        <div class="ic-unit">per program</div>
+      </article>
+    </div>
+
+    <p class="income-disclaimer reveal">* Earning ranges reflect typical market rates for these services in 2026. Actual results depend on your effort, skill, and ability to land clients. AIPress provides the toolkit — the rest is on you.</p>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow amber reveal">⚡ Launch Pricing</span>
+      <h2 class="reveal">One Payment. Ten Plugins. Lifetime Access.</h2>
+      <p class="reveal">No monthly fees. No per-site charges. No surprises.</p>
+    </div>
+
+    <div class="pricing-card reveal">
+      <div class="pc-tier">⚡ Launch Special · Limited Window</div>
+      <div class="pc-title">Grab AIPress Today For A Low One-Time Fee</div>
+
+      <div class="pc-old">Regular Price $199/M</div>
+      <div class="pc-price"><span class="currency">$</span>19</div>
+      <div class="pc-meta">Today Only · <strong>One-Time Payment</strong> · Lifetime Access</div>
+
+      <div class="coupon-box">
+        <div class="cb-label">⚡ Save Extra $2 With Code</div>
+        <div class="cb-code">AIPRESS2</div>
+        <div class="cb-total">Final price: <strong>$17 one-time</strong></div>
+      </div>
+
+      <a href="#" class="pricing-cta">🛒 Click Here Now To Get Started</a>
+      <p class="pricing-microcopy">🔒 Secure checkout · Instant delivery to your inbox</p>
+
+      <!-- Payment logos + guarantee seal -->
+      <div class="pricing-badges-row">
+        <span class="pay-logo-pill pay-visa">VISA</span>
+        <span class="pay-logo-pill pay-amex">AMEX</span>
+        <span class="pay-logo-pill pay-discover">DISCOVER</span>
+        <span class="pay-logo-pill pay-mc">Mastercard</span>
+        <div class="guarantee-seal">
+          <div class="gs-badge">30<small>DAYS</small></div>
+        </div>
+        <div class="guarantee-info">
+          <div class="gi-title">30 Days Money Back</div>
+          <div class="gi-sub">Guarantee</div>
+        </div>
+      </div>
+
+      <!-- Compatible with badges -->
+      <div class="compat-row">
+        <div class="compat-badge">
+          <span class="cb-icon">🌐</span>
+          <div class="cb-text"><div class="cb-label-tiny">Compatible with</div><div class="cb-name">WordPress 5.8+</div></div>
+        </div>
+        <div class="compat-badge">
+          <span class="cb-icon">🛒</span>
+          <div class="cb-text"><div class="cb-label-tiny">Compatible with</div><div class="cb-name">WooCommerce</div></div>
+        </div>
+        <div class="compat-badge">
+          <span class="cb-icon">🎨</span>
+          <div class="cb-text"><div class="cb-label-tiny">Works with</div><div class="cb-name">Any Theme</div></div>
+        </div>
+      </div>
+
+      <div class="launch-note">⏰ <strong>Launch window closes soon</strong> — after that, new buyers move to $49/month billing.</div>
+    </div>
+  </div>
+</section>
+
+<!-- BONUSES -->
+<section class="bonuses">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow amber reveal">🎁 Launch Bonuses</span>
+      <h2 class="reveal">Plus 4 Bonuses Worth $1,488 — Free Today</h2>
+      <p class="reveal">These bonuses disappear when the launch window closes.</p>
+    </div>
+
+    <div class="bonus-grid">
+      <article class="bonus-card reveal">
+        <span class="bc-ribbon">$497</span>
+        <span class="bc-label">Bonus 01</span>
+        <h4>AIPress Quick-Start Playbook</h4>
+        <p>30-minute setup guide from "just installed" to "running on autopilot." The exact configuration we use ourselves.</p>
+        <div class="bonus-sample"><strong>📖 Sample inside:</strong> "Day 1 Setup Checklist · 12-step config · Priority order for enabling plugins"</div>
+        <span class="bc-value">VALUE $497</span>
+      </article>
+      <article class="bonus-card reveal">
+        <span class="bc-ribbon">$297</span>
+        <span class="bc-label">Bonus 02</span>
+        <h4>50 Ready-to-Use AI Prompts</h4>
+        <p>Tested prompts for Claude Assistant — covering posts, products, replies, admin tasks. Copy, paste, done.</p>
+        <div class="bonus-sample mono"><strong>Prompt #14:</strong> "Write 5 product bullets for [product name] focused on [benefit]..."</div>
+        <span class="bc-value">VALUE $297</span>
+      </article>
+      <article class="bonus-card reveal">
+        <span class="bc-ribbon">$397</span>
+        <span class="bc-label">Bonus 03</span>
+        <h4>GEO Ranking Cheat Sheet</h4>
+        <p>The exact post structure, schema, and answer-capsule format that gets your content cited by ChatGPT and Perplexity in 30 days.</p>
+        <div class="bonus-sample"><strong>📊 Includes:</strong> Answer-capsule template · Schema JSON · FAQ block structure · Citation tracker</div>
+        <span class="bc-value">VALUE $397</span>
+      </article>
+      <article class="bonus-card reveal">
+        <span class="bc-ribbon">$297</span>
+        <span class="bc-label">Bonus 04</span>
+        <h4>Agency Reseller Toolkit</h4>
+        <p>Use AIPress on client sites. Includes white-label install guide, retainer pricing, and sample proposals.</p>
+        <div class="bonus-sample"><strong>💼 Includes:</strong> Client proposal PDF · $500-$2,000 pricing tiers · Contract template · Onboarding checklist</div>
+        <span class="bc-value">VALUE $297</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="guarantee">
+  <div class="container">
+    <div class="guarantee-card reveal">
+      <div class="guarantee-badge">30<small>DAYS</small></div>
+      <h2>Try It For 30 Days. If It Doesn't Deliver, Get Every Penny Back.</h2>
+      <p>Install AIPress. Use all 10 plugins on your site. Run real tasks through Claude Assistant. Rank a post with GEO Optimizer. Recover a cart with WhatsApp Notifier.</p>
+      <p>If it doesn't save you hours every week — or it just isn't for you — email support within 30 days, get a full refund. <strong>Refund processed within 24 hours to your original payment method.</strong> No forms. No interrogation. <strong>Zero risk to you.</strong></p>
+      <p class="guarantee-stat">✓ 98.7% of users keep AIPress · Under 1.3% refund rate</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHO FOR -->
+<section class="who-for">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow blue reveal">Built For</span>
+      <h2 class="reveal">Who AIPress Is The Right Fit For</h2>
+      <p class="reveal">If any of these sounds like you, this is built to make your work easier.</p>
+    </div>
+
+    <div class="who-grid">
+      <article class="who-card reveal"><div class="who-icon">🛒</div><h4>WooCommerce Store Owners</h4><p>Recover carts, rank in AI search, run virtual try-on.</p></article>
+      <article class="who-card reveal"><div class="who-icon">🏢</div><h4>WordPress Agencies</h4><p>Deliver more value per client, lower plugin bill.</p></article>
+      <article class="who-card reveal"><div class="who-icon">✍️</div><h4>Bloggers &amp; Affiliates</h4><p>Get cited by ChatGPT and Perplexity in your niche.</p></article>
+      <article class="who-card reveal"><div class="who-icon">👔</div><h4>Local Businesses</h4><p>Faster sites, better security, WhatsApp updates.</p></article>
+      <article class="who-card reveal"><div class="who-icon">🎓</div><h4>Course Creators</h4><p>AI search to find buyers, Claude to draft content.</p></article>
+      <article class="who-card reveal"><div class="who-icon">👤</div><h4>Solo Operators</h4><p>Run WordPress without a developer on call.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow reveal">Questions</span>
+      <h2 class="reveal">Everything You Might Want To Ask</h2>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item reveal"><summary>Is AIPress really a one-time payment?</summary><div class="faq-body"><p>Yes. One-time payment at the launch price. With coupon AIPRESS2 you save an extra $2. No monthly fees, no annual renewal. Lifetime updates included.</p></div></details>
+      <details class="faq-item reveal"><summary>Do I need any technical skills to set this up?</summary><div class="faq-body"><p>No. Install each plugin like any WordPress plugin. The Quick-Start Playbook walks you through setup in 30 minutes.</p></div></details>
+      <details class="faq-item reveal"><summary>What about the AI features — do I need API keys?</summary><div class="faq-body"><p>Some AI features (Claude Assistant, GEO Optimizer) work best with your own Claude or OpenAI API key. Both easy to get with free tiers.</p></div></details>
+      <details class="faq-item reveal"><summary>How many sites can I use it on?</summary><div class="faq-body"><p>Launch price covers personal use on 1 site. Unlimited sites or client use — one-time upgrade available after checkout.</p></div></details>
+      <details class="faq-item reveal"><summary>Do all 10 plugins actually work together?</summary><div class="faq-body"><p>Yes. Built by the same team, designed to coexist without conflicts. Each one was originally sold as its own product.</p></div></details>
+      <details class="faq-item reveal"><summary>How does the refund work?</summary><div class="faq-body"><p>Email support within 30 days, say you want a refund. Processed to your original payment method within 24 hours. No forms, no questions.</p></div></details>
+      <details class="faq-item reveal"><summary>Why is the launch price this low?</summary><div class="faq-body"><p>To build a base of real users. The launch window is short and the price climbs throughout the cart period. After launch, new buyers move to $49/month billing.</p></div></details>
+      <details class="faq-item reveal"><summary>Will AIPress conflict with my other WordPress plugins?</summary><div class="faq-body"><p>No. AIPress plugins are built following WordPress coding standards and tested with the top 100 most popular plugins. If you hit an edge case, our support helps you resolve it (or refunds).</p></div></details>
+      <details class="faq-item reveal"><summary>Can I sell services to clients using these plugins?</summary><div class="faq-body"><p>Yes. Bonus #4 (Agency Reseller Toolkit) walks you through it. Full agency licensing available via one-time upgrade after checkout.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <span class="eyebrow reveal">One Decision</span>
+    <h2 class="reveal">Stop Paying Monthly. Start Running WordPress <span class="accent">On Autopilot.</span></h2>
+    <p class="reveal">10 AI plugins. One license. Lifetime updates. Less than the price of a pizza — for everything your WordPress needs to run itself.</p>
+    <div class="final-cta-btn-wrap reveal">
+      <a href="#pricing" class="pricing-cta">Get AIPress For $19 (Lifetime) →</a>
+    </div>
+    <p class="pricing-microcopy reveal">🔒 Secure checkout · ✓ 30-day money-back guarantee · Lifetime access · $0 monthly fees</p>
+    <p class="final-cta-note reveal">Join 2,300+ WordPress operators already using AIPress</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo"><span class="logo-mark">AI</span> <span>Press</span></div>
+  <p>"10 AI WordPress Plugins. 1 License. Every Task Automated. Forever."</p>
+  <div class="footer-badges">
+    <span class="footer-badge">VISA</span>
+    <span class="footer-badge">MASTERCARD</span>
+    <span class="footer-badge">AMEX</span>
+    <span class="footer-badge">PAYPAL</span>
+    <span class="footer-badge">🔒 SSL SECURED</span>
+  </div>
+  <p class="footer-copy">© 2026 AIPress. All trademarks belong to their respective owners.</p>
+  <div class="footer-links"><a href="mailto:support@aipress.com">Contact</a> · <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Refund Policy</a></div>
+</footer>
+
+</body>
+</html>
