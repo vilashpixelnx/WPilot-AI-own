@@ -206,11 +206,15 @@ section { padding: var(--section-pad) 0; position: relative; }
 /* 5. HERO ------------------------------------------------------------- */
 .hero {
   position: relative; overflow: hidden; text-align: center; isolation: isolate;
-  padding: 76px 0 100px;
+  padding: 30px 0 80px;
   background:
-    radial-gradient(1100px 560px at 50% -12%, #e7ecff 0%, transparent 62%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0) 72%, #ffffff 100%),
+    url('images/banner/banner_bg.png') center top / cover no-repeat,
     linear-gradient(180deg, #f4f6ff 0%, #eaefff 46%, #ffffff 100%);
 }
+
+/* Banner artwork already contains the ambient decorations */
+.hero-bg, .hero-char { display: none; }
 
 /* Ambient background layer */
 .hero-bg { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
@@ -242,6 +246,7 @@ section { padding: var(--section-pad) 0; position: relative; }
 
 /* Brand lockup */
 .hero-brand { display: flex; justify-content: center; align-items: center; gap: 16px; margin-bottom: 22px; }
+.hero-logo { width: clamp(240px, 34vw, 300px); height: auto; display: block; }
 .hero-brand-mark {
   width: 54px; height: 54px; border-radius: 15px; background: var(--gradient-primary);
   display: inline-flex; align-items: center; justify-content: center;
@@ -250,8 +255,8 @@ section { padding: var(--section-pad) 0; position: relative; }
 }
 .hero-brand-mark::before { content: ''; position: absolute; inset: -8px; background: var(--gradient-primary); border-radius: 24px; opacity: 0.3; filter: blur(16px); z-index: -1; }
 .hero-brand-text { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 900; font-size: clamp(44px, 6.5vw, 76px); line-height: 0.9; letter-spacing: -0.05em; }
-.hero-brand-text .brand-ai    { background: linear-gradient(135deg, #06b6d4, #0891b2); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.hero-brand-text .brand-press { background: linear-gradient(135deg, #4f46e5, #7c3aed); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero-brand-text .brand-ai    { background: linear-gradient(135deg, #3b82f6, #06b6d4); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero-brand-text .brand-press { color: var(--ink); }
 
 /* Sub-hook pill */
 .hero-pill {
@@ -287,6 +292,56 @@ section { padding: var(--section-pad) 0; position: relative; }
   display: inline-block; margin: 0 2px; padding: 3px 16px; color: #fff; border-radius: 10px;
   background: linear-gradient(90deg, #2563eb 0%, #06b6d4 50%, #10b981 100%);
   box-shadow: 0 10px 26px rgba(37, 99, 235, 0.35);
+}
+
+/* Hero video (ported from GEO banner implementation) */
+.ma_video_wrapper {
+  background-image:
+    linear-gradient(#fff0eb, #fff8f2),
+    linear-gradient(89.09deg, #2887ff -4.43%, #22cfff 40.29%, #ffd106 62.12%, #ff6a35 106.32%);
+  border: 1px solid transparent;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  padding: 10px;
+  margin: 12px auto 36px;
+  max-width: 860px;
+  border-radius: 20px;
+  position: relative;
+}
+.ma-tutorial-video {
+  transition: all 0.5s ease-in-out;
+  position: relative;
+  z-index: 9;
+  background: linear-gradient(89.09deg, rgba(40, 135, 255, 0.06) -4.43%, rgba(34, 207, 255, 0.06) 40.29%, rgba(255, 209, 6, 0.06) 62.12%, rgba(255, 106, 53, 0.06) 106.32%);
+  border-radius: 10px;
+}
+div#vimeo-video iframe { border-radius: 10px; }
+
+/* Animated "Watch Now" accent */
+.geo_banner_watch_vector {
+  position: absolute;
+  left: -13%;
+  top: 30%;
+  animation: geoWatchZigZag 3s ease-in-out infinite alternate;
+  will-change: transform;
+  z-index: 20;
+}
+.geo_banner_watch_vector img { display: block; }
+@keyframes geoWatchZigZag {
+  0%     { transform: translate(0, 0); }
+  16.65% { transform: translate(8px, 8px); }
+  33.3%  { transform: translate(-6px, -6px); }
+  49.95% { transform: translate(4px, 4px); }
+  66.6%  { transform: translate(-2px, -2px); }
+  83.25% { transform: translate(1px, 1px); }
+  100%   { transform: translate(0, 0); }
+}
+@media (max-width: 640px) {
+  .ma_video_wrapper { max-width: 92%; }
+  .geo_banner_watch_vector { width: 60px; left: -4px; top: -28px; }
+}
+@media (max-width: 420px) {
+  .geo_banner_watch_vector { width: 44px; left: -2px; top: -22px; }
 }
 
 /* Primary CTA */
