@@ -22,7 +22,7 @@ The page is a long-form direct-response sales page: hero hook → pain agitation
 
 ## External Dependencies (loaded via CDN)
 
-- **Google Fonts** — Inter, Plus Jakarta Sans, Space Grotesk
+- **Google Fonts** — Be Vietnam Pro (single font family)
 - **GSAP 3.12.5** + **ScrollTrigger** — scroll-reveal animations and 3D card tilt
 - **Unsplash** — some hero/demo imagery is hot-linked
 
