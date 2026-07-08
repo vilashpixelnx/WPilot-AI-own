@@ -1408,7 +1408,24 @@ div#vimeo-video iframe { border-radius: 10px; }
 .final-cta h2 .accent { background: var(--gradient-warm); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .final-cta p { color: rgba(255, 255, 255, 0.7); font-size: 20px; max-width: 620px; margin: 0 auto 40px; line-height: 1.6; }
 .final-cta .pricing-microcopy { margin-top: 22px; color: rgba(255, 255, 255, 0.5); }
-.final-cta .final-cta-note { margin-top: 14px; font-size: 14px; color: rgba(255, 255, 255, 0.5); }
+.final-cta .final-cta-note { margin: 22px auto 0; font-size: 15px; color: rgba(255, 255, 255, 0.62); max-width: none; }
+.final-cta .final-cta-note strong { color: #a78bfa; font-weight: 800; }
+
+/* Final CTA — bordered card (reference) */
+.final-cta .section-cta {
+  position: relative; margin: 6px auto 0; max-width: 1060px;
+  padding: clamp(34px, 5vw, 58px) clamp(22px, 4vw, 60px);
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(22, 17, 44, 0.55) 0%, rgba(11, 9, 22, 0.5) 100%);
+  box-shadow: 0 34px 90px rgba(79, 70, 229, 0.18), inset 0 0 70px rgba(124, 58, 237, 0.06);
+}
+.final-cta .section-cta::before {
+  content: ''; position: absolute; inset: 0; border-radius: 28px; padding: 1px; pointer-events: none;
+  background: linear-gradient(135deg, rgba(147, 51, 234, 0.75) 0%, rgba(37, 99, 235, 0.45) 50%, rgba(147, 51, 234, 0.28) 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+}
 
 /* 28. FOOTER — disclaimer style (power-pack) -------------------------- */
 .logo-mark { position: relative; width: 34px; height: 34px; border-radius: 9px; display: inline-flex; align-items: center; justify-content: center; font-weight: 900; font-size: 15px; color: #fff; background: var(--gradient-primary); box-shadow: var(--shadow-glow); }
