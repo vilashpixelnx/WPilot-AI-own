@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Live Webinar — WPilot AI · July 18, 2026</title>
+  <meta name="description"
+    content="Register free for the WPilot AI live webinar on July 18, 2026. See how 10 AI plugins automate WordPress and replace $2,000–$5,000/year of subscriptions.">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="prelaunch.css">
+</head>
+
+<body>
+
+  <!-- Nav -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <span class="nav-logo"><img src="assets/light.png" alt="WPilot AI"></span>
+      <a href="#register" class="btn-primary nav-cta">Save My Seat</a>
+    </div>
+  </nav>
+
+  <!-- 1. HERO — two-column, form top-right -->
+  <header id="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <span class="beacon"></span>
+      <span class="hero-lines"></span>
+      <span class="hero-orb orb-1"></span>
+      <span class="hero-orb orb-2"></span>
+    </div>
+
+    <div class="container hero-inner">
+      <!-- LEFT: copy -->
+      <div class="hero-copy">
+        <span class="eyebrow-pill"><i class="dot"></i> FREE LIVE WEBINAR · JULY 18</span>
+        <h1>What If Every WordPress Task<br><span class="grad-text">You Hate Was Handled By AI?</span></h1>
+        <p class="hero-sub">Join us live for a 45-minute training on the AI system built to run your WordPress site —
+          the content, the security, the support, the sales — <strong>so you never have to babysit it again.</strong>
+        </p>
+
+        <div class="date-badge">
+          <svg class="db-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+            <path d="M16 2v4M8 2v4M3 10h18"></path>
+          </svg>
+          <div class="date-badge-text">
+            <span class="db-date">Friday, July 18, 2026</span>
+            <span class="db-time">10:00 AM EST · 45 min · Live &amp; Interactive</span>
+          </div>
+        </div>
+
+        <div class="countdown-wrap">
+          <p class="countdown-label">Webinar starts in</p>
+          <div class="countdown" id="countdown">
+            <div class="cd-unit"><span class="cd-num" data-cd="days">00</span><span class="cd-lbl">Days</span></div>
+            <div class="cd-unit"><span class="cd-num" data-cd="hours">00</span><span class="cd-lbl">Hours</span></div>
+            <div class="cd-unit"><span class="cd-num" data-cd="mins">00</span><span class="cd-lbl">Minutes</span></div>
+            <div class="cd-unit"><span class="cd-num" data-cd="secs">00</span><span class="cd-lbl">Seconds</span></div>
+          </div>
+        </div>
+
+        <div class="trust-row">
+          <span><i class="tick"></i> Free to attend</span>
+          <span><i class="tick"></i> 100% live</span>
+          <span><i class="tick"></i> Limited seats</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: registration form -->
+      <div class="hero-form-col" id="register">
+        <div class="reg-card">
+          <div class="reg-card-head">
+            <span class="reg-badge">🎟 Reserve Your Free Seat</span>
+            <h2>Save your spot</h2>
+            <p>Enter your details below. Seats for the live session are limited.</p>
+          </div>
+          <form id="registerForm" novalidate>
+            <div class="form-field">
+              <label for="regName">Full Name</label>
+              <input type="text" id="regName" name="name" placeholder="Jane Smith" autocomplete="name" required>
+              <span class="field-error" id="nameError"></span>
+            </div>
+            <div class="form-field">
+              <label for="regEmail">Email Address</label>
+              <input type="email" id="regEmail" name="email" placeholder="jane@example.com" autocomplete="email"
+                required>
+              <span class="field-error" id="emailError"></span>
+            </div>
+            <button type="submit" class="btn-primary form-submit">Reserve My Free Seat <i class="arrow"></i></button>
+            <p class="form-privacy">🔒 We'll only email you about this webinar. No spam, ever.</p>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon">✓</div>
+            <h3>You're Registered!</h3>
+            <p>Check your inbox for your confirmation and calendar invite.<br>See you July 18 at 10:00 AM EST.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. WEBINAR DETAILS -->
+  <section class="section" id="details">
+    <div class="container centered">
+      <span class="section-tag">The Session</span>
+      <h2 class="section-title">A Free, Live Training —<br><span class="grad-text">Not A Replay, Not A Pitch.</span>
+      </h2>
+      <p class="section-sub">In 45 minutes you'll see exactly how AI can take the busywork off your plate. Bring your
+        WordPress questions — there's a live Q&amp;A at the end.</p>
+    </div>
+    <div class="container">
+      <div class="wd-grid">
+        <div class="wd-card">
+          <div class="wd-icon">📅</div>
+          <span class="wd-label">Date</span>
+          <span class="wd-value">Fri, July 18, 2026</span>
+        </div>
+        <div class="wd-card">
+          <div class="wd-icon">🕙</div>
+          <span class="wd-label">Time</span>
+          <span class="wd-value">10:00 AM EST</span>
+        </div>
+        <div class="wd-card">
+          <div class="wd-icon">⏱️</div>
+          <span class="wd-label">Duration</span>
+          <span class="wd-value">45 min + live Q&amp;A</span>
+        </div>
+        <div class="wd-card">
+          <div class="wd-icon">🎟️</div>
+          <span class="wd-label">Cost</span>
+          <span class="wd-value">Free · Limited seats</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. PROBLEM -->
+  <section class="section-alt" id="problem">
+    <div class="container centered">
+      <span class="section-tag">Before We Begin</span>
+      <h2 class="section-title">You're Not Slow.<br><span class="grad-text">Your Stack Is Working Against You.</span>
+      </h2>
+      <p class="section-sub">Every tool you bought to "save time" is still making you do all the work. Here's what
+        it's really costing you.</p>
+    </div>
+    <div class="container">
+      <div class="pain-grid">
+        <div class="pain-card">
+          <span class="pain-index">01</span>
+          <span class="pain-num">$1,200<small>+</small></span>
+          <p>spent yearly across Yoast, Wordfence, WPML, AffiliateWP &amp; ShortPixel — none of them talk to each
+            other.</p>
+        </div>
+        <div class="pain-card">
+          <span class="pain-index">02</span>
+          <span class="pain-num">10<small>+</small></span>
+          <p>separate subscription dashboards to log into — each with its own password and learning curve.</p>
+        </div>
+        <div class="pain-card">
+          <span class="pain-index">03</span>
+          <span class="pain-num">15<small>hrs</small></span>
+          <p>wasted every week on repetitive tasks that AI could finish in seconds, not hours.</p>
+        </div>
+        <div class="pain-card">
+          <span class="pain-index">04</span>
+          <span class="pain-num">73<small>%</small></span>
+          <p>of WordPress sites have zero AI integration — invisible in ChatGPT, Claude &amp; Perplexity answers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. COMPARE TABLE -->
+  <section class="section" id="compare">
+    <div class="container centered">
+      <span class="section-tag">The Shift You'll See</span>
+      <h2 class="section-title">The Old Way vs<br><span class="grad-text">The WPilot AI Way</span></h2>
+      <p class="section-sub">The exact before-and-after we'll walk through, live, on the session.</p>
+    </div>
+    <div class="container">
+      <div class="compare-grid">
+        <div class="compare-card old">
+          <span class="cmp-emoji">😰</span>
+          <span class="cmp-label old">The Old Way</span>
+          <h3 class="cmp-title">The Manual Grind</h3>
+          <ul class="cmp-list">
+            <li><span class="cmp-x">✕</span> Pay $200/mo across 10+ subscriptions</li>
+            <li><span class="cmp-x">✕</span> Write every product description by hand</li>
+            <li><span class="cmp-x">✕</span> Guess whether an order is fraud</li>
+            <li><span class="cmp-x">✕</span> Email customers at a 2–3% open rate</li>
+            <li><span class="cmp-x">✕</span> Pay a VA $1,800/mo for admin work</li>
+            <li><span class="cmp-x">✕</span> Watch competitors get cited in ChatGPT</li>
+          </ul>
+        </div>
+        <div class="compare-card new">
+          <span class="cmp-emoji">🥳</span>
+          <span class="cmp-label new">The WPilot AI Way</span>
+          <h3 class="cmp-title">The Automated Life</h3>
+          <ul class="cmp-list">
+            <li><span class="cmp-check">✓</span> Pay once — no monthly fees, ever</li>
+            <li><span class="cmp-check">✓</span> AI writes every description in seconds</li>
+            <li><span class="cmp-check">✓</span> AI scores every order 0–100 for fraud</li>
+            <li><span class="cmp-check">✓</span> WhatsApp messages at a 98% open rate</li>
+            <li><span class="cmp-check">✓</span> Claude Assistant handles admin — free</li>
+            <li><span class="cmp-check">✓</span> You rank inside ChatGPT, Claude &amp; Perplexity</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. STATS -->
+  <section class="stats-strip">
+    <div class="container centered">
+      <span class="section-tag">The Opportunity In Numbers</span>
+    </div>
+    <div class="container">
+      <div class="stats-row">
+        <div class="stat-item">
+          <span class="stat-num">6.5M<small>+</small></span>
+          <span class="stat-label">Active WooCommerce stores worldwide</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">$2K–$5K</span>
+          <span class="stat-label">Replaceable subscriptions, per year</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">50<small>+</small></span>
+          <span class="stat-label">AI features across the bundle</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">10 / 1</span>
+          <span class="stat-label">AI plugins, one single license</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. WHAT YOU'LL LEARN -->
+  <section class="section-alt" id="learn">
+    <div class="container centered">
+      <span class="section-tag">What You'll Learn</span>
+      <h2 class="section-title">Walk Away In 45 Minutes<br><span class="grad-text">Knowing Exactly What To Do.</span>
+      </h2>
+      <p class="section-sub">Four things you'll take away from the live session — whether or not you ever buy
+        anything.</p>
+    </div>
+    <div class="container">
+      <div class="agenda-list">
+        <div class="agenda-item">
+          <span class="agenda-num">01</span>
+          <div>
+            <h4>The 10 AI plugins that replace $2,000–$5,000/yr of tools</h4>
+            <p>A plugin-by-plugin breakdown of what gets cancelled — and what replaces it.</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <span class="agenda-num">02</span>
+          <div>
+            <h4>A live demo inside a real WordPress site</h4>
+            <p>Watch the AI write copy, rank content in ChatGPT, block fraud, and recover carts — live.</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <span class="agenda-num">03</span>
+          <div>
+            <h4>How agencies turn 1 plugin into $300–$5,000/mo per client</h4>
+            <p>The exact service-selling angle freelancers and agencies use to create recurring income.</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <span class="agenda-num">04</span>
+          <div>
+            <h4>The launch offer, bonuses &amp; webinar-only pricing</h4>
+            <p>Revealed live, for attendees only — not published anywhere else.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. WHAT YOU'LL SEE INSIDE -->
+  <section class="section" id="inside">
+    <div class="container centered">
+      <span class="section-tag">What You'll See Inside</span>
+      <h2 class="section-title">A Live Look At The<br><span class="grad-text">10 AI Plugins.</span></h2>
+      <p class="section-sub">You'll watch these run in real time during the session — no slides, real interfaces.</p>
+    </div>
+    <div class="container">
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="fc-icon">🛍️</div>
+          <h4>AI Commerce</h4>
+          <p>17 AI features that turn WooCommerce into a selling machine.</p>
+        </div>
+        <div class="feature-card">
+          <div class="fc-icon">🤖</div>
+          <h4>Claude Assistant</h4>
+          <p>Run your entire WordPress site just by typing commands.</p>
+        </div>
+        <div class="feature-card">
+          <div class="fc-icon">📈</div>
+          <h4>GEO Optimizer</h4>
+          <p>Get cited inside ChatGPT, Claude, Perplexity &amp; Google AI.</p>
+        </div>
+        <div class="feature-card">
+          <div class="fc-icon">🛡️</div>
+          <h4>Security</h4>
+          <p>Blocks hackers and scans for malware, 24/7, on your server.</p>
+        </div>
+        <div class="feature-card">
+          <div class="fc-icon">💬</div>
+          <h4>WhatsApp Notifier</h4>
+          <p>Recover abandoned carts at a 98% open rate — automatically.</p>
+        </div>
+        <div class="feature-card">
+          <div class="fc-icon">👕</div>
+          <h4>TryIt Virtual Try-On</h4>
+          <p>Let customers see products on themselves before they buy.</p>
+        </div>
+      </div>
+      <p class="inside-note">+ Image Optimizer, Affiliate System, Uptime Monitor &amp; Custom Checkout Fields —
+        all demoed live.</p>
+    </div>
+  </section>
+
+  <!-- 8. WHY ATTEND LIVE -->
+  <section class="section-alt" id="why-live">
+    <div class="container centered">
+      <span class="section-tag">Why Attend Live</span>
+      <h2 class="section-title">The Replay Won't Get You<br><span class="grad-text">What The Room Gets.</span></h2>
+    </div>
+    <div class="container">
+      <div class="live-grid">
+        <div class="live-card">
+          <div class="lc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v3"></path>
+            </svg>
+          </div>
+          <h4>Live Q&amp;A</h4>
+          <p>Ask about your exact setup and get answered on the spot.</p>
+        </div>
+        <div class="live-card">
+          <div class="lc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path
+                d="M20.59 13.41 11 3.83A2 2 0 0 0 9.59 3.2L3.2 3.2A2 2 0 0 0 1.2 5.2l0 6.4a2 2 0 0 0 .58 1.42l9.6 9.6a2 2 0 0 0 2.83 0l6.4-6.4a2 2 0 0 0 0-2.83z">
+              </path>
+              <circle cx="6.5" cy="6.5" r="1.5"></circle>
+            </svg>
+          </div>
+          <h4>Webinar-Only Pricing</h4>
+          <p>Launch pricing and bonuses are revealed and locked in live — not repeated after.</p>
+        </div>
+        <div class="live-card">
+          <div class="lc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 6v6l4 2"></path>
+            </svg>
+          </div>
+          <h4>Time-Boxed Bonus</h4>
+          <p>Attendee bonuses are only available during the live session window.</p>
+        </div>
+      </div>
+      <p class="replay-note">A recording is sent to registered attendees afterward, but the live bonus and
+        webinar-only pricing are not repeated in the replay.</p>
+    </div>
+  </section>
+
+  <!-- 9. IS THIS FOR YOU -->
+  <section class="section" id="for-you">
+    <div class="container centered">
+      <span class="section-tag">Is This Webinar For You?</span>
+      <h2 class="section-title">You Should Be In The Room If…</h2>
+      <p class="section-sub">If any of these sound like you, this session was built for exactly your situation.</p>
+    </div>
+    <div class="container">
+      <div class="foryou-grid">
+        <div class="foryou-card"><i class="tick"></i>
+          <p>You run a <strong>WooCommerce store</strong> and drown in manual tasks every week.</p>
+        </div>
+        <div class="foryou-card"><i class="tick"></i>
+          <p>You own a <strong>WordPress site</strong> and juggle 10+ plugin subscriptions.</p>
+        </div>
+        <div class="foryou-card"><i class="tick"></i>
+          <p>You're an <strong>agency or freelancer</strong> looking for new services to sell.</p>
+        </div>
+        <div class="foryou-card"><i class="tick"></i>
+          <p>You're a <strong>blogger or creator</strong> who wants to rank inside AI search.</p>
+        </div>
+        <div class="foryou-card"><i class="tick"></i>
+          <p>You're <strong>tired of monthly fees</strong> for tools you barely open.</p>
+        </div>
+        <div class="foryou-card"><i class="tick"></i>
+          <p>You want <strong>AI to do the work</strong> — not just another chatbot.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. FINAL CTA — One Seat. One Shot. -->
+  <section class="final-cta">
+    <div class="fc-bg" aria-hidden="true"><span class="beacon beacon-sm"></span></div>
+    <div class="container centered">
+      <span class="section-tag">One Seat. One Shot. Don't Miss It.</span>
+
+      <div class="fc-date">
+        <svg class="db-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+          <path d="M16 2v4M8 2v4M3 10h18"></path>
+        </svg>
+        <span>Friday, July 18, 2026</span>
+      </div>
+
+      <div class="fc-schedule">
+        <div class="fc-slot">
+          <span class="fc-slot-tag">Prelaunch Webinar</span>
+          <div class="fc-time">10:00 <span class="fc-ampm">AM</span> <span class="fc-est">EST</span></div>
+        </div>
+        <div class="fc-sched-divider" aria-hidden="true"></div>
+        <div class="fc-slot">
+          <span class="fc-slot-tag">Launch Starts</span>
+          <div class="fc-time">11:00 <span class="fc-ampm">AM</span> <span class="fc-est">EST</span></div>
+        </div>
+      </div>
+
+      <div class="fc-warning">
+        <span class="fc-warn-lock">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+        </span>
+        <div class="fc-warn-text">
+          <strong>Limited Seats — Don't Miss Out!</strong>
+          <p>We cap attendance on every live session to keep quality high. Once we hit capacity, registration
+            closes — no exceptions. Lock in your free seat right now.</p>
+        </div>
+        <span class="fc-warn-people">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </span>
+      </div>
+
+      <a href="#register" class="btn-primary fc-cta">Reserve My Free Seat Now <i class="arrow"></i></a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-logo"><img src="assets/light.png" alt="WPilot AI"></span>
+      <nav class="footer-links">
+        <a href="../legal/privacy.html">Privacy Policy</a>
+        <a href="../legal/terms.html">Terms &amp; Conditions</a>
+      </nav>
+      <p class="footer-copy">© <span data-year>2026</span> WPilot, All Rights Reserved. Made with ❤️ by <a
+          href="https://pixalab.ai/" target="_blank" rel="noopener">PixaLab</a> | Powered by <a
+          href="https://pixelnx.com/" target="_blank" rel="noopener">PixelNX</a>.</p>
+    </div>
+  </footer>
+
+  <script src="prelaunch.js"></script>
+</body>
+
+</html>

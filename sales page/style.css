@@ -957,10 +957,10 @@ div#vimeo-video iframe { border-radius: 10px; }
 .philo-body:first-of-type { font-size: 19px; color: rgba(255, 255, 255, 0.92); }
 .philo-body strong { color: #fff; font-weight: 700; }
 .philo-source { display: inline-flex; align-items: center; margin-top: 22px; padding: 12px 18px; border-radius: 12px; font-size: 13.5px; color: rgba(255, 255, 255, 0.78); background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-left: 3px solid #22d3ee; }
-.philo-visual { position: relative; height: 480px; }
-.philo-char-frame { position: relative; overflow: hidden; border-radius: 24px; height: 100%; border: 1px solid rgba(255, 255, 255, 0.12); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+.philo-visual { position: relative; }
+.philo-char-frame { position: relative; transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
 .philo-char-frame:hover { transform: translateY(-6px); }
-.philo-char-frame img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 24px; filter: saturate(0.9) brightness(0.95) contrast(1.05); }
+.philo-char-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .philo-char-frame::before { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; border-radius: 24px; mix-blend-mode: overlay; background: linear-gradient(135deg, rgba(79, 70, 229, 0.25) 0%, transparent 50%, rgba(16, 185, 129, 0.15) 100%); }
 .philo-char-frame::after { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: 24px; background: linear-gradient(180deg, transparent 60%, rgba(30, 27, 75, 0.7) 100%); }
 .philo-section:nth-of-type(even) .philo-char-frame::before { background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, transparent 50%, rgba(6, 182, 212, 0.2) 100%); }
@@ -1021,22 +1021,46 @@ div#vimeo-video iframe { border-radius: 10px; }
 .philo-light {
   color: var(--ink);
   background:
+    radial-gradient(1000px 900px at 80% 46%, #ece6f8 0%, #ece6f8 34%, rgba(236, 230, 248, 0) 74%),
     radial-gradient(900px 520px at 15% 5%, rgba(124, 58, 237, 0.08), transparent 55%),
     radial-gradient(820px 520px at 85% 100%, rgba(37, 99, 235, 0.08), transparent 55%),
-    linear-gradient(180deg, #f6f5ff 0%, #ffffff 60%);
+    linear-gradient(180deg, #f0edfb 0%, #f6f4ff 60%);
 }
 
-.philo-light .philo-head h2 { color: var(--ink); }
-.philo-light .philo-head p { color: var(--muted); }
-.philo-light .philo-body { color: var(--body); }
-.philo-light .philo-body:first-of-type { color: var(--ink); }
-.philo-light .philo-body strong { color: var(--ink); }
+.philo-light .section-header { margin-bottom: 25px; }
+.philo-light .philo-head h2 { color: var(--ink); font-size: clamp(28px, 3.8vw, 44px); font-weight: 900; line-height: 1.2; letter-spacing: -0.02em; }
+.philo-light .philo-head p { color: var(--muted); font-size: clamp(16px, 1.9vw, 19px); line-height: 1.65; }
+.philo-light .philo-body { color: var(--body); font-size: clamp(16px, 1.8vw, 18px); line-height: 1.75; margin-bottom: 18px; }
+.philo-light .philo-body:first-of-type { color: var(--ink); font-size: clamp(17px, 2vw, 20px); font-weight: 500; line-height: 1.65; }
+.philo-light .philo-body strong { color: var(--ink); font-weight: 700; }
+.philo-light .philo-source { font-size: 14px; font-weight: 600; letter-spacing: 0.2px; line-height: 1.5; }
 .philo-light .philo-highlight-blue { color: #2563eb; }
 .philo-light .philo-highlight-cyan { color: #0891b2; }
 .philo-light .philo-highlight-green { color: #059669; }
-.philo-light .philo-source { color: var(--muted); background: var(--paper-2); border: 1px solid var(--line); border-left: 3px solid #06b6d4; }
-.philo-light .philo-char-frame { border-color: var(--line); box-shadow: 0 30px 70px rgba(30, 27, 75, 0.16); }
-.philo-light .philo-char-frame::after { background: linear-gradient(180deg, transparent 65%, rgba(30, 27, 75, 0.28) 100%); }
+.philo-light .philo-source {
+  display: inline-flex; align-items: center; gap: 14px; margin-top: 26px;
+  padding: 14px 20px 14px 16px; border-radius: 16px;
+  color: var(--body); background: linear-gradient(135deg, rgba(124, 58, 237, 0.07), rgba(37, 99, 235, 0.05));
+  border: 1px solid rgba(124, 58, 237, 0.16); border-left: none;
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.1);
+}
+.philo-light .philo-source .ps-icon {
+  flex: none; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 12px; font-size: 20px; background: rgba(124, 58, 237, 0.12);
+}
+.philo-light .philo-source .ps-text { font-size: 14.5px; font-weight: 600; line-height: 1.45; color: var(--ink); }
+.philo-light .philo-source .ps-text strong { color: #6d28d9; font-weight: 800; }
+.philo-light .philo-source .ps-cite { display: block; margin-top: 3px; font-size: 12px; font-weight: 600; letter-spacing: 0.4px; text-transform: uppercase; color: var(--muted-2); }
+/* Merge the JPG into the section bg — no card frame, feather all edges */
+.philo-light .philo-char-frame { border: none; box-shadow: none; background: transparent; transform: none;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 13%, #000 87%, transparent 100%), linear-gradient(180deg, transparent 0%, #000 11%, #000 89%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 13%, #000 87%, transparent 100%), linear-gradient(180deg, transparent 0%, #000 11%, #000 89%, transparent 100%);
+  -webkit-mask-composite: source-in; mask-composite: intersect;
+}
+.philo-light .philo-char-frame:hover { transform: none; }
+.philo-light .philo-char-frame img { border-radius: 0; }
+.philo-light .philo-char-frame::before,
+.philo-light .philo-char-frame::after { display: none; }
 .philo-light .ph-ring { border-color: rgba(37, 99, 235, 0.18); }
 .philo-light .ph-ring.right { border-color: rgba(6, 182, 212, 0.18); }
 .philo-light .ph-dots { background-image: radial-gradient(rgba(37, 99, 235, 0.32) 2px, transparent 2px); }
