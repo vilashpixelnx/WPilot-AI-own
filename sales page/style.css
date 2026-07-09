@@ -130,8 +130,15 @@ section { padding: var(--section-pad) 0; position: relative; }
   background: linear-gradient(90deg, #E01AFF 0%, #1295FF 100%);
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
+.yellow-text-gradient {
+    background: var(--gradient-warm);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
 /* Reusable lime-yellow accent color */
 .text-lime { color: #E1FF00; }
+
 
 /* Eyebrow badge */
 /* .eyebrow {
@@ -452,7 +459,8 @@ div#vimeo-video iframe { border-radius: 10px; }
 @keyframes slideInLeft { from { transform: translateX(-120%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
 
 /* 7. TRUST STATS ------------------------------------------------------ */
-.trust-stats { background: #fff; padding: 64px 0 40px; position: relative; overflow: hidden; }
+.trust-stats .container { max-width: 1300px; }
+.trust-stats { background: #fff; padding: 80px 0 40px; position: relative; overflow: hidden; }
 .trust-stats::before, .trust-stats::after {
   content: ''; position: absolute; width: 340px; height: 340px; border-radius: 50%;
   filter: blur(90px); opacity: 0.55; z-index: 0; pointer-events: none;
@@ -464,7 +472,7 @@ div#vimeo-video iframe { border-radius: 10px; }
   width: fit-content; margin: 0 auto 36px;
   display: flex; align-items: center; gap: 8px;
 }
-.ts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; max-width: 1120px; margin: 0 auto; }
+.ts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin: 0 auto; }
 .ts-item {
   position: relative; text-align: center; overflow: hidden;
   background: #fff; border: 1px solid var(--line); border-radius: 24px;
@@ -487,7 +495,7 @@ div#vimeo-video iframe { border-radius: 10px; }
 .ts-item:nth-child(4)::before { background: linear-gradient(90deg, #8b5cf6, #ec4899); } */
 /* Circular neumorphic icon badge */
 .ts-icon {
-  width: 72px; height: 72px; margin: 0 auto 22px;
+  width: 100px; height: auto; margin: 0 auto 22px;
   display: flex; align-items: center; justify-content: center; font-size: 34px;
 }
 .ts-num { font-family: 'Be Vietnam Pro', sans-serif; font-size: clamp(24px, 4vw, 36px); font-weight: 900; line-height: 1; letter-spacing: -0.03em; background: var(--gradient-primary); -webkit-background-clip: text; background-clip: text; color: transparent; }
@@ -500,13 +508,13 @@ div#vimeo-video iframe { border-radius: 10px; }
 .ts-label { font-size: 13px; color: var(--muted); font-weight: 600; letter-spacing: 0.5px; }
 
 /* 8. PROOF BAR -------------------------------------------------------- */
-.proof-bar { background: #fff; padding: 44px 0 40px; border-bottom: 1px solid var(--line); }
+.proof-bar { background: #fff; padding: 0px 0 80px; border-bottom: 1px solid var(--line); }
 .proof-bar p { text-align: center; color: var(--muted); font-size: 18px; text-transform: capitalize; font-weight: 500; margin-bottom: 30px; }
 .proof-bar p strong { color: #6d28d9; }
 .proof-logos { display: flex; justify-content: center; align-items: center; gap: 0; flex-wrap: wrap; row-gap: 14px; margin: 0 auto; }
 .proof-logo {
   display: inline-flex; align-items: center; gap: 10px;
-  font-family: 'Be Vietnam Pro', sans-serif; font-weight: 800; color: var(--ink);
+  font-family: 'Be Vietnam Pro', sans-serif; font-weight: 600; color: var(--ink);
   font-size: 17px; letter-spacing: -0.01em;
   padding: 6px 26px; position: relative;
   transition: transform 0.25s ease;
@@ -743,8 +751,9 @@ div#vimeo-video iframe { border-radius: 10px; }
 .plugin-card:nth-child(even) .pc-mockup  { order: 1; }
 
 .pc-content { min-width: 0; }
-.pc-content .p-step { display: inline-block; padding: 7px 18px; border-radius: var(--radius-full); background: color-mix(in srgb, var(--pc-accent) 14%, #fff); color: var(--pc-dark); font-weight: 800; font-size: 13px; letter-spacing: 0.4px; margin-bottom: 20px; }
-.plugin-card h3 { font-size: clamp(24px, 2.6vw, 32px); margin: 0 0 10px; }
+.pc-content .p-step { display: inline-block; padding: 7px 18px; border-radius: var(--radius-full); background: color-mix(in srgb, var(--pc-accent) 14%, #fff); color: var(--pc-dark); font-weight: 600; font-size: 13px; letter-spacing: 0.4px; margin-bottom: 20px; }
+.pc-plugin-logo { margin: 0 0 15px; }
+.pc-plugin-logo > img{}
 .plugin-card .tagline { color: var(--muted); font-size: 16px; margin: 0 0 24px; line-height: 1.55;}
 .plugin-card .p-features { list-style: none; margin: 0 0 26px; padding: 0; }
 .plugin-card .p-features li { display: flex; align-items: flex-start; gap: 12px; padding: 5px 0; font-size: 15px; color: var(--body); }
@@ -1307,7 +1316,7 @@ div#vimeo-video iframe { border-radius: 10px; }
 .compat-badge { display: flex; align-items: center; gap: 16px; padding: 22px 26px; border-radius: 16px; background: #fff; border: 1px solid var(--line); box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06); }
 .compat-badge .cb-logo { flex: none; width: 52px; height: 52px; object-fit: contain; }
 .compat-badge .cb-text { text-align: left; display: flex; flex-direction: column; gap: 8px; }
-.compat-badge .cb-name { font-size: 19px; color: var(--ink); font-weight: 800; line-height: 1.1; }
+.compat-badge .cb-name { font-size: 19px; color: var(--ink); font-weight: 600; line-height: 1.1; }
 .compat-badge .cb-verified { align-self: flex-start; padding: 4px 12px; border-radius: var(--radius-full); font-size: 12px; font-weight: 700; color: var(--indigo-2); background: rgba(124, 58, 237, 0.09); }
 
 /* launch note — reference banner */
@@ -1350,7 +1359,7 @@ div#vimeo-video iframe { border-radius: 10px; }
 .fe_bonus_sub_heading { font-size: clamp(20px, 3vw, 34px); font-weight: 800; line-height: 1.2; letter-spacing: 1px; color: #a78bfa; }
 .fe_bonus_content .bonus-value { padding: 6px 14px; border-radius: 999px; font-size: 13px; font-weight: 800; letter-spacing: 0.5px; color: #6ee7b7; background: rgba(16, 185, 129, 0.14); border: 1px solid rgba(16, 185, 129, 0.32); }
 .fe_bonus_content h3 { font-family: 'Be Vietnam Pro', sans-serif; font-size: clamp(22px, 3vw, 34px); font-weight: 800; line-height: 1.2; color: #fff; margin: 0 0 12px; }
-.fe_bonus_content > p { font-size: clamp(15px, 2vw, 20px); font-weight: 400; line-height: 1.5; color: rgba(255, 255, 255, 0.72); margin: 0 0 14px; }
+.fe_bonus_content > p { font-size: clamp(14px, 2vw, 18px); font-weight: 400; line-height: 1.6; color: rgba(255, 255, 255, 0.72); margin: 0 0 14px; }
 .fe_bonus_content .bonus-sample { padding: 12px 16px; border-radius: 12px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(139, 92, 246, 0.22); font-size: 13.5px; color: rgba(255, 255, 255, 0.7); }
 .fe_bonus_content .bonus-sample strong { color: #c4b5fd; }
 
@@ -1374,7 +1383,7 @@ div#vimeo-video iframe { border-radius: 10px; }
 .guarantee .watermark { position: absolute; top: 18px; left: 34px; z-index: 1; }
 .guarantee .watermark span { font-family: 'Be Vietnam Pro', sans-serif; font-size: clamp(38px, 8vw, 72px); line-height: 1.12; color: rgba(197, 197, 197, 0.28); font-weight: 900; }
 .guar-content { position: relative; z-index: 1; padding: 4px 0; }
-.guar-content h2 { margin-bottom: 16px; color: var(--ink); }
+.guar-content h2 { margin-bottom: 16px; color: var(--ink);    font-size: clamp(24px, 4.5vw, 36px); }
 .guar-content p { font-size: 16px; color: var(--muted); line-height: 1.7; margin-bottom: 14px; }
 .guar-content p strong { color: var(--ink); font-weight: 700; }
 .guar-content .guarantee-stat { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 15px; font-weight: 700; color: var(--emerald-2); }
@@ -1629,4 +1638,12 @@ div#vimeo-video iframe { border-radius: 10px; }
   .hero-brand-text { font-size: 42px; }
   .tb-badge { font-size: 10px; }
   .damage-amount { font-size: 44px; }
+}
+
+
+
+
+.forgeContainer .price-wrap span:first-child {
+    text-shadow: none!important;
+    color: #9d9d9d;
 }
