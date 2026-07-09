@@ -1,4 +1,4 @@
-/* =====================================================================
+﻿/* =====================================================================
    WPilot AI — Landing Page Styles
    ---------------------------------------------------------------------
    1.  Design tokens (:root)
@@ -444,7 +444,12 @@ div#vimeo-video iframe { border-radius: 10px; }
   background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--indigo);
   border-radius: 12px; padding: 14px 40px 14px 16px; max-width: 300px; font-size: 13px;
   box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15);
-  animation: slideInLeft 0.6s ease-out 2s both;
+  opacity: 0; transform: translateX(-120%); pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.social-proof-pop.is-visible {
+  opacity: 1; transform: translateX(0); pointer-events: auto;
+  animation: slideInLeft 0.6s ease-out both;
 }
 .spp-close {
   position: absolute; top: 6px; right: 6px; width: 24px; height: 24px; border-radius: 50%;
@@ -498,7 +503,7 @@ div#vimeo-video iframe { border-radius: 10px; }
   width: 100px; height: auto; margin: 0 auto 22px;
   display: flex; align-items: center; justify-content: center; font-size: 34px;
 }
-.ts-num { font-family: 'Be Vietnam Pro', sans-serif; font-size: clamp(24px, 4vw, 36px); font-weight: 900; line-height: 1; letter-spacing: -0.03em; background: var(--gradient-primary); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.ts-num { font-family: 'Be Vietnam Pro', sans-serif; font-size: clamp(24px, 4vw, 36px); font-weight: 900; line-height: 1; letter-spacing: -0.03em; background: var(--ink); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .ts-divider { position: relative; display: block; width: 56px; height: 2px; margin: 16px auto; background: var(--line); border-radius: 2px; }
 .ts-divider::after {
   content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
@@ -532,7 +537,7 @@ div#vimeo-video iframe { border-radius: 10px; }
   position: relative; color: #fff; overflow: hidden;
   background:
     linear-gradient(180deg, rgba(10, 14, 26, 0.6) 0%, rgba(20, 10, 18, 0.3) 45%, rgba(10, 14, 26, 0.72) 100%),
-    url('images/hard_truth/bg.png') center center / cover no-repeat,
+    url('images/hard_truth/bg.jpg') center center / cover no-repeat,
     linear-gradient(135deg, #0a0e1a 0%, #1a0a12 50%, #2a0a12 100%);
 }
 .pain::before { content: ''; position: absolute; top: -200px; left: -100px; width: 700px; height: 700px; background: radial-gradient(circle, rgba(220, 38, 38, 0.18), transparent 65%); pointer-events: none; }
@@ -961,6 +966,57 @@ div#vimeo-video iframe { border-radius: 10px; }
 .philo-section:nth-of-type(even) .philo-char-frame::before { background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, transparent 50%, rgba(6, 182, 212, 0.2) 100%); }
 .philo-dots { position: absolute; bottom: -30px; left: -30px; width: 120px; height: 120px; z-index: 0; opacity: 0.4; background-image: radial-gradient(circle, rgba(59, 130, 246, 0.5) 1.5px, transparent 1.5px); background-size: 12px 12px; }
 
+/* ── Philosophy 1 ("The Real Reason") — fully independent, phc- prefix ── */
+.phc-section .section-header{
+  margin-bottom: 20px;
+}
+.phc-section {
+  position: relative; overflow: hidden; padding: 96px 0; color: #fff;
+  background:
+    radial-gradient(900px 520px at 10% 0%, rgba(124, 58, 237, 0.06), transparent 50%),
+    radial-gradient(820px 520px at 90% 100%, rgba(37, 99, 235, 0.05), transparent 50%),
+    #01010d;
+}
+.phc-section .container { position: relative; z-index: 2; max-width: 1400px; }
+
+/* Decorative layer — glow orbs, gradient ring, sparkles, dots */
+.phc-decor { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.phc-orb { position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.5; }
+.phc-orb.o1 { width: 420px; height: 420px; top: -140px; left: -120px; background: radial-gradient(circle, rgba(124, 58, 237, 0.35), transparent 70%); }
+.phc-orb.o2 { width: 380px; height: 380px; bottom: -140px; right: -110px; background: radial-gradient(circle, rgba(37, 99, 235, 0.3), transparent 70%); }
+.phc-ring { position: absolute; top: 8%; left: 6%; width: 150px; height: 150px; border-radius: 50%; border: 2px dashed rgba(96, 165, 250, 0.22); }
+.phc-dot-cluster { position: absolute; bottom: 12%; right: 8%; width: 110px; height: 84px; opacity: 0.5; background-image: radial-gradient(rgba(96, 165, 250, 0.5) 2px, transparent 2px); background-size: 15px 15px; }
+.phc-spark { position: absolute; line-height: 1; animation: msTwinkle 3s ease-in-out infinite; }
+.phc-spark.s1 { top: 20%; right: 12%; font-size: 20px; color: #93c5fd; }
+.phc-spark.s2 { top: 62%; left: 9%; font-size: 15px; color: #67e8f9; animation-delay: 0.7s; }
+.phc-spark.s3 { bottom: 22%; right: 22%; font-size: 17px; color: #c4b5fd; animation-delay: 1.2s; }
+
+/* Centered header */
+.phc-head h2 { color: #fff; font-family: 'Be Vietnam Pro', sans-serif; font-weight: 900; font-size: clamp(30px, 4vw, 46px); line-height: 1.18; letter-spacing: -0.02em; }
+.phc-head p { color: rgba(255, 255, 255, 0.72); font-size: 18px; line-height: 1.7; max-width: 720px; margin: 0 auto; }
+
+/* Centered single-column grid */
+.phc-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
+
+/* Image — natural size, no filters/overlays */
+.phc-visual { position: relative; width: auto; height: auto; }
+.phc-frame { position: relative; height: auto; border: 0; border-radius: 0; box-shadow: none; }
+.phc-frame img { width: auto; height: auto; object-fit: none; filter: none; border-radius: 0; display: block; margin: 0 auto; }
+.phc-frame-dots { position: absolute; bottom: -30px; left: -30px; width: 120px; height: 120px; z-index: 0; opacity: 0.4; background-image: radial-gradient(circle, rgba(59, 130, 246, 0.5) 1.5px, transparent 1.5px); background-size: 12px 12px; }
+
+/* Content */
+.phc-content { position: relative; text-align: center;     max-width: 1100px;
+    margin: auto;}
+.phc-highlight-blue { color: #60a5fa; font-weight: 600; }
+.phc-body { font-size: 17px; color: rgba(255, 255, 255, 0.78); line-height: 1.75; margin-bottom: 16px; }
+.phc-body:first-of-type { font-size: 19px; color: rgba(255, 255, 255, 0.92); }
+.phc-body strong { color: #fff; font-weight: 700; }
+.phc-source { display: inline-flex; align-items: center; gap: 8px; margin: 26px auto 0; padding: 11px 22px; border-radius: 999px; font-size: 13.5px; font-weight: 500; letter-spacing: 0.01em; color: rgba(255, 255, 255, 0.82); background: linear-gradient(135deg, rgba(124, 58, 237, 0.12), rgba(34, 211, 238, 0.08)); border: 1px solid rgba(148, 163, 253, 0.25); box-shadow: 0 10px 28px rgba(124, 58, 237, 0.16); backdrop-filter: blur(6px); }
+
+@media (max-width: 576px) {
+  .phc-section { padding: 64px 0; }
+}
+
 /* ── Philosophy: light-theme variant ─────────────────────────── */
 .philo-light {
   color: var(--ink);
@@ -1050,7 +1106,8 @@ div#vimeo-video iframe { border-radius: 10px; }
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 /* VS circle */
-.ba-vs { position: relative; z-index: 9; align-self: center; flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Be Vietnam Pro', sans-serif; font-weight: 800; font-size: 15px; letter-spacing: 0.1em; color: rgba(255, 255, 255, 0.85); background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.16); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); }
+.ba-vs { position: relative; z-index: 9; align-self: center; flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.16); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); }
+.ba-vs img { width: 28px; height: 28px; object-fit: contain; }
 /* Side figure (right.png) — reference .stack-good-img */
 .ba-good-img { position: relative; z-index: 8; align-self: center; margin-left: -30px; max-width: 100%; height: auto; }
 .ba-good-img img { width: 100%; height: auto; display: block; filter: drop-shadow(0 18px 34px rgba(0, 0, 0, 0.45)); }
@@ -1363,31 +1420,112 @@ div#vimeo-video iframe { border-radius: 10px; }
 .fe_bonus_content .bonus-sample { padding: 12px 16px; border-radius: 12px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(139, 92, 246, 0.22); font-size: 13.5px; color: rgba(255, 255, 255, 0.7); }
 .fe_bonus_content .bonus-sample strong { color: #c4b5fd; }
 
-/* 24. GUARANTEE — standalone trust section (pro style) ----------------- */
-.guarantee { position: relative; overflow: hidden; background: #fff; }
-.guarantee .container { max-width: 1440px; }
-.guar-wrap {
-  position: relative; display: grid; grid-template-columns: 550px 1fr; gap: 52px; align-items: center;
-  background: #fff; border: 1.5px solid rgba(16, 185, 129, 0.22); border-radius: var(--radius-lg);
-  padding: 56px 58px; margin: 0 auto;
-  box-shadow: 0 2px 12px rgba(11, 6, 24, 0.06), 0 24px 64px rgba(16, 185, 129, 0.1);
+/* money-back section START — light theme, matches site's light sections */
+.fe_moneyBack_section {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(900px 520px at 50% 0%, rgba(124, 58, 237, 0.10), transparent 65%),
+    linear-gradient(180deg, #f7f5ff 0%, #ffffff 55%, #f8fbff 100%);
 }
-.guar-wrap::before {
-  content: ''; position: absolute; inset: -1.5px; border-radius: var(--radius-lg); padding: 1.5px;
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.4), rgba(124, 58, 237, 0.2));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-          mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+.fe_moneyBack_section .section-header {
+    margin: 0 auto 64px;
 }
-.guar-img { position: relative; z-index: 1; width: 100%; height: auto; display: block; }
-.guarantee .watermark { position: absolute; top: 18px; left: 34px; z-index: 1; }
-.guarantee .watermark span { font-family: 'Be Vietnam Pro', sans-serif; font-size: clamp(38px, 8vw, 72px); line-height: 1.12; color: rgba(197, 197, 197, 0.28); font-weight: 900; }
-.guar-content { position: relative; z-index: 1; padding: 4px 0; }
-.guar-content h2 { margin-bottom: 16px; color: var(--ink);    font-size: clamp(24px, 4.5vw, 36px); }
-.guar-content p { font-size: 16px; color: var(--muted); line-height: 1.7; margin-bottom: 14px; }
-.guar-content p strong { color: var(--ink); font-weight: 700; }
-.guar-content .guarantee-stat { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 15px; font-weight: 700; color: var(--emerald-2); }
-
+.fe_mback_box {
+  position: relative;
+  max-width: 1074px;
+  margin: 110px auto 0;
+  padding: 120px 38px 44px;
+  border-radius: 28px;
+  border: 1px solid transparent;
+  background: #ffffff;
+  background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(108.72deg, rgba(79, 70, 229, 0.22) 6.78%, rgba(6, 182, 212, 0.18) 96.42%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 30px 70px rgba(79, 70, 229, 0.12), 0 4px 14px rgba(15, 23, 42, 0.04);
+}
+.fe_mback_box::before {
+  content: '';
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.16), transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+.fe_mback_badge {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 10px 26px rgba(79, 70, 229, 0.22));
+}
+.fe_mback_badge img {
+  width: 210px;
+  height: auto;
+}
+.fe_mback_text {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin: 0 auto 34px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.7;
+  text-align: center;
+}
+.fe_mback_list {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.fe_mback_item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  line-height: 1.4;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 15.5px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.fe_mback_item:hover {
+  transform: translateY(-3px);
+  border-color: rgba(79, 70, 229, 0.28);
+  box-shadow: 0 14px 30px rgba(79, 70, 229, 0.12);
+}
+.fe_mback_item img {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+.fe_mback_check {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--emerald);
+  font-size: 13px;
+  font-weight: 900;
+}
+/* money-back section END */
 /* 25. WHO IT'S FOR — dark gradient-border cards (pro limits style) ----- */
 .who-for { position: relative; overflow: hidden; background: #0b0918; color: #fff; }
 .who-for .section-header h2 { color: #fff; }
@@ -1533,8 +1671,8 @@ div#vimeo-video iframe { border-radius: 10px; }
 }
 
 @media (max-width: 900px) {
-  .guar-wrap { grid-template-columns: 1fr; gap: 28px; padding: 40px 26px; }
-  .guarantee .watermark { display: none; }
+  .fe_mback_box { padding: 110px 24px 28px; }
+  .fe_mback_list { grid-template-columns: 1fr; gap: 12px; padding: 20px 22px; }
   .hero-char { display: none; }
   .top-bar-inner { flex-wrap: wrap; justify-content: center; gap: 12px; }
   .tb-text { display: none; }
@@ -1646,4 +1784,7 @@ div#vimeo-video iframe { border-radius: 10px; }
 .forgeContainer .price-wrap span:first-child {
     text-shadow: none!important;
     color: #9d9d9d;
+}
+.forgeContainer .price-wrap span:last-child {
+    color: var(--indigo-2);
 }
