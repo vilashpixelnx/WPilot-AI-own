@@ -1,5 +1,126 @@
 // WPilot AI — Prelaunch Webinar Page Script
 
+// ── NAV SCROLL STATE ──
+(function () {
+  const navbar = document.getElementById('navbar');
+  if (!navbar) return;
+
+  function onScroll() {
+    navbar.classList.toggle('scrolled', window.scrollY > 10);
+  }
+
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+})();
+
+// ── HERO RIPPLE GRID (mouse-following spotlight + click ripple over a faint grid) ──
+(function () {
+  const grid = document.getElementById('rippleGrid');
+  const base = document.getElementById('rippleBase');
+  const spot = document.getElementById('rippleSpot');
+  const hero = document.getElementById('hero');
+  if (!grid || !base || !spot || !hero) return;
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const CELL = 56;
+
+  function build() {
+    const cols = Math.ceil(grid.clientWidth / CELL) + 1;
+    const rows = Math.ceil(grid.clientHeight / CELL) + 1;
+    base.style.gridTemplateColumns = `repeat(${cols}, ${CELL}px)`;
+    base.style.gridAutoRows = `${CELL}px`;
+    const frag = document.createDocumentFragment();
+    for (let i = 0; i < cols * rows; i++) {
+      const cell = document.createElement('div');
+      cell.className = 'ripple-cell';
+      frag.appendChild(cell);
+    }
+    base.innerHTML = '';
+    base.appendChild(frag);
+  }
+
+  // Click ripple — a continuous expanding ring of cyan grid that fades out.
+  const DUR = 900;
+  const MAX_R = 300;
+  const BAND = 60;
+
+  function ripple(px, py) {
+    if (reduce) return;
+    const el = document.createElement('div');
+    el.className = 'ripple-pulse';
+    grid.appendChild(el);
+    const start = performance.now();
+
+    function frame(now) {
+      const t = Math.min(1, (now - start) / DUR);
+      const ease = 1 - Math.pow(1 - t, 3);
+      const r = ease * MAX_R;
+      const inner = Math.max(0, r - BAND);
+      const opacity = Math.pow(1 - t, 1.6) * 0.75;
+      const m = `radial-gradient(circle at ${px}px ${py}px,
+        transparent ${inner}px,
+        rgba(0,0,0,0.55) ${r - BAND * 0.5}px,
+        #000 ${r}px,
+        rgba(0,0,0,0.55) ${r + BAND * 0.5}px,
+        transparent ${r + BAND}px)`;
+      el.style.webkitMaskImage = m;
+      el.style.maskImage = m;
+      el.style.opacity = opacity.toFixed(3);
+      if (t < 1) {
+        requestAnimationFrame(frame);
+      } else {
+        el.remove();
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+
+  hero.addEventListener('click', (e) => {
+    if (e.target.closest('a, button')) return;
+    const rect = grid.getBoundingClientRect();
+    ripple(e.clientX - rect.left, e.clientY - rect.top);
+  });
+
+  // Mouse-following cyan spotlight — eased for smooth trailing motion.
+  let tx = -999, ty = -999, cx = -999, cy = -999, raf = null, active = false;
+
+  function follow() {
+    cx += (tx - cx) * 0.14;
+    cy += (ty - cy) * 0.14;
+    spot.style.setProperty('--mx', cx.toFixed(1) + 'px');
+    spot.style.setProperty('--my', cy.toFixed(1) + 'px');
+    if (active || Math.abs(tx - cx) > 0.4 || Math.abs(ty - cy) > 0.4) {
+      raf = requestAnimationFrame(follow);
+    } else {
+      raf = null;
+    }
+  }
+
+  hero.addEventListener('mouseenter', (e) => {
+    const rect = grid.getBoundingClientRect();
+    tx = cx = e.clientX - rect.left;
+    ty = cy = e.clientY - rect.top;
+    active = true;
+    spot.style.opacity = '1';
+    if (!raf) raf = requestAnimationFrame(follow);
+  });
+  hero.addEventListener('mousemove', (e) => {
+    const rect = grid.getBoundingClientRect();
+    tx = e.clientX - rect.left;
+    ty = e.clientY - rect.top;
+    active = true;
+    if (!raf) raf = requestAnimationFrame(follow);
+  });
+  hero.addEventListener('mouseleave', () => {
+    active = false;
+    spot.style.opacity = '0';
+  });
+
+  build();
+  let rt;
+  window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(build, 200); });
+})();
+
 // ── FOOTER YEAR ──
 document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
 
@@ -62,14 +183,10 @@ document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new 
 })();
 
 // ── REGISTRATION FORM (pixelnx.com lead-sync → GetResponse + GoToWebinar) ──
-// Same working submission flow as the RankOnAI prelaunch page's leadsync.js:
 // POSTs first_name/last_name/email + autoresponder_id/webinar_id to the PixelNX
 // form handler, then redirects to the thank-you page. No access token needed.
-//
 (function () {
   const FORM_ENDPOINT = 'https://pixelnx.com/form-handler';
-  const AUTORESPONDER_ID = '7f2Kz';
-  const WEBINAR_ID = '854994992010843226';
   const THANKYOU_URL = 'https://wpilot-sales.pixalab.ai/webinar-thankyou/';
 
   const form = document.getElementById('registerForm');
@@ -136,16 +253,11 @@ document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new 
     }
 
     try {
+      const jsonData = JSON.stringify(Object.fromEntries(new FormData(form)));
       const response = await fetch(FORM_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          first_name: first,
-          last_name: last,
-          email,
-          autoresponder_id: AUTORESPONDER_ID,
-          webinar_id: WEBINAR_ID,
-        }),
+        body: jsonData,
       });
       const res = await response.json();
 
