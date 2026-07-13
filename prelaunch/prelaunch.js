@@ -13,6 +13,30 @@
   window.addEventListener('scroll', onScroll, { passive: true });
 })();
 
+// ── NAV MOBILE MENU ──
+(function () {
+  const navbar = document.getElementById('navbar');
+  const toggle = document.querySelector('.nav-toggle');
+  const panel = document.querySelector('.nav-mobile-panel');
+  if (!navbar || !toggle || !panel) return;
+
+  function closeMenu() {
+    navbar.classList.remove('menu-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  toggle.addEventListener('click', () => {
+    const isOpen = navbar.classList.toggle('menu-open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  panel.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu));
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 992) closeMenu();
+  });
+})();
+
 // ── HERO RIPPLE GRID (mouse-following spotlight + click ripple over a faint grid) ──
 (function () {
   const grid = document.getElementById('rippleGrid');
