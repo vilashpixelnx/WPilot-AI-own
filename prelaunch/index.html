@@ -28,7 +28,7 @@
         <a href="#why-live">Why Attend Live</a>
         <a href="#for-you">Is This For You</a>
       </div>
-      <a href="#register" class="btn-primary nav-cta">Reserve Your Seat <i class="arrow"></i></a>
+      <a href="#hero" class="btn-primary nav-cta">Reserve Your Seat <i class="arrow"></i></a>
     </div>
   </nav>
 
@@ -104,7 +104,7 @@
       </div>
 
       <!-- RIGHT: registration form -->
-      <div class="hero-form-col" id="register">
+      <div class="hero-form-col" ">
         <div class="reg-card">
           <img class="reg-sticker" src="assets/ai_icon.png" alt="" aria-hidden="true" loading="lazy">
           <div class="reg-card-head">
@@ -493,23 +493,38 @@
   <!-- 8. WHY ATTEND LIVE -->
   <section class="section-alt" id="why-live">
     <div class="container centered">
-      <span class="section-tag">Why Attend Live</span>
+      <span class="section-tag why-live-tag">
+        <svg class="wt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"></path>
+          <path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"></path>
+          <circle cx="12" cy="12" r="2"></circle>
+          <path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"></path>
+          <path d="M19.1 4.9C23 8.8 23 15.2 19.1 19.1"></path>
+        </svg>
+        Why Attend Live
+      </span>
       <h2 class="section-title">The Replay Won't Get You<br><span class="grad-text">What The Room Gets.</span></h2>
+      <span class="why-live-divider" aria-hidden="true"></span>
+      <p class="section-sub">Being live means more access, more answers, and more value you <strong>won't</strong> get
+        from replay.</p>
     </div>
     <div class="container">
       <div class="live-grid">
-        <div class="live-card">
+        <div class="live-card live-violet">
           <div class="lc-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round">
               <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
               <path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v3"></path>
             </svg>
+            <i class="lc-spark">✦</i>
           </div>
           <h4>Live Q&amp;A</h4>
-          <p>Ask about your exact setup and get answered on the spot.</p>
+          <span class="lc-underline" aria-hidden="true"></span>
+          <p>Ask directly, get <strong>real answers</strong>, and get unfiltered clarity on the spot.</p>
         </div>
-        <div class="live-card">
+        <div class="live-card live-blue">
           <div class="lc-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round">
@@ -518,29 +533,46 @@
               </path>
               <circle cx="6.5" cy="6.5" r="1.5"></circle>
             </svg>
+            <i class="lc-spark">✦</i>
           </div>
           <h4>Webinar-Only Pricing</h4>
-          <p>Launch pricing and bonuses are revealed and locked in live — not repeated after.</p>
+          <span class="lc-underline" aria-hidden="true"></span>
+          <p>Launch pricing and <strong>exclusive rewards</strong> are locked in live — not repeated after.</p>
         </div>
-        <div class="live-card">
+        <div class="live-card live-cyan">
           <div class="lc-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"></circle>
               <path d="M12 6v6l4 2"></path>
             </svg>
+            <i class="lc-spark">✦</i>
           </div>
           <h4>Time-Boxed Bonus</h4>
-          <p>Attendee bonuses are only available during the live session window.</p>
+          <span class="lc-underline" aria-hidden="true"></span>
+          <p>Attendee bonuses are <strong>only available</strong> during the live session window.</p>
         </div>
       </div>
-      <p class="replay-note">A recording is sent to registered attendees afterward, but the live bonus and
-        webinar-only pricing are not repeated in the replay.</p>
+      <div class="live-banner">
+        <span class="live-banner-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path>
+          </svg>
+        </span>
+        <p>Attending is open to registered members only. &nbsp;|&nbsp; The more you show up, the more you grow.<br>
+          <strong>See you live. Be present</strong> for the value.</p>
+      </div>
     </div>
   </section>
 
   <!-- 9. IS THIS FOR YOU -->
-  <section class="section" id="for-you">
+  <section class="section-light" id="for-you">
+    <div class="light-bg" aria-hidden="true">
+      <span class="light-dots"></span>
+      <span class="light-orb light-orb-1"></span>
+      <span class="light-orb light-orb-2"></span>
+    </div>
     <div class="container centered">
       <span class="section-tag">Is This Webinar For You?</span>
       <h2 class="section-title">You Should Be In The Room If…</h2>
@@ -620,7 +652,7 @@
         </span>
       </div>
 
-      <a href="#register" class="btn-primary fc-cta">Reserve My Free Seat Now <i class="arrow"></i></a>
+      <a href="#hero" class="btn-primary fc-cta">Reserve My Free Seat Now <i class="arrow"></i></a>
     </div>
   </section>
 
