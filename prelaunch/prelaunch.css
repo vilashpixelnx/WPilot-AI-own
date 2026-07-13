@@ -449,7 +449,7 @@ svg { display: block; }
   width: 84px; height: 20px; border-radius: 50%;
   background: radial-gradient(ellipse at center, rgba(122, 92, 255, 0.16) 0%, transparent 72%);
 }
-.stat-num { display: block; font-family: var(--font-h); font-size: 2.1rem; font-weight: 800; color: var(--violet); }
+.stat-num { display: block; font-family: var(--font-h); font-size: 2.1rem; font-weight: 800; color: #2A2350; }
 .stat-label { display: block; margin-top: 8px; font-size: 0.85rem; color: var(--text-dim); max-width: 200px; margin-left: auto; margin-right: auto; }
 
 .section-light .stat-item {

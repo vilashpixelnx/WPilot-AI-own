@@ -110,7 +110,9 @@ p { color: var(--body); font-size: 17px; line-height: 1.7; }
 a { color: var(--indigo); text-decoration: none; transition: color 0.2s ease; }
 
 :focus-visible { outline: 3px solid rgba(79, 70, 229, 0.5); outline-offset: 3px; border-radius: 6px; }
-
+.d-none {
+    display: none;
+}
 /* 3. LAYOUT HELPERS & SHARED COMPONENTS ------------------------------ */
 .container { max-width: var(--maxw); margin: 0 auto; padding-inline: 24px; }
 
@@ -230,7 +232,8 @@ section { padding: var(--section-pad) 0; position: relative; }
 .hero {
   position: relative; overflow: hidden; text-align: center; isolation: isolate;
   padding: 95px 0 80px;
-  background:url('images/banner/banner_bg.jpg') center top / cover no-repeat;
+  /* #0a0520 = dominant color of banner_bg.jpg — shows while the image loads (no white flash) */
+  background: #0a0520 url('images/banner/banner_bg.jpg') center top / cover no-repeat;
 }
 
 /* Banner artwork already contains the ambient decorations */
@@ -1453,7 +1456,7 @@ div#vimeo-video iframe { border-radius: 10px; }
     linear-gradient(180deg, #f7f5ff 0%, #ffffff 55%, #f8fbff 100%);
 }
 .fe_moneyBack_section .section-header {
-    margin: 0 auto 64px;
+    margin: 0 auto 154px;
 }
 .fe_mback_box {
   position: relative;
@@ -1562,7 +1565,7 @@ div#vimeo-video iframe { border-radius: 10px; }
 .who-card .wc-inner { height: 100%; border-radius: 15px; padding: 30px; text-align: left; background: linear-gradient(180deg, #0a0818 0%, #100b22 100%); }
 .who-card .wc-img { display: block; width: auto; max-width: 100%; height: auto; max-height: 265px; margin: 0 auto; border-radius: 12px; }
 .who-card h4 { font-size: 22px; font-weight: 700; color: #fff; margin: 20px 0 12px; line-height: 1.25; }
-.who-card p { font-size: 17px; color: rgba(255, 255, 255, 0.6); margin: 0; line-height: 1.6; }
+.who-card p { font-size: 16px; color: rgba(255, 255, 255, 0.5); margin: 0; line-height: 1.5; }
 
 /* 26. FAQ ------------------------------------------------------------- */
 .faq { background: var(--paper-2); }

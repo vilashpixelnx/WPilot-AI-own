@@ -80,7 +80,16 @@
     });
   }
 
-  /* --- Flash-sale countdown ------------------------------------------ */
+  /* --- Flash-sale countdown ------------------------------------------
+     Ticking loop for the top-bar countdown (#cd-days/#cd-hours/#cd-mins/#cd-secs).
+     Deadline is persisted in localStorage ('wpilot_launch_end', 47-hour window)
+     so it survives page refreshes; time is computed from Date.now() each tick.
+     NOTE: index.html has a small inline script right after the .tb-countdown
+     markup that sets the initial values on first paint (this file loads with
+     `defer` + waits on the GSAP CDN, so without it the placeholders would
+     flash on refresh). That inline script runs once; this one keeps ticking
+     every second. Keep the storage key and HOURS value identical in both.
+  ---------------------------------------------------------------------- */
   (function initCountdown() {
     var dEl = document.getElementById('cd-days');
     var hEl = document.getElementById('cd-hours');
@@ -88,20 +97,36 @@
     var sEl = document.getElementById('cd-secs');
     if (!dEl) return;
 
-    var base = (2 * 24 * 60 * 60) + (14 * 60 * 60) + (36 * 60);
-    var totalSec = base + 48; // 2d 14h 36m 48s from page load
+    var STORAGE_KEY = 'wpilot_launch_end';
+    var HOURS = 47;
+    var endAt = parseInt(localStorage.getItem(STORAGE_KEY), 10);
+    var now = Date.now();
+
+    if (!endAt || isNaN(endAt) || endAt < now) {
+      endAt = now + HOURS * 60 * 60 * 1000;
+      try { localStorage.setItem(STORAGE_KEY, endAt); } catch (_) {}
+    }
+
     var pad = function (n) { return String(n).padStart(2, '0'); };
 
-    function tick() {
-      if (totalSec <= 0) totalSec = base; // roll over so it never hits zero
-      dEl.textContent = pad(Math.floor(totalSec / 86400));
-      hEl.textContent = pad(Math.floor((totalSec % 86400) / 3600));
-      mEl.textContent = pad(Math.floor((totalSec % 3600) / 60));
-      sEl.textContent = pad(totalSec % 60);
-      totalSec--;
-    }
+    var tick = function () {
+      var diff = Math.max(0, endAt - Date.now());
+      var d = Math.floor(diff / 86400000);
+      var h = Math.floor((diff % 86400000) / 3600000);
+      var m = Math.floor((diff % 3600000) / 60000);
+      var s = Math.floor((diff % 60000) / 1000);
+      dEl.textContent = pad(d);
+      hEl.textContent = pad(h);
+      mEl.textContent = pad(m);
+      sEl.textContent = pad(s);
+    };
+
     tick();
-    setInterval(tick, 1000);
+    function runTimer() {
+      tick();
+      setTimeout(runTimer, 1000);
+    }
+    runTimer();
   })();
 
   /* --- Social proof popup: rotating worldwide purchase notifications --
