@@ -1028,10 +1028,8 @@ div#vimeo-video iframe { border-radius: 10px; }
 
 /* ── Philosophy: light-theme variant ─────────────────────────── */
 .philo-light {
-  color: var(--ink);
-  background:
-    linear-gradient(180deg, rgba(245, 243, 255, 0.84) 0%, rgba(255, 255, 255, 0.76) 55%, rgba(248, 251, 255, 0.88) 100%),
-    url('images/one_task.jpg') center center / cover no-repeat;
+    color: var(--ink);
+    background: radial-gradient(1000px 900px at 80% 46%, #ece6f8 0%, #ece6f8 34%, rgba(236, 230, 248, 0) 74%), radial-gradient(900px 520px at 15% 5%, rgba(124, 58, 237, 0.08), transparent 55%), radial-gradient(820px 520px at 85% 100%, rgba(37, 99, 235, 0.08), transparent 55%), linear-gradient(180deg, #f0edfb 0%, #f6f4ff 60%);
 }
 
 .philo-light .section-header { margin-bottom: 25px; }
@@ -1058,40 +1056,24 @@ div#vimeo-video iframe { border-radius: 10px; }
 .philo-light .philo-source .ps-text { font-size: 14.5px; font-weight: 600; line-height: 1.45; color: var(--ink); }
 .philo-light .philo-source .ps-text strong { color: #6d28d9; font-weight: 800; }
 .philo-light .philo-source .ps-cite { display: block; margin-top: 3px; font-size: 12px; font-weight: 600; letter-spacing: 0.4px; text-transform: uppercase; color: var(--muted-2); }
-.philo-light .philo-visual {
-  padding: 18px;
-  border-radius: 30px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.58), rgba(255, 255, 255, 0.18));
-  border: 1px solid rgba(255, 255, 255, 0.48);
-  box-shadow: 0 26px 60px rgba(79, 70, 229, 0.10);
-  backdrop-filter: blur(10px);
-}
+
 .philo-light .philo-char-frame {
-  min-height: 560px;
-  border-radius: 24px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.56);
-  box-shadow: 0 24px 55px rgba(30, 27, 75, 0.10);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.54) 0%, rgba(255, 255, 255, 0.18) 42%, rgba(255, 255, 255, 0.40) 100%);
-  backdrop-filter: blur(10px);
-  transform: none;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    transform: none;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 13%, #000 87%, transparent 100%), linear-gradient(180deg, transparent 0%, #000 11%, #000 89%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, #000 13%, #000 87%, transparent 100%), linear-gradient(180deg, transparent 0%, #000 11%, #000 89%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
 }
 .philo-light .philo-char-frame:hover { transform: none; }
-.philo-light .philo-char-frame img { display: none; }
+.philo-light .philo-char-frame img { border-radius: 0 }
 .philo-light .philo-char-frame::before {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, transparent 52%, rgba(79, 70, 229, 0.10) 100%);
+display: none;
 }
 .philo-light .philo-char-frame::after {
-  background: linear-gradient(180deg, transparent 66%, rgba(30, 27, 75, 0.16) 100%);
-}
-.philo-light .philo-content {
-  padding: 24px 26px;
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(226, 232, 240, 0.92);
-  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.05);
-  backdrop-filter: blur(8px);
+display: none;
 }
 .philo-light .philo-grid.reverse { gap: 40px; }
 .philo-light .ph-ring { border-color: rgba(37, 99, 235, 0.18); }

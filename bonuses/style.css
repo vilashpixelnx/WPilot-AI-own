@@ -179,8 +179,7 @@ ul li {
 
 /* header start */
 .mt-bonus-logo img {
-  max-height: 130px;
-  max-width: 260px;
+  max-height: 60px;
 }
 .mt-bonus-header {
   padding: 50px 0 38px;
