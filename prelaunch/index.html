@@ -113,9 +113,10 @@
           </div>
           <!-- Smart-form (pixelnx.com lead-sync → GetResponse + GoToWebinar).
                GoToWebinar requires first_name + last_name as SEPARATE fields, plus email.
-               autoresponder_id / webinar_id + thank-you redirect URL (WPilot-AI-specific)
-               are set as constants in prelaunch.js. -->
-          <form id="registerForm" novalidate>
+               Per-page values live on THIS form: the two hidden inputs below
+               (webinar_id, autoresponder_id) and data-thankyou-url. The shared
+               script is loaded from pixelnx.com (see bottom of page). -->
+          <form id="registerForm" novalidate data-thankyou-url="https://wpilot-sales.pixalab.ai/webinar-thankyou/">
             <div class="form-row">
               <div class="form-field">
                 <label for="regFirstName">First Name</label>
@@ -643,7 +644,8 @@
     </div>
   </footer>
 
-  <script src="assets/js/leadsync.js"></script>
+  <!-- Global shared registration script (hosted centrally, reused by every webinar page). -->
+  <script src="https://pixelnx.com/webinar-registration/leadsync.js" defer></script>
   <script src="prelaunch.js"></script>
 </body>
 
