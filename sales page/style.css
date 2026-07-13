@@ -164,6 +164,7 @@ section { padding: var(--section-pad) 0; position: relative; }
     text-transform: uppercase;
     border-radius: var(--radius-full);
     border: 1px solid #d4cbff;
+    text-align: center;
 }
 .eyebrow.dark-section { background: rgba(124, 58, 237, 0.2); border-color: rgba(139, 92, 246, 0.45); color: #c4b5fd; }
 .eyebrow.green { background: linear-gradient(135deg, #d1fae5, #a7f3d0); color: #047857; border-color: #a7f3d0; }
@@ -294,7 +295,7 @@ section { padding: var(--section-pad) 0; position: relative; }
 
 /* Brand lockup */
 .hero-brand { display: flex; justify-content: center; align-items: center; gap: 16px; margin-bottom: 22px; }
-.hero-logo { width: clamp(240px, 34vw, 300px); height: auto; display: block; }
+.hero-logo { width: clamp(180px, 34vw, 300px); height: auto; display: block; }
 .hero-brand-mark {
   width: 54px; height: 54px; border-radius: 15px; background: var(--gradient-primary);
   display: inline-flex; align-items: center; justify-content: center;
@@ -319,15 +320,15 @@ section { padding: var(--section-pad) 0; position: relative; }
   box-shadow: 0 10px 34px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 .hero-pill-text {
-  margin: 0; font-family: "Be Vietnam Pro", sans-serif; font-weight: 700; font-size: 22px;
-  line-height: 32px; letter-spacing: -0.03em; text-align: center;
+  margin: 0; font-family: "Be Vietnam Pro", sans-serif; font-weight: 700; font-size: clamp(18px, 4vw, 22px);
+  line-height: 1.45; letter-spacing: -0.03em; text-align: center;
 }
 
 
 /* Dramatic headline */
 .hero-headline {
   font-family: "Be Vietnam Pro", sans-serif; font-weight: 800;
-  font-size: clamp(30px, 5.6vw, 59px); line-height: 1.2; letter-spacing: -0.03em; text-align: center;
+  font-size: clamp(24px, 5vw, 60px); line-height: 1.2; letter-spacing: -0.03em; text-align: center;
   color: #FFFFFF; margin: 0 auto 34px; max-width: 1180px;
 }
 .hero-headline > span { display: block; margin-bottom: 10px; }
@@ -391,6 +392,11 @@ div#vimeo-video iframe { border-radius: 10px; }
 @media (max-width: 640px) {
   .ma_video_wrapper { max-width: 92%; }
   .geo_banner_watch_vector { width: 60px; left: -4px; top: -28px; }
+  .hero-inner {
+    padding: 0 8px;
+}
+
+
 }
 @media (max-width: 420px) {
   .geo_banner_watch_vector { width: 44px; left: -2px; top: -22px; }
@@ -410,9 +416,9 @@ div#vimeo-video iframe { border-radius: 10px; }
 .btn-default:hover { transform: translateY(-3px); color: #fff; box-shadow: 0 26px 56px rgba(79, 70, 229, 0.55); }
 
 /* Hero offer line + badges */
-.hero-offer-line { font-family: "Be Vietnam Pro", sans-serif; font-weight: 700; font-size: clamp(26px, 5vw, 50px); line-height: 1.2; letter-spacing: 0; text-align: center; color: #FFFFFF; margin: 6px 0 22px; }
+.hero-offer-line { font-family: "Be Vietnam Pro", sans-serif; font-weight: 700; font-size: clamp(22px, 5vw, 50px); line-height: 1.2; letter-spacing: 0; text-align: center; color: #FFFFFF; margin: 6px 0 22px; }
 .hero-offer-line .just-price { font-family: "Be Vietnam Pro", sans-serif; font-weight: 900; font-size: clamp(26px, 5vw, 50px); line-height: 1.2; letter-spacing: 0; color: #E1FF00; }
-.hero-inner .btn-cta { font-family: 'Be Vietnam Pro', sans-serif; font-weight: 900; font-size: clamp(20px, 4.2vw, 40px); letter-spacing: 0; text-align: center; }
+.hero-inner .btn-cta { font-family: 'Be Vietnam Pro', sans-serif; font-weight: 700; font-size: clamp(20px, 4.2vw, 40px); letter-spacing: 0; text-align: center; }
 .hero-badges { display: flex; flex-direction: column; align-items: center; gap: 16px; margin-top: 28px; }
 
 /* Primary CTA */
@@ -516,7 +522,7 @@ div#vimeo-video iframe { border-radius: 10px; }
 .ts-label { font-size: 13px; color: var(--muted); font-weight: 600; letter-spacing: 0.5px; }
 
 /* 8. PROOF BAR -------------------------------------------------------- */
-.proof-bar { background: #fff; padding: 0px 0 80px; border-bottom: 1px solid var(--line); }
+.proof-bar { background: #fff; padding: 0px 0 74px; border-bottom: 1px solid var(--line); }
 .proof-bar p { text-align: center; color: var(--muted); font-size: 18px; text-transform: capitalize; font-weight: 500; margin-bottom: 30px; }
 .proof-bar p strong { color: #6d28d9; }
 .proof-logos { display: flex; justify-content: center; align-items: center; gap: 0; flex-wrap: wrap; row-gap: 14px; margin: 0 auto; }
@@ -1024,10 +1030,8 @@ div#vimeo-video iframe { border-radius: 10px; }
 .philo-light {
   color: var(--ink);
   background:
-    radial-gradient(1000px 900px at 80% 46%, #ece6f8 0%, #ece6f8 34%, rgba(236, 230, 248, 0) 74%),
-    radial-gradient(900px 520px at 15% 5%, rgba(124, 58, 237, 0.08), transparent 55%),
-    radial-gradient(820px 520px at 85% 100%, rgba(37, 99, 235, 0.08), transparent 55%),
-    linear-gradient(180deg, #f0edfb 0%, #f6f4ff 60%);
+    linear-gradient(180deg, rgba(245, 243, 255, 0.84) 0%, rgba(255, 255, 255, 0.76) 55%, rgba(248, 251, 255, 0.88) 100%),
+    url('images/one_task.jpg') center center / cover no-repeat;
 }
 
 .philo-light .section-header { margin-bottom: 25px; }
@@ -1043,9 +1047,9 @@ div#vimeo-video iframe { border-radius: 10px; }
 .philo-light .philo-source {
   display: inline-flex; align-items: center; gap: 14px; margin-top: 26px;
   padding: 14px 20px 14px 16px; border-radius: 16px;
-  color: var(--body); background: linear-gradient(135deg, rgba(124, 58, 237, 0.07), rgba(37, 99, 235, 0.05));
-  border: 1px solid rgba(124, 58, 237, 0.16); border-left: none;
-  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.1);
+  color: var(--body); background: linear-gradient(135deg, rgba(124, 58, 237, 0.06), rgba(37, 99, 235, 0.04));
+  border: 1px solid rgba(124, 58, 237, 0.12); border-left: none;
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.08);
 }
 .philo-light .philo-source .ps-icon {
   flex: none; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center;
@@ -1054,16 +1058,42 @@ div#vimeo-video iframe { border-radius: 10px; }
 .philo-light .philo-source .ps-text { font-size: 14.5px; font-weight: 600; line-height: 1.45; color: var(--ink); }
 .philo-light .philo-source .ps-text strong { color: #6d28d9; font-weight: 800; }
 .philo-light .philo-source .ps-cite { display: block; margin-top: 3px; font-size: 12px; font-weight: 600; letter-spacing: 0.4px; text-transform: uppercase; color: var(--muted-2); }
-/* Merge the JPG into the section bg — no card frame, feather all edges */
-.philo-light .philo-char-frame { border: none; box-shadow: none; background: transparent; transform: none;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 13%, #000 87%, transparent 100%), linear-gradient(180deg, transparent 0%, #000 11%, #000 89%, transparent 100%);
-  mask-image: linear-gradient(90deg, transparent 0%, #000 13%, #000 87%, transparent 100%), linear-gradient(180deg, transparent 0%, #000 11%, #000 89%, transparent 100%);
-  -webkit-mask-composite: source-in; mask-composite: intersect;
+.philo-light .philo-visual {
+  padding: 18px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.58), rgba(255, 255, 255, 0.18));
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  box-shadow: 0 26px 60px rgba(79, 70, 229, 0.10);
+  backdrop-filter: blur(10px);
+}
+.philo-light .philo-char-frame {
+  min-height: 560px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  box-shadow: 0 24px 55px rgba(30, 27, 75, 0.10);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.54) 0%, rgba(255, 255, 255, 0.18) 42%, rgba(255, 255, 255, 0.40) 100%);
+  backdrop-filter: blur(10px);
+  transform: none;
 }
 .philo-light .philo-char-frame:hover { transform: none; }
-.philo-light .philo-char-frame img { border-radius: 0; }
-.philo-light .philo-char-frame::before,
-.philo-light .philo-char-frame::after { display: none; }
+.philo-light .philo-char-frame img { display: none; }
+.philo-light .philo-char-frame::before {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, transparent 52%, rgba(79, 70, 229, 0.10) 100%);
+}
+.philo-light .philo-char-frame::after {
+  background: linear-gradient(180deg, transparent 66%, rgba(30, 27, 75, 0.16) 100%);
+}
+.philo-light .philo-content {
+  padding: 24px 26px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(226, 232, 240, 0.92);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.05);
+  backdrop-filter: blur(8px);
+}
+.philo-light .philo-grid.reverse { gap: 40px; }
 .philo-light .ph-ring { border-color: rgba(37, 99, 235, 0.18); }
 .philo-light .ph-ring.right { border-color: rgba(6, 182, 212, 0.18); }
 .philo-light .ph-dots { background-image: radial-gradient(rgba(37, 99, 235, 0.32) 2px, transparent 2px); }
@@ -1697,6 +1727,13 @@ div#vimeo-video iframe { border-radius: 10px; }
   .mock-1 { width: 400px; left: 50%; transform: translateX(-50%) rotate(-2deg); }
 }
 
+/* Top bar has no wrap between 901px-1099px (only wraps at <=900px below), causing
+   the Buy Now button to overflow the viewport on small laptop/tablet-landscape sizes. */
+@media (max-width: 1099px) and (min-width: 901px) {
+  .top-bar-inner { flex-wrap: wrap; justify-content: center; gap: 12px; }
+  .tb-text { display: none; }
+}
+
 @media (max-width: 900px) {
   .fe_mback_box { padding: 110px 24px 28px; }
   .fe_mback_list { grid-template-columns: 1fr; gap: 12px; padding: 20px 22px; }
@@ -1709,8 +1746,7 @@ div#vimeo-video iframe { border-radius: 10px; }
   .philo-visual { height: 400px; }
   .era-card { flex: 0 0 calc(50% - 20px); }
   /* Hero responsive */
-  .hero-headline { font-size: 46px; }
-  .hero-offer-line, .hero-offer-line .just-price { font-size: 38px; line-height: 48px; }
+.hero-offer-line .just-price { font-size: 38px; line-height: 48px; }
   .hero-inner .btn-cta { font-size: 26px; line-height: 1.25; padding: 18px 30px; }
   .hero-pill-box { height: auto; min-height: 91px; padding: 16px 22px; }
 }
@@ -1731,6 +1767,9 @@ div#vimeo-video iframe { border-radius: 10px; }
   .fe_bonus_item { padding: 26px 24px; border-radius: 28px; }
   .fe_bonus_inner, .fe_bonus_item:nth-child(even) .fe_bonus_inner { flex-direction: column; gap: 24px; }
   .fe_bonus_media { flex: 0 0 auto; width: 100%; max-width: 360px; }
+  .ts-icon img {
+    max-width: 60px;
+}
 }
 
 @media (max-width: 700px) {
@@ -1759,11 +1798,9 @@ div#vimeo-video iframe { border-radius: 10px; }
   .hero-brand-mark { width: 56px; height: 56px; font-size: 24px; }
   .hero-pill { font-size: 14px; padding: 12px 20px; }
   .hero-cta { font-size: 18px; padding: 20px 34px; width: 100%; justify-content: center; }
-  .hero-headline { font-size: 34px; }
   .hero-headline .hi-tail { font-size: 24px; line-height: 32px; }
-  .hero-offer-line, .hero-offer-line .just-price { font-size: 28px; line-height: 36px; }
+ .hero-offer-line .just-price { font-size: 28px; line-height: 36px; }
   .hero-inner .btn-cta { font-size: 20px; line-height: 1.25; padding: 16px 20px; width: 100%; }
-  .hero-pill-text { font-size: 17px; line-height: 26px; }
   .ms-formula { grid-template-columns: 1fr; }
   .ms-operator { display: none; }
   .ms-breakdown-grid { grid-template-columns: 1fr; }
@@ -1786,15 +1823,38 @@ div#vimeo-video iframe { border-radius: 10px; }
   .plugin-card, .plugin-card:nth-child(even) { padding: 26px 22px; gap: 24px; }
   .plugin-card .p-features li { font-size: 14px; }
   .pricing-cta { font-size: 18px; padding: 22px 22px; }
+  .hero-headline .hi-money {
+    margin: 4px 0 2px;
+}
+.hero-headline > span {
+    margin-bottom: 3px;
+}
+.hero-pill-box {
+    margin: 0 auto 20px;
+}
+.hero-headline {
+    margin: 0 auto 24px;
+
+}
+.hero-inner .btn-cta {
+    font-size: 18px;
+    line-height: 1.25;
+    padding: 16px 10px;
+    width: 100%;
+    border-radius: 10px;
+}
 }
 
 @media (max-width: 390px) {
   .hero-brand-text { font-size: 48px; }
-  .hero-headline { font-size: 28px; }
   .hero-offer-line, .hero-offer-line .just-price { font-size: 23px; line-height: 30px; }
   .jv-pric-price { font-size: 54px; }
   .ms-result-big { font-size: 52px; }
   .tb-count-box { min-width: 34px; padding: 4px 6px; }
+  .ts-grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 15px;
+    }
 }
 
 @media (max-width: 360px) {
