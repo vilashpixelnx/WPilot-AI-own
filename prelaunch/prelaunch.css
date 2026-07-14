@@ -634,7 +634,7 @@ svg { display: block; }
 .live-blue .lc-spark { color: var(--indigo); }
 .live-cyan .lc-spark { color: var(--cyan); }
 
-.live-card h4 { font-size: 1.05rem; margin-bottom: 12px; }
+.live-card h4 { font-size: 1.5rem; margin-bottom: 12px; }
 .lc-underline { display: block; width: 34px; height: 2px; margin: 0 auto 14px; border-radius: 2px; }
 .live-violet .lc-underline { background: var(--violet); }
 .live-blue .lc-underline { background: var(--indigo); }
