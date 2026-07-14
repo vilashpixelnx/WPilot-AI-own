@@ -524,7 +524,7 @@ svg { display: block; }
   flex-shrink: 0; font-family: var(--font-h); font-size: 1.7rem; font-weight: 800; width: 52px; line-height: 1;
   background: var(--brand); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
 }
-.agenda-item h4 { font-size: 1.12rem; margin-bottom: 7px; }
+.agenda-item h4 { font-size: 1.12rem; margin-bottom: 7px;line-height: 1.4; }
 .agenda-item p { font-size: 0.93rem; color: var(--text-muted); }
 
 /* ── WHAT YOU'LL SEE INSIDE (feature grid, light + rainbow accents) ─ */
@@ -591,14 +591,6 @@ svg { display: block; }
 
 
 /* ── WHY LIVE ──────────────────────────────────────────────── */
-.why-live-tag {
-  gap: 7px; color: var(--violet);
-  background: rgba(122, 92, 255, 0.1); border-color: rgba(122, 92, 255, 0.28);
-}
-.why-live-tag .wt-icon { width: 14px; height: 14px; }
-.why-live-divider { display: block; width: 60px; height: 3px; margin: 18px auto 0; border-radius: 2px; background: var(--brand); }
-#why-live .section-sub strong { color: var(--violet); }
-
 .live-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 50px; }
 .live-card {
   position: relative; overflow: hidden;
@@ -827,8 +819,8 @@ svg { display: block; }
 }
 
 @media (max-width: 768px) {
-  .section, .section-alt, .section-light { padding: 68px 0; }
-  .final-cta { padding: 76px 0; }
+  .section, .section-alt, .section-light { padding: 50px 0; }
+  .final-cta { padding: 50px 0; }
   .live-grid { grid-template-columns: 1fr; }
   .live-banner { flex-direction: column; text-align: center; }
   .foryou-grid { grid-template-columns: 1fr; }
@@ -880,20 +872,24 @@ svg { display: block; }
   .eyebrow-pill {
     margin-bottom: 12px;
 }
-    .hero-form-col {
-        margin-top: 15px;
+.hero-form-col {
+    margin-top: 15px;
+}
+  .nav-inner { gap: 8px; padding: 5px 10px;height: inherit; }
+  .nav-logo img { height: 24px; }
+  .nav-cta { padding: 8px 13px; font-size: 0.72rem; gap: 6px; }
+  .nav-cta .arrow { width: 11px; height: 11px; font-size: 11px; }
+  #hero {
+        padding: 90px 0 50px;
     }
 }
 
+@media (max-width: 420px) {
+
+}
 @media (max-width: 390px) {
   .countdown { gap: 6px; }
   .cd-unit { width: 50px; height: 50px; }
   .cd-lbl { font-size: 0.58rem; }
 }
 
-@media (max-width: 420px) {
-  .nav-inner { gap: 8px; padding: 0 14px; }
-  .nav-logo img { height: 24px; }
-  .nav-cta { padding: 8px 13px; font-size: 0.72rem; gap: 6px; }
-  .nav-cta .arrow { width: 11px; height: 11px; font-size: 11px; }
-}
