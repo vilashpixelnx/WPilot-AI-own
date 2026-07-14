@@ -804,7 +804,7 @@ div#vimeo-video iframe { border-radius: 10px; }
 /* Floating vector accents */
 .day-vector { position: absolute; z-index: 1; pointer-events: none; }
 .day-vector img { width: 100%; height: auto; display: block; filter: drop-shadow(0 14px 34px rgba(124, 58, 237, 0.45)); }
-.day-vector-left  { width: 92px;  top: 84px; left: 4%;  animation: dayFloatL 7s ease-in-out infinite; }
+.day-vector-left  { width: 135px;  top: 84px; left: 4%;  animation: dayFloatL 7s ease-in-out infinite; }
 .day-vector-right { width: 118px; top: 74px; right: 4%; animation: dayFloatR 8s ease-in-out infinite; }
 @keyframes dayFloatL {
   0%, 100% { transform: translate(0, 0) rotate(0deg); }
@@ -1255,24 +1255,24 @@ display: none;
   position: absolute;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.45;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  filter: drop-shadow(0 14px 34px rgba(124, 58, 237, 0.45));
 }
 .income-section::before {
   top: 56px;
-  left: -36px;
+  left: 1%;
   width: 150px;
   height: 150px;
-  background-image: url('images/ten_ais/vector1.png');
+  background-image: url('images/ten_ais/vector7.png');
 }
 .income-section::after {
-  right: -40px;
+  right: 1%;
   bottom: 54px;
   width: 160px;
   height: 160px;
-  background-image: url('images/ten_ais/vector2.png');
+  background-image: url('images/ten_ais/vector3.png');
 }
 .income-section .section-header h2,
 .income-section .section-header p {
