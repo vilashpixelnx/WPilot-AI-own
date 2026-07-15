@@ -428,9 +428,9 @@ svg { display: block; }
   width: 64px; height: 64px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   font-family: var(--font-h); font-weight: 800; font-size: 0.9rem; letter-spacing: 0.02em;
-  background: var(--bg); color: var(--text);
-  border: 1.5px solid rgba(122, 92, 255, 0.4);
-  box-shadow: 0 0 0 6px var(--bg), 0 10px 24px rgba(122, 92, 255, 0.3), 0 0 30px rgba(122, 92, 255, 0.25);
+  background: var(--brand); color: #fff;
+  border: 1.5px solid rgba(34, 201, 224, 0.5);
+  box-shadow: 0 0 0 3px rgba(122, 92, 255, 0.22), 0 0 0 6px rgba(34, 201, 224, 0.16), 0 10px 24px rgba(122, 92, 255, 0.35), 0 0 22px rgba(78, 141, 245, 0.3), 0 0 34px rgba(34, 201, 224, 0.28);
 }
 
 .cmp-label {
