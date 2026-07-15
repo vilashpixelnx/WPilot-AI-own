@@ -200,20 +200,17 @@ section { padding: var(--section-pad) 0; position: relative; }
   pointer-events: none;
 }
 .top-bar-inner { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-.tb-flash { display: inline-flex; align-items: center; gap: 12px; }
-.tb-badge {
-  background: linear-gradient(90deg, #10b981, #06b6d4); color: #fff;
-  padding: 6px 16px; border-radius: var(--radius-full);
-  font-weight: 800; font-size: 13px; letter-spacing: 0.5px; white-space: nowrap;
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
-}
+.tb-flash { display: inline-flex; align-items: center; gap: 10px; }
+.tb-dot { color: rgba(255, 255, 255, 0.85); font-size: 8px; line-height: 1; }
 .tb-text { font-size: 14px; color: rgba(255, 255, 255, 0.9); white-space: nowrap; }
-.tb-text strong { color: #fff; }
+.tb-text strong { color: #fff; font-weight: 500; }
 .tb-text .code {
-  display: inline-block; margin-left: 8px; background: #fbbf24; color: #1e1b4b;
+  display: inline-block; margin: 0 4px; background: #fff; color: #4f46e5;
   padding: 3px 12px; border-radius: 6px;
-  font-family: 'Be Vietnam Pro', sans-serif; font-weight: 900; letter-spacing: 2px; font-size: 13px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  font-family: 'Be Vietnam Pro', sans-serif; font-weight: 900; letter-spacing: 1.5px; font-size: 13px;
 }
+.tb-text .tb-save { color: #ffd055; font-weight: 500; }
 .tb-countdown { display: inline-flex; gap: 8px; }
 .tb-count-box {
   background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px);
@@ -415,6 +412,102 @@ div#vimeo-video iframe { border-radius: 10px; }
 .btn-default { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); color: #fff; box-shadow: 0 18px 44px rgba(79, 70, 229, 0.42); }
 .btn-default:hover { transform: translateY(-3px); color: #fff; box-shadow: 0 26px 56px rgba(79, 70, 229, 0.55); }
 
+/* --------------------------------------------------------------------
+   Premium liquid-gold treatment for .btn-yellow — layered on top of the
+   rules above with zero change to size/padding/radius/font/gradient/text.
+   Every layer here is a pseudo-element or box-shadow so the real box
+   model (and the anchor's own hit area) never moves.
+   -------------------------------------------------------------------- */
+@property --flow-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+.btn-yellow {
+  --flow-angle: 0deg;
+  isolation: isolate;
+  /* extra shadow layers stacked after the required base shadow — glass rim + soft depth */
+  box-shadow:
+    0 18px 44px rgba(255, 163, 1, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65),
+    inset 0 -14px 22px rgba(140, 70, 0, 0.16),
+    0 0 22px rgba(255, 224, 130, 0.28);
+  animation: btn-yellow-breathe 3.6s ease-in-out infinite;
+}
+/* Animated flowing-gold ring — conic gradient masked down to a hollow outline
+   so it never covers the label, and never changes the button's real box size. */
+.btn-yellow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  padding: 3px;
+  background: conic-gradient(from var(--flow-angle),
+    transparent 0%,
+    rgba(255, 248, 213, 0) 2%,
+    #FFF8D5 10%,
+    #FFE27A 22%,
+    #FFD01B 34%,
+    #FFB000 46%,
+    rgba(255, 176, 0, 0) 58%,
+    transparent 100%);
+  opacity: 0.9;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: flow-rotate 3.8s linear infinite;
+  pointer-events: none;
+  transition: opacity 0.35s ease, filter 0.35s ease;
+}
+/* Shine sweep — clipped by .btn-cta's own overflow:hidden, so it stays inside the pill */
+.btn-yellow::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -60%; width: 40%; height: 100%;
+  z-index: 0;
+  background: linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  transform: skewX(-20deg);
+  pointer-events: none;
+  animation: btn-yellow-shine 3.6s ease-in-out infinite;
+}
+.btn-yellow-label { position: relative; z-index: 1; }
+.btn-yellow:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow:
+    0 26px 56px rgba(255, 163, 1, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75),
+    inset 0 -14px 22px rgba(140, 70, 0, 0.2),
+    0 0 34px rgba(255, 224, 130, 0.5);
+}
+.btn-yellow:hover::before { opacity: 1; filter: brightness(1.2); }
+@keyframes flow-rotate { to { --flow-angle: 360deg; } }
+@keyframes btn-yellow-shine {
+  0%   { left: -60%; }
+  18%  { left: 130%; }
+  100% { left: 130%; }
+}
+@keyframes btn-yellow-breathe {
+  0%, 100% {
+    box-shadow:
+      0 18px 44px rgba(255, 163, 1, 0.42),
+      inset 0 1px 0 rgba(255, 255, 255, 0.65),
+      inset 0 -14px 22px rgba(140, 70, 0, 0.16),
+      0 0 22px rgba(255, 224, 130, 0.28);
+  }
+  50% {
+    box-shadow:
+      0 20px 48px rgba(255, 163, 1, 0.48),
+      inset 0 1px 0 rgba(255, 255, 255, 0.7),
+      inset 0 -14px 22px rgba(140, 70, 0, 0.18),
+      0 0 36px rgba(255, 224, 130, 0.48);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-yellow, .btn-yellow::before, .btn-yellow::after { animation: none; }
+}
+
 /* Hero offer line + badges */
 .hero-offer-line { font-family: "Be Vietnam Pro", sans-serif; font-weight: 700; font-size: clamp(22px, 5vw, 50px); line-height: 1.2; letter-spacing: 0; text-align: center; color: #FFFFFF; margin: 6px 0 22px; }
 .hero-offer-line .just-price { font-family: "Be Vietnam Pro", sans-serif; font-weight: 900; font-size: clamp(26px, 5vw, 50px); line-height: 1.2; letter-spacing: 0; color: #E1FF00; }
@@ -609,16 +702,7 @@ div#vimeo-video iframe { border-radius: 10px; }
 .solution-mockup { max-width: 1500px; margin: 0 auto; }
 .solution-mockup img { width: 100%; height: auto; display: block; border-radius: 24px; }
 
-/* CTA + trust line */
-.solution-cta {
-  display: inline-flex; align-items: center; gap: 8px; margin-top: 36px; color: #fff;
-  font-family: 'Be Vietnam Pro', sans-serif; font-weight: 800; font-size: clamp(17px, 2.6vw, 34px);
-  padding: 16px 36px; border-radius: var(--radius-full);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  background: linear-gradient(48.08deg, #8F33FF 21.84%, #2575FC 126.9%);
-  box-shadow: -5px 8px 28.5px 0px #9347F34D, 0px 0px 16px 5px #FFFFFF40 inset;
-}
-.solution-cta:hover { transform: translateY(-3px); box-shadow: 0 24px 56px rgba(79, 70, 229, 0.52); color: #fff; }
+/* CTA + trust line — button now uses the shared .section-cta-btn treatment */
 .solution-trust { margin-top: 22px; font-size: 14px; font-weight: 700; color: var(--muted); letter-spacing: 0.3px; }
 
 /* Shared plugin icon backgrounds (used by solution row + plugin cards) */
@@ -1020,7 +1104,7 @@ div#vimeo-video iframe { border-radius: 10px; }
 .phc-body { font-size: 17px; color: rgba(255, 255, 255, 0.78); line-height: 1.75; margin-bottom: 16px; }
 .phc-body:first-of-type { font-size: 19px; color: rgba(255, 255, 255, 0.92); }
 .phc-body strong { color: #fff; font-weight: 700; }
-.phc-source { display: inline-flex; align-items: center; gap: 8px; margin: 26px auto 0; padding: 11px 22px; border-radius: 999px; font-size: 13.5px; font-weight: 500; letter-spacing: 0.01em; color: rgba(255, 255, 255, 0.82); background: linear-gradient(135deg, rgba(124, 58, 237, 0.12), rgba(34, 211, 238, 0.08)); border: 1px solid rgba(148, 163, 253, 0.25); box-shadow: 0 10px 28px rgba(124, 58, 237, 0.16); backdrop-filter: blur(6px); }
+.phc-source { display: inline-flex; align-items: center; gap: 8px; margin: 26px auto 0; padding: 11px 22px; max-width: 820px; border-radius: 10px; font-size: 13.5px; font-weight: 500; letter-spacing: 0.01em; color: rgba(255, 255, 255, 0.82); background: linear-gradient(135deg, rgba(124, 58, 237, 0.12), rgba(34, 211, 238, 0.08)); border: 1px solid rgba(148, 163, 253, 0.25); box-shadow: 0 10px 28px rgba(124, 58, 237, 0.16); backdrop-filter: blur(6px); }
 
 @media (max-width: 576px) {
   .phc-section { padding: 64px 0; }
@@ -1654,12 +1738,123 @@ display: none;
   display: inline-flex; align-items: center; gap: 8px; margin-top: 36px; color: #fff;
   font-family: 'Be Vietnam Pro', sans-serif; font-weight: 800; font-size: clamp(17px, 2.6vw, 34px);
   padding: 16px 36px; border-radius: var(--radius-full);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
   background: linear-gradient(48.08deg, #8F33FF 21.84%, #2575FC 126.9%);
   box-shadow: -5px 8px 28.5px 0px #9347F34D, 0px 0px 16px 5px #FFFFFF40 inset;
 }
 .section-cta-btn:hover { transform: translateY(-3px); box-shadow: 0 24px 56px rgba(79, 70, 229, 0.52); color: #fff; }
 .section-cta-note { margin-top: 14px; font-size: 13px; color: var(--muted); }
+
+/* --------------------------------------------------------------------
+   Premium energy-beam treatment for .section-cta-btn — additive only.
+   Existing background gradient, shadow values, padding, radius, font,
+   text and markup are all kept intact; every effect below is a
+   pseudo-element, an extra shadow layer, or an idle keyframe animation
+   layered on top. Scoped strictly to .section-cta-btn — the yellow
+   hero button (.btn-cta.btn-yellow) is a separate class and unaffected.
+   -------------------------------------------------------------------- */
+@property --scta-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+.section-cta-btn {
+  --scta-angle: 0deg;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  will-change: transform;
+  box-shadow:
+    -5px 8px 28.5px 0px #9347F34D,
+    0px 0px 16px 5px #FFFFFF40 inset,
+    0 0 20px 2px rgba(143, 51, 255, 0.26),
+    0 0 34px 5px rgba(37, 117, 252, 0.13),
+    0 0 44px 6px rgba(76, 201, 255, 0.06),
+    inset 0 -12px 16px rgba(20, 8, 46, 0.15);
+  animation: scta-breathe 3.6s ease-in-out infinite;
+}
+/* Animated energy border — conic beam masked to a hollow ring so it can
+   never sit over the label text, however the paint order resolves. */
+.section-cta-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  padding: 3px;
+  background: conic-gradient(from var(--scta-angle),
+    transparent 0%,
+    rgba(255, 255, 255, 0) 2%,
+    #FFFFFF 8%,
+    #A855F7 20%,
+    #8F33FF 32%,
+    #2575FC 46%,
+    #4CC9FF 58%,
+    rgba(76, 201, 255, 0) 70%,
+    transparent 100%);
+  opacity: 0.9;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: scta-rotate 3.6s linear infinite;
+  pointer-events: none;
+  transition: opacity 0.28s ease, filter 0.28s ease;
+}
+/* Apple-style soft diagonal shine, clipped to the pill by overflow:hidden above */
+.section-cta-btn::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -60%; width: 35%; height: 100%;
+  z-index: 0;
+  background: linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: skewX(-20deg);
+  pointer-events: none;
+  animation: scta-shine 4.6s ease-in-out infinite;
+}
+.section-cta-btn-label { position: relative; z-index: 1; }
+.section-cta-btn:hover {
+  animation: none;
+  transform: translateY(-4px) scale(1.03);
+  box-shadow:
+    -5px 8px 28.5px 0px #9347F34D,
+    0px 0px 16px 5px #FFFFFF40 inset,
+    0 0 32px 7px rgba(168, 85, 247, 0.42),
+    0 0 50px 10px rgba(37, 117, 252, 0.2),
+    0 0 64px 12px rgba(76, 201, 255, 0.1),
+    inset 0 -12px 16px rgba(20, 8, 46, 0.2);
+}
+.section-cta-btn:hover::before { opacity: 1; filter: brightness(1.25); }
+.section-cta-btn:hover::after { animation-duration: 2.4s; }
+@keyframes scta-rotate { to { --scta-angle: 360deg; } }
+@keyframes scta-shine {
+  0%   { left: -60%; }
+  16%  { left: 130%; }
+  100% { left: 130%; }
+}
+@keyframes scta-breathe {
+  0%, 100% {
+    box-shadow:
+      -5px 8px 28.5px 0px #9347F34D,
+      0px 0px 16px 5px #FFFFFF40 inset,
+      0 0 20px 2px rgba(143, 51, 255, 0.26),
+      0 0 34px 5px rgba(37, 117, 252, 0.13),
+      0 0 44px 6px rgba(76, 201, 255, 0.06),
+      inset 0 -12px 16px rgba(20, 8, 46, 0.15);
+  }
+  50% {
+    box-shadow:
+      -5px 8px 28.5px 0px #9347F34D,
+      0px 0px 16px 5px #FFFFFF40 inset,
+      0 0 28px 5px rgba(168, 85, 247, 0.36),
+      0 0 44px 9px rgba(37, 117, 252, 0.18),
+      0 0 56px 10px rgba(76, 201, 255, 0.09),
+      inset 0 -12px 16px rgba(20, 8, 46, 0.18);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .section-cta-btn, .section-cta-btn::before, .section-cta-btn::after { animation: none; }
+}
 /* Legible on dark sections */
 .value-section .section-cta-note { color: rgba(255, 255, 255, 0.6); }
 @media (max-width: 576px) {
@@ -1769,7 +1964,7 @@ display: none;
   .era-card { flex: 0 0 100%; }
   .container { padding-inline: 18px; }
   .top-bar { padding: 10px 12px; }
-  .tb-badge { font-size: 11px; padding: 5px 12px; }
+  .tb-text .code { font-size: 11px; padding: 3px 10px; }
   .tb-countdown { gap: 6px; }
   .tb-count-box { padding: 4px 8px; min-width: 38px; }
   .tb-count-num { font-size: 15px; }
@@ -1843,7 +2038,7 @@ display: none;
   .container { padding-inline: 14px; }
   .hero-brand-mark { width: 50px; height: 50px; font-size: 22px; }
   .hero-brand-text { font-size: 42px; }
-  .tb-badge { font-size: 10px; }
+  .tb-text .code { font-size: 10px; }
   .damage-amount { font-size: 44px; }
 }
 
