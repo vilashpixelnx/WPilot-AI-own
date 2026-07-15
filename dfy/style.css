@@ -205,7 +205,7 @@ section {
 /* ---------- PRICING CARD ---------- */
 .wp_ftr_price-card {
   position: relative;
-  max-width: 1000px;
+  max-width: 1075px;
   margin: 0 auto;
   border-radius: 26px;
   padding: 44px 48px 40px;
@@ -220,9 +220,6 @@ section {
   padding: 17px 50px;
 }
 
-
-
-
 .wp_ftr_price-head {
   display: flex;
   align-items: center;
@@ -234,7 +231,7 @@ section {
 }
 
 .wp_ftr_plan-name {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
   color: #ffffff;
 }
@@ -281,8 +278,8 @@ section {
 }
 
 .wp_ftr_feature-icon {
-  width: 110px;
-  height: 90px;
+  width: 120px;
+  height: 100px;
   margin: 0 auto 20px;
   position: relative;
 }
@@ -294,14 +291,14 @@ section {
 
 .wp_ftr_feature h4 {
   margin: 0px 0 12px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   color: #ffffff;
 }
 
 .wp_ftr_feature p {
   margin: 0;
-  font-size: 13.5px;
+  font-size: 14px;
   line-height: 1.5;
   color: var(--text-dim);
 }
@@ -382,7 +379,7 @@ h1 .wplt_the_catch_grad {
   gap: 10px;
   font-family: 'Be Vietnam Pro', sans-serif;
   font-weight: 800;
-  font-size: clamp(17px, 2.2vw, 21px);
+  font-size: clamp(17px, 2.2vw, 26px);
   padding: 17px 40px;
   border-radius: var(--radius-full);
   letter-spacing: 0.2px;
@@ -643,10 +640,10 @@ h1 .wplt_the_catch_grad {
 
 .hero h1 {
   margin: 20px auto 0;
-  max-width: 940px;
+  max-width: 1010px;
   font-family: "Be Vietnam Pro", sans-serif;
     font-weight: 800;
-    font-size: clamp(24px, 5vw, 64px);
+    font-size: clamp(24px, 5vw, 70px);
     line-height: 1.2;
     letter-spacing: -0.03em;
 }
@@ -790,8 +787,7 @@ h1 .wplt_the_catch_grad {
     justify-content: center;
     padding: 8px 24px;
     border-radius: 16px;
-    background: linear-gradient(180deg, rgba(23, 1, 72, 0.55) 0%, rgba(2, 4, 32, 0.55) 100%);
-    -webkit-backdrop-filter: blur(16px);
+    background: linear-gradient(90deg, #E01AFF 0%, #1295FF 100%);
     backdrop-filter: blur(16px);
     border: 1.5px solid rgba(146, 128, 242, 0.5);
     box-shadow: 0 10px 34px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -805,9 +801,9 @@ h1 .wplt_the_catch_grad {
     line-height: 1.45;
     letter-spacing: -0.03em;
     text-align: center;
-    background: linear-gradient(90deg, #E01AFF 0%, #1295FF 100%);
-    background-clip: text;
-    color: transparent;
+    /* background: linear-gradient(90deg, #E01AFF 0%, #1295FF 100%); */
+    /* background-clip: text; */
+    color: #ffffff;
 }
 
 /* ---------- GRID ---------- */
@@ -1420,7 +1416,7 @@ filter: drop-shadow(0 20px 30px rgba(35, 2, 66, 0.123));
   z-index: 1;
   display: inline-flex;
   font-family: 'Manrope', 'Inter', ui-sans-serif, system-ui, sans-serif;
-  font-size: 0.72rem;
+  font-size: 0.92rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1444,7 +1440,7 @@ filter: drop-shadow(0 20px 30px rgba(35, 2, 66, 0.123));
 .cmp-title {
   position: relative;
   z-index: 1;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   margin-bottom: 22px;
 }
 
@@ -1461,7 +1457,7 @@ filter: drop-shadow(0 20px 30px rgba(35, 2, 66, 0.123));
   align-items: flex-start;
   gap: 13px;
   padding: 15px 0;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   color: var(--text-muted);
   border-bottom: 1px solid rgba(255, 255, 255, 0.09);
 }
@@ -1524,7 +1520,7 @@ filter: drop-shadow(0 20px 30px rgba(35, 2, 66, 0.123));
 }
 
 .compare-banner p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: var(--text-muted);
   line-height: 1.65;
 }
@@ -1618,7 +1614,7 @@ filter: drop-shadow(0 20px 30px rgba(35, 2, 66, 0.123));
   margin-top: 22px;
   padding: 8px 24px;
   border-radius: var(--radius-full);
-  font-size: clamp(14px, 2vw, 18px);
+  font-size: clamp(14px, 2vw, 20px);
   font-weight: 700;
   color: var(--ink);
   background: linear-gradient(90deg, rgba(79, 70, 229, 0.08), rgba(147, 51, 234, 0.08));
@@ -1652,7 +1648,7 @@ filter: drop-shadow(0 20px 30px rgba(35, 2, 66, 0.123));
 
 .price-once {
   margin-top: 10px;
-  font-size: clamp(14px, 2vw, 17px);
+  font-size: clamp(14px, 2vw, 18px);
   font-weight: 700;
   color: var(--body);
   border-radius: 20px;
@@ -1682,7 +1678,7 @@ filter: drop-shadow(0 20px 30px rgba(35, 2, 66, 0.123));
 }
 
 .price-list li p {
-  font-size: clamp(14.5px, 2vw, 16.5px);
+  font-size: clamp(14.5px, 2vw, 18px);
   font-weight: 600;
   color: var(--ink);
   margin: 0;
@@ -1997,7 +1993,7 @@ filter: drop-shadow(0 20px 30px rgba(35, 2, 66, 0.123));
 
 .fc-guarantee {
   margin-top: 18px;
-  font-size: 13px;
+  font-size: 14px;
   display: flex;
   color: rgba(255, 255, 255, 0.62);
   align-items: center;
