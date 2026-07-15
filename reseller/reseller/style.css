@@ -86,7 +86,7 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(28px, 4.4vw, 48px);
+  font-size: clamp(28px, 4.4vw, 52px);
   font-weight: 800;
 }
 
@@ -97,7 +97,7 @@ h3 {
 
 p {
   color: var(--body);
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.7;
 }
 
@@ -172,7 +172,7 @@ section {
   padding: 7px 16px;
   background: #ede9fe78;
   color: #6d28d9;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -197,7 +197,7 @@ section {
 }
 
 .section-header p {
-  font-size: 19px;
+  font-size: 20px;
   color: var(--muted);
   max-width: 660px;
   margin: 0 auto;
@@ -211,7 +211,7 @@ section {
   gap: 10px;
   font-family: 'Be Vietnam Pro', sans-serif;
   font-weight: 800;
-  font-size: clamp(17px, 2.2vw, 21px);
+  font-size: clamp(17px, 2.2vw, 27px);
   padding: 17px 40px;
   border-radius: var(--radius-full);
   letter-spacing: 0.2px;
@@ -332,7 +332,7 @@ section {
 }
 
 .dcard p {
-  font-size: 15px;
+  font-size: 16px;
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -395,8 +395,7 @@ section {
 .stat-num {
   display: block;
   font-family: 'Be Vietnam Pro', sans-serif;
-
-  font-size: 2.4rem;
+  font-size: 2.6rem;
   font-weight: 800;
   line-height: 1;
   margin-bottom: 12px;
@@ -413,7 +412,8 @@ section {
 .stat-label {
   display: block;
   margin-top: 12px;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 500;
   color: var(--muted);
 }
 
@@ -421,7 +421,7 @@ section {
 /* ---------- PRICING CARD ---------- */
 .wp_ftr_price-card {
   position: relative;
-  max-width: 1000px;
+  max-width: 1110px;
   margin: 0 auto;
   border-radius: 26px;
   padding: 44px 48px 40px;
@@ -447,7 +447,7 @@ section {
 }
 
 .wp_ftr_plan-name {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
   color: #ffffff;
 }
@@ -507,14 +507,14 @@ section {
 
 .wp_ftr_feature h4 {
   margin: 0px 0 12px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   color: #ffffff;
 }
 
 .wp_ftr_feature p {
   margin: 0;
-  font-size: 13.5px;
+  font-size: 14px;
   line-height: 1.5;
   color: var(--text-dim);
 }
@@ -638,17 +638,17 @@ section {
 }
 
 .hero-logo img {
-  height: 55px;
+  height: 60px;
   width: auto;
 }
 
 .hero h1 {
   margin: 20px auto 0;
-  max-width: 940px;
+  max-width: 1110px;
   font-family: "Be Vietnam Pro", sans-serif;
   font-weight: 800;
   
-  font-size: clamp(24px, 5vw, 64px);
+  font-size: clamp(24px, 5vw, 68px);
   line-height: 1.2;
   letter-spacing: -0.03em;
 }
@@ -661,9 +661,7 @@ section {
   line-height: 1.45;
   letter-spacing: -0.03em;
   text-align: center;
-  background: linear-gradient(90deg, #E01AFF 0%, #1295FF 100%);
-  background-clip: text;
-  color: transparent;
+  color: #ffffff;
 }
 
 .hero-pill-box {
@@ -676,7 +674,7 @@ section {
   justify-content: center;
   padding: 8px 24px;
   border-radius: 16px;
-  background: linear-gradient(180deg, rgba(23, 1, 72, 0.55) 0%, rgba(2, 4, 32, 0.55) 100%);
+ background: linear-gradient(90deg, #E01AFF 0%, #1295FF 100%);
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
   border: 1.5px solid rgba(146, 128, 242, 0.5);
@@ -685,7 +683,7 @@ section {
 
 .hero .btn-cta {
   font-weight: 700;
-  font-size: 34px !important;
+  font-size: 40px !important;
   letter-spacing: 0;
   text-align: center;
 }
@@ -757,7 +755,7 @@ section {
   gap: 8px;
   max-width: 980px;
   margin: 0 auto;
-  padding: 18px 26px;
+  padding: 16px 22px;
   border-radius: var(--radius-lg);
   background: linear-gradient(180deg, #120c26, #0b0817);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -801,7 +799,7 @@ section {
 .fs-title {
   font-family: 'Be Vietnam Pro', sans-serif;
   font-weight: 700;
-  font-size: 16.5px;
+  font-size: 18px;
   color: rgba(255, 255, 255, 0.92);
   white-space: nowrap;
 }
@@ -826,7 +824,6 @@ section {
     flex-wrap: wrap;
     justify-content: center;
     row-gap: 26px;
-    padding: 26px 24px;
   }
 
   .fs-item {
@@ -862,7 +859,7 @@ section {
 }
 
 .struggle-card {
-  padding: 30px 20px;
+  padding: 30px 15px;
   transition: transform 0.3s ease, border-color 0.3s ease;
   text-align: center;
   position: relative;
@@ -915,12 +912,12 @@ section {
 }
 
 .struggle-card h3 {
-  font-size: 19px;
+  font-size: 20px;
   margin-bottom: 12px;
 }
 
 .struggle-card p {
-  font-size: 14.5px;
+  font-size: 16px;
   color: rgba(255, 255, 255, 0.66);
 }
 
@@ -1003,7 +1000,7 @@ section {
 }
 
 .how-step p {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--muted);
 }
 
@@ -1086,7 +1083,7 @@ section {
 }
 
 .benefit-card h3 {
-  font-size: 19px;
+  font-size: 20px;
   margin-bottom: 8px;
 }
 
@@ -1101,7 +1098,7 @@ section {
 }
 
 .benefit-card p {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--muted);
 }
 
@@ -1153,14 +1150,14 @@ section {
 
 .vs-item {
   flex: 1;
-  font-size: clamp(14.5px, 1.6vw, 16.5px);
+  font-size: clamp(14.5px, 1.6vw, 18px);
   color: rgba(255, 255, 255, 0.82);
 }
 
 .vs-price {
   font-family: 'Be Vietnam Pro', sans-serif;
   font-weight: 800;
-  font-size: clamp(15px, 2vw, 18px);
+  font-size: clamp(15px, 2vw, 20px);
   color: rgba(255, 255, 255, 0.55);
   white-space: nowrap;
 }
@@ -1205,7 +1202,7 @@ section {
 .vs-you .vs-item {
   font-weight: 800;
   color: #fff;
-  font-size: clamp(16px, 2.2vw, 19px);
+  font-size: clamp(16px, 2.2vw, 20px);
 }
 
 .vs-you .vs-price-wrap {
@@ -1220,7 +1217,7 @@ section {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  font-size: clamp(24px, 3.4vw, 42px);
+  font-size: clamp(24px, 3.4vw, 44px);
   font-weight: 900;
 }
 
@@ -1272,7 +1269,7 @@ section {
 
 .value-callout p {
   margin: 0;
-  font-size: 15.5px;
+  font-size: 16px;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.78);
   /* max-width:480px; */
@@ -1351,7 +1348,7 @@ section {
   gap: 8px;
   padding: 9px 22px;
   border-radius: var(--radius-full);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 800;
   letter-spacing: 1.4px;
   text-transform: uppercase;
@@ -1411,7 +1408,7 @@ section {
   margin-top: 22px;
   padding: 8px 24px;
   border-radius: var(--radius-full);
-  font-size: clamp(14px, 2vw, 18px);
+  font-size: clamp(14px, 2vw, 20px);
   font-weight: 700;
   color: var(--ink);
   background: linear-gradient(90deg, rgba(79, 70, 229, 0.08), rgba(147, 51, 234, 0.08));
@@ -1479,7 +1476,7 @@ section {
 }
 
 .price-list li p {
-  font-size: clamp(14.5px, 2vw, 16.5px);
+  font-size: clamp(14.5px, 2vw, 18px);
   font-weight: 600;
   color: var(--ink);
   margin: 0;
@@ -1792,11 +1789,11 @@ section {
   width: 100%;
 }
 
-.fc-guarantee {
+/* .fc-guarantee {
   margin-top: 18px;
   font-size: 13px;
   color: rgba(255, 255, 255, 0.62);
-}
+} */
 
 .final-cta .decline-link {
   display: block;
@@ -1961,6 +1958,26 @@ section {
   margin-top: 20px;
 }
 
+.hero-offer-line {
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 700;
+    font-size: clamp(22px, 5vw, 42px);
+    line-height: 1.2;
+    letter-spacing: 0;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 6px 0 22px;
+}
+
+.hero-offer-line .just-price {
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 900;
+    font-size: clamp(26px, 5vw, 42px);
+    line-height: 1.2;
+    letter-spacing: 0;
+    color: #E1FF00;
+}
+
 /* =====================================================================
    RESPONSIVE
    ===================================================================== */
@@ -1986,6 +2003,10 @@ section {
   .wp_ftr_feature-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+}
+
+.hero .btn-cta {
+    font-size: 30px !important;
 }
 }
 
@@ -2029,6 +2050,10 @@ section {
   .wp_ftr_price-card .btn-cta {
     max-width: fit-content;
     padding: 15px 30px;
+}
+
+.fc-guarantee svg{
+  display: none;
 }
 }
 
