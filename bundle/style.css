@@ -385,6 +385,24 @@ section { padding: var(--section-pad) 0; position: relative; }
 .disc-links a:hover { color: #22d3ee; }
 .disc-sep { color: rgba(255,255,255,0.18); font-size: 13px; user-select: none; }
 
+
+.forgeContainer .price-wrap span:first-child {
+    text-shadow: none !important;
+    text-decoration: line-through;
+    color: #1d1d1d !important;
+}
+
+.forgeContainer .price-wrap span:last-child {
+    color: var(--indigo-2);
+}
+
+.forgeContainer .btn-forge-continue {
+    background: transparent;
+    margin-top: 6px;
+    font-weight: 400;
+    color: #40097C;
+  display:none !important;
+}
 /* =====================================================================
    RESPONSIVE
    ===================================================================== */
