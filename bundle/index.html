@@ -87,22 +87,30 @@
       </div>
       <div class="prob-grid">
         <div class="prob-card reveal">
-          <div class="prob-icon">🧾</div>
+          <span class="prob-num" aria-hidden="true">01</span>
+          <div class="prob-icon"><img src="images/problems/1.png" alt="A Stack Of Subscriptions"></div>
+          <span class="prob-tag">Problem</span>
           <h4>A Stack Of Subscriptions</h4>
           <p>Yoast, Wordfence, WPML, a chatbot, an optimizer — separate bills that never talk to each other.</p>
         </div>
         <div class="prob-card reveal">
-          <div class="prob-icon">⏳</div>
+          <span class="prob-num" aria-hidden="true">02</span>
+          <div class="prob-icon"><img src="images/problems/2.png" alt="Hours Lost To Busywork"></div>
+          <span class="prob-tag">Time</span>
           <h4>Hours Lost To Busywork</h4>
           <p>Writing copy, recovering carts, checking security, moderating comments — work that simply never ends.</p>
         </div>
         <div class="prob-card reveal">
-          <div class="prob-icon">🤖</div>
+          <span class="prob-num" aria-hidden="true">03</span>
+          <div class="prob-icon"><img src="images/problems/3.png" alt="AI Is Passing You By"></div>
+          <span class="prob-tag">AI</span>
           <h4>AI Is Passing You By</h4>
           <p>Competitors get cited inside ChatGPT &amp; Claude while your site stays completely invisible.</p>
         </div>
         <div class="prob-card reveal">
-          <div class="prob-icon">💸</div>
+          <span class="prob-num" aria-hidden="true">04</span>
+          <div class="prob-icon"><img src="images/problems/4.png" alt="Money Leaking Monthly"></div>
+          <span class="prob-tag">Cost</span>
           <h4>Money Leaking Monthly</h4>
           <p>$2,000–$5,000 a year on tools you barely use — with no end to the billing in sight.</p>
         </div>
@@ -134,8 +142,11 @@
         <div class="sep-row sep-total"><span class="sep-item">Total if bought separately</span><span
             class="sep-price">$450</span></div>
       </div>
-      <p class="sep-note reveal">That's <strong>$450 for the products alone</strong> — before you count the $2,379 in
-        launch bonuses. There's a smarter way to get all of it. 👇</p>
+      <div class="sep-note reveal">
+        <span class="sep-note-icon" aria-hidden="true">★</span>
+        <p>That's <strong>$450 for the products alone</strong> — before you count the $2,379 in
+          launch bonuses. There's a smarter way to get all of it. 👇</p>
+      </div>
     </div>
   </section>
 
@@ -194,71 +205,103 @@
   <section class="included sec-light">
     <div class="container">
       <div class="section-header">
-        <span class="eyebrow">Everything Inside</span>
+        <span class="eyebrow">🎁 Everything Inside</span>
         <h2>Four Products.<br><span class="gradient-text">One Unstoppable Bundle.</span></h2>
         <p>Here's every piece of the ecosystem you unlock the moment you grab the bundle.</p>
       </div>
       <div class="bundle-grid">
-        <div class="bundle-item reveal">
+        <div class="bundle-item v-purple reveal">
           <div class="bi-top">
-            <span class="bi-badge fe">Front-End</span>
+            <span class="bi-badge">Front-End</span>
             <span class="bi-value">$19 value</span>
           </div>
-          <h3>WPilot AI Starter</h3>
-          <p class="bi-desc">The core engine — all 10 AI plugins that automate your entire WordPress site.</p>
-          <ul class="bi-list">
-            <li><span class="chk">✓</span> All 10 AI-powered plugins (50+ features)</li>
-            <li><span class="chk">✓</span> Replaces $2,000–$5,000/yr of tools</li>
-            <li><span class="chk">✓</span> Lifetime access — no recurring fees</li>
-          </ul>
+          <div class="bi-body">
+            <div class="bi-icon"><img src="images/inside/b-1.png" alt="WPilot AI Starter" loading="lazy"></div>
+            <div class="bi-content">
+              <h3>WPilot AI Starter</h3>
+              <p class="bi-desc">The core engine — all 10 AI plugins that automate your entire WordPress site.</p>
+              <ul class="bi-list">
+                <li><span class="chk">✓</span> All 10 AI-powered plugins (50+ features)</li>
+                <li><span class="chk">✓</span> Replaces $2,000–$5,000/yr of tools</li>
+                <li><span class="chk">✓</span> Lifetime access — no recurring fees</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="bundle-item reveal">
+        <div class="bundle-item v-blue reveal">
           <div class="bi-top">
             <span class="bi-badge">Upgrade 1</span>
             <span class="bi-value">$37 value</span>
           </div>
-          <h3>WPilot AI Unlimited</h3>
-          <p class="bi-desc">Removes every limit — run the whole suite on every site you'll ever build.</p>
-          <ul class="bi-list">
-            <li><span class="chk">✓</span> Unlimited websites, one license</li>
-            <li><span class="chk">✓</span> Free lifetime updates</li>
-            <li><span class="chk">✓</span> Higher AI limits + priority support</li>
-          </ul>
+          <div class="bi-body">
+            <div class="bi-icon"><img src="images/inside/b-2.png" alt="WPilot AI Unlimited" loading="lazy"></div>
+            <div class="bi-content">
+              <h3>WPilot AI Unlimited</h3>
+              <p class="bi-desc">Removes every limit — run the whole suite on every site you'll ever build.</p>
+              <ul class="bi-list">
+                <li><span class="chk">✓</span> Unlimited websites, one license</li>
+                <li><span class="chk">✓</span> Free lifetime updates</li>
+                <li><span class="chk">✓</span> Higher AI limits + priority support</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="bundle-item reveal">
+        <div class="bundle-item v-green reveal">
           <div class="bi-top">
             <span class="bi-badge">Upgrade 2</span>
             <span class="bi-value">$297 value</span>
           </div>
-          <h3>Reseller &amp; Whitelabel</h3>
-          <p class="bi-desc">Turn the bundle into income — sell it as your own and keep every dollar.</p>
-          <ul class="bi-list">
-            <li><span class="chk">✓</span> Sell WPilot AI, keep 100%</li>
-            <li><span class="chk">✓</span> Full whitelabel — your brand</li>
-            <li><span class="chk">✓</span> Sales pages, swipes + dev rebrand</li>
-          </ul>
+          <div class="bi-body">
+            <div class="bi-icon"><img src="images/inside/b-3.png" alt="Reseller & Whitelabel" loading="lazy"></div>
+            <div class="bi-content">
+              <h3>Reseller &amp; Whitelabel</h3>
+              <p class="bi-desc">Turn the bundle into income — sell it as your own and keep every dollar.</p>
+              <ul class="bi-list">
+                <li><span class="chk">✓</span> Sell WPilot AI, keep 100%</li>
+                <li><span class="chk">✓</span> Full whitelabel — your brand</li>
+                <li><span class="chk">✓</span> Sales pages, swipes + dev rebrand</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="bundle-item reveal">
+        <div class="bundle-item v-orange reveal">
           <div class="bi-top">
             <span class="bi-badge">Upgrade 3</span>
             <span class="bi-value">$97 value</span>
           </div>
-          <h3>Done-For-You Pack</h3>
-          <p class="bi-desc">Skip the learning curve — 150+ ready-to-use assets you copy, paste and go.</p>
-          <ul class="bi-list">
-            <li><span class="chk">✓</span> 150+ prompts, templates &amp; swipes</li>
-            <li><span class="chk">✓</span> Ready-to-sell service templates</li>
-            <li><span class="chk">✓</span> Proposals, outreach &amp; social content</li>
-          </ul>
+          <div class="bi-body">
+            <div class="bi-icon"><img src="images/inside/b-4.png" alt="Done-For-You Pack" loading="lazy"></div>
+            <div class="bi-content">
+              <h3>Done-For-You Pack</h3>
+              <p class="bi-desc">Skip the learning curve — 150+ ready-to-use assets you copy, paste and go.</p>
+              <ul class="bi-list">
+                <li><span class="chk">✓</span> 150+ prompts, templates &amp; swipes</li>
+                <li><span class="chk">✓</span> Ready-to-sell service templates</li>
+                <li><span class="chk">✓</span> Proposals, outreach &amp; social content</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
       <div class="cta-band reveal">
-        <div class="cb-content">
-          <span class="cb-eyebrow">🎯 The Whole Stack, One Click</span>
-          <h3 class="cb-title">That's the complete toolkit — unlock all of it together.</h3>
+        <div class="cb-left">
+          <span class="cb-eyebrow">🎁 The Whole Stack, One Click</span>
+          <h3 class="cb-title">That's the complete toolkit —<br><span class="gradient-text-light">unlock all of it together.</span></h3>
         </div>
-        <a href="https://launchpadjv.com/product/checkout/3887?page=3243&offer=407&offerProduct=4390" class="btn-cta btn-yellow cb-btn">Get The Complete Bundle · $197 <span
-            class="btn-arrow">→</span></a>
+        <span class="cb-divider" aria-hidden="true"></span>
+        <div class="cb-value">
+          <span class="cb-value-label">Total Value</span>
+          <span class="cb-value-price">$450</span>
+        </div>
+        <span class="cb-arrow" aria-hidden="true">→</span>
+        <div class="cb-today">
+          <span class="cb-today-label">Today Only</span>
+          <span class="cb-today-price">$197</span>
+        </div>
+        <span class="cb-divider" aria-hidden="true"></span>
+        <div class="cb-right">
+          <a href="https://launchpadjv.com/product/checkout/3887?page=3243&offer=407&offerProduct=4390" class="btn-cta btn-yellow cb-btn">Get The Complete Bundle </a>
+        </div>
       </div>
     </div>
   </section>
