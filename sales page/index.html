@@ -39,36 +39,35 @@
       <span class="tb-dot" aria-hidden="true">●</span>
       <span class="tb-text"><strong>Limited-Time Launch Deal</strong> - Use Coupon <span class="code">WPILOT2</span> <span class="tb-save">&amp; Save $2 Instantly</span></span>
     </div>
-    <div class="tb-countdown">
-      <div class="tb-count-box"><div class="tb-count-num" id="cd-days">00</div><div class="tb-count-label">Days</div></div>
-      <div class="tb-count-box"><div class="tb-count-num" id="cd-hours">00</div><div class="tb-count-label">Hours</div></div>
-      <div class="tb-count-box"><div class="tb-count-num" id="cd-mins">00</div><div class="tb-count-label">Min</div></div>
-      <div class="tb-count-box"><div class="tb-count-num" id="cd-secs">00</div><div class="tb-count-label">Sec</div></div>
+    <div class="tb-countdown-wrap">
+      <span class="tb-countdown-label">Offer ends in</span>
+      <div class="tb-countdown">
+        <div class="tb-count-box"><div class="tb-count-num" id="cd-hours">00</div><div class="tb-count-label">Hours</div></div>
+        <div class="tb-count-box"><div class="tb-count-num" id="cd-mins">00</div><div class="tb-count-label">Min</div></div>
+        <div class="tb-count-box"><div class="tb-count-num" id="cd-secs">00</div><div class="tb-count-label">Sec</div></div>
+      </div>
     </div>
     <!--
       COUNTDOWN FIRST-PAINT SCRIPT (intentionally inline — do NOT move to script.js)
       script.js loads with `defer` and waits for the GSAP CDN files, so on refresh
       the boxes would briefly show static placeholder values before it runs.
-      This inline snippet runs immediately during HTML parsing and sets the real
-      remaining time (from localStorage) on first paint — no flash.
+      This inline snippet runs immediately during HTML parsing and paints the
+      correct value on first paint — no flash.
       It runs ONCE only; the per-second ticking loop lives in script.js
-      ("Flash-sale countdown" section). Both share the same localStorage key
-      'wpilot_launch_end' and the same 47-hour window, so they stay in sync.
+      ("Flash-sale countdown" section). No localStorage — the deadline is a
+      globally-synced repeating cycle computed purely from Date.now(), so every
+      visitor sees the same countdown at the same real-world moment. Keep
+      CYCLE_MS and ANCHOR_UTC identical in both places.
     -->
     <script>
     (function () {
-      var STORAGE_KEY = 'wpilot_launch_end';
-      var HOURS = 47;
-      var endAt = parseInt(localStorage.getItem(STORAGE_KEY), 10);
+      var CYCLE_MS = 4 * 60 * 60 * 1000; // 4-hour repeating cycle
+      var ANCHOR_UTC = 15 * 3600 * 1000; // phase anchor (15:00 UTC)
       var now = Date.now();
-      if (!endAt || isNaN(endAt) || endAt < now) {
-        endAt = now + HOURS * 60 * 60 * 1000;
-        try { localStorage.setItem(STORAGE_KEY, endAt); } catch (_) {}
-      }
+      var elapsed = ((now - ANCHOR_UTC) % CYCLE_MS + CYCLE_MS) % CYCLE_MS;
+      var diff = CYCLE_MS - elapsed;
       var pad = function (n) { return String(n).padStart(2, '0'); };
-      var diff = Math.max(0, endAt - now);
-      document.getElementById('cd-days').textContent = pad(Math.floor(diff / 86400000));
-      document.getElementById('cd-hours').textContent = pad(Math.floor((diff % 86400000) / 3600000));
+      document.getElementById('cd-hours').textContent = pad(Math.floor(diff / 3600000));
       document.getElementById('cd-mins').textContent = pad(Math.floor((diff % 3600000) / 60000));
       document.getElementById('cd-secs').textContent = pad(Math.floor((diff % 60000) / 1000));
     })();

@@ -211,6 +211,8 @@ section { padding: var(--section-pad) 0; position: relative; }
   font-family: 'Be Vietnam Pro', sans-serif; font-weight: 900; letter-spacing: 1.5px; font-size: 13px;
 }
 .tb-text .tb-save { color: #ffd055; font-weight: 500; }
+.tb-countdown-wrap { display: inline-flex; align-items: center; gap: 10px; }
+.tb-countdown-label { font-size: 14px; font-weight: 500; color: rgba(255, 255, 255, 0.85); white-space: nowrap; }
 .tb-countdown { display: inline-flex; gap: 8px; }
 .tb-count-box {
   background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px);
