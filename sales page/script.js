@@ -81,41 +81,34 @@
   }
 
   /* --- Flash-sale countdown ------------------------------------------
-     Ticking loop for the top-bar countdown (#cd-days/#cd-hours/#cd-mins/#cd-secs).
-     Deadline is persisted in localStorage ('wpilot_launch_end', 47-hour window)
-     so it survives page refreshes; time is computed from Date.now() each tick.
+     Ticking loop for the top-bar countdown (#cd-hours/#cd-mins/#cd-secs).
+     No localStorage — the deadline is a globally-synced repeating cycle computed
+     purely from Date.now(), so every visitor sees the same countdown at the same
+     real-world moment, and it resets automatically every CYCLE_MS forever.
      NOTE: index.html has a small inline script right after the .tb-countdown
      markup that sets the initial values on first paint (this file loads with
      `defer` + waits on the GSAP CDN, so without it the placeholders would
      flash on refresh). That inline script runs once; this one keeps ticking
-     every second. Keep the storage key and HOURS value identical in both.
+     every second. Keep CYCLE_MS and ANCHOR_UTC identical in both.
   ---------------------------------------------------------------------- */
   (function initCountdown() {
-    var dEl = document.getElementById('cd-days');
     var hEl = document.getElementById('cd-hours');
     var mEl = document.getElementById('cd-mins');
     var sEl = document.getElementById('cd-secs');
-    if (!dEl) return;
+    if (!hEl) return;
 
-    var STORAGE_KEY = 'wpilot_launch_end';
-    var HOURS = 47;
-    var endAt = parseInt(localStorage.getItem(STORAGE_KEY), 10);
-    var now = Date.now();
-
-    if (!endAt || isNaN(endAt) || endAt < now) {
-      endAt = now + HOURS * 60 * 60 * 1000;
-      try { localStorage.setItem(STORAGE_KEY, endAt); } catch (_) {}
-    }
+    var CYCLE_MS = 4 * 60 * 60 * 1000; // 4-hour repeating cycle
+    var ANCHOR_UTC = 15 * 3600 * 1000; // phase anchor (15:00 UTC)
 
     var pad = function (n) { return String(n).padStart(2, '0'); };
 
     var tick = function () {
-      var diff = Math.max(0, endAt - Date.now());
-      var d = Math.floor(diff / 86400000);
-      var h = Math.floor((diff % 86400000) / 3600000);
+      var now = Date.now();
+      var elapsed = ((now - ANCHOR_UTC) % CYCLE_MS + CYCLE_MS) % CYCLE_MS;
+      var diff = CYCLE_MS - elapsed;
+      var h = Math.floor(diff / 3600000);
       var m = Math.floor((diff % 3600000) / 60000);
       var s = Math.floor((diff % 60000) / 1000);
-      dEl.textContent = pad(d);
       hEl.textContent = pad(h);
       mEl.textContent = pad(m);
       sEl.textContent = pad(s);
