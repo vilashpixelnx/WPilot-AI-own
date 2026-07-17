@@ -214,7 +214,7 @@ h4 {
 }
 
 .bg-introducing {
-    background: linear-gradient(0deg, #01012c 0%, #01010a 62%, #100B20 100%);
+  background: linear-gradient(0deg, #01012c 0%, #01010a 62%, #100B20 100%);
 }
 
 
@@ -2644,252 +2644,326 @@ h4 {
 
 /*  */
 
-  /* ---------- LAYOUT ---------- */
-  .prize-layout{
-    display:grid;
-    grid-template-columns: 0.85fr 1.15fr;
-    gap:24px;
-    align-items:stretch;
-  }
+/* ---------- LAYOUT ---------- */
+.prize-layout {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 24px;
+  align-items: stretch;
+}
 
-  .prize-layout img{
-    filter: drop-shadow(0px 4px 10px rgba(4, 83, 97, 0.35));
-  }
+.prize-layout img {
+  filter: drop-shadow(0px 4px 10px rgba(4, 83, 97, 0.35));
+}
 
-  /* ---------- LEFT BANNER ---------- */
-  .prize-total-banner{
-    position:relative;
-    overflow:hidden;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:flex-start;
-    text-align:center;
-    padding: 25px 34px 125px;
-    border-radius: var(--r-xl);
-    background: var(--brand-135);
-    color:#fff;
-    box-shadow: var(--shadow-brand-lg);
-      /* background-image: url(/assets/images/bgtrophy.png); */
-  }
-  .prize-total-banner::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background: radial-gradient(60% 60% at 50% 0%, rgba(255,255,255,0.22), transparent 60%);
-  }
-  .confetti{
-    position:absolute;
-    inset:0;
-    pointer-events:none;
-    filter: drop-shadow(0px 1px 2px rgba(68, 68, 68, 0.479));
-    opacity: 0.2;
-  }
-
- .prize-total-icon {
+/* ---------- LEFT BANNER ---------- */
+.prize-total-banner {
   position: relative;
-    display: grid;
-    place-items: center;
-    width: 130px;
-    height: 140px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.16);
-    margin-bottom: 15px;
-}
-  .prize-total-icon svg{width:54px;height:54px;filter:drop-shadow(0 8px 10px rgba(0,0,0,0.25));}
-
-  .prize-total-amount{
-    position:relative;
-    font-size:3.2rem;
-    font-weight:800;
-    line-height:1;
-  }
-  .prize-total-label{
-    position:relative;
-    font-size:0.85rem;
-    opacity:0.9;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    margin-top:8px;
-    font-weight:700;
-  }
-
-  .prize-total-divider{
-        position: relative;
-    width: 100%;
-    height: 1px;
-    background: rgb(255 255 255 / 8%);
-    margin: 15px 0 15px;
-}
-
-  .prize-total-window{
-    position:relative;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    font-size:0.85rem;
-    font-weight:600;
-    margin-bottom:30px;
-  }
-  .prize-total-window svg{width:15px;height:15px;flex-shrink:0;}
-  .prize-total-window em{
-    font-style:normal;
-    opacity:0.7;
-    font-size:0.8rem;
-  }
-
-  .banner-gift-scene{
-    position: absolute;
-    width: 100%;
-    left: 25px;
-    bottom: 0px;
-    max-width: 240px;
-    margin-top: auto;
-    /* display: flex; */
-    justify-content: center;
-  }
-  .banner-gift-scene svg{width:220px;height:150px;}
-
-  /* ---------- RIGHT GRID ---------- */
-  .prize-grid{
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap:16px;
-  }
-  .prize-1st{ grid-column: 1 / -1; }
-
-  .prize-card{
-    display:flex;
-    align-items:center;
-    gap:18px;
-    padding:22px 26px;
-    border-radius: var(--r-lg);
-    background: var(--light-elev);
-    border:1px solid var(--light-border);
-    box-shadow: var(--shadow-light-md);
-    transition: transform var(--t-base), box-shadow var(--t-base);
-  }
-  .prize-card:hover{
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-light-md);
-  }
-
-  .prize-1st{
-    position:relative;
-    overflow:hidden;
-  }
-  .sparkle{
-    position:absolute;
-    color:#c9c2f7;
-  }
-
-  .pc-badge{
-    flex-shrink:0;
-    display:grid;
-    place-items:center;
-    border-radius:50%;
-  }
-  .prize-1st .pc-badge{ max-width:75px;  }
-  .prize-2nd .pc-badge, .prize-3rd .pc-badge{ max-width:56px;  }
-  .prize-4th .pc-badge, .prize-5th .pc-badge{ max-width:56px;  }
-
-  .pc-badge svg{ width:70%; height:70%; }
-
-  .pc-body{
-    flex:1;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:12px;
-  }
-  .prize-1st .pc-body{ padding-left:4px; }
-
-  .pc-text strong{
-    display:block;
-    font-size:19px;
-    font-weight:700;
-    color:var(--light-text);
-    margin-bottom:3px;
-  }
-  .prize-1st .pc-text strong{ font-size:26px; }
-
-  .pc-text span{
-    font-size:13.5px;
-    color:var(--light-dim);
-  }
-
-  .pc-amount{
-    font-size:1.6rem;
-    font-weight:800;
-    background: var(--brand);
-    -webkit-background-clip:text;
-    background-clip:text;
-    -webkit-text-fill-color:transparent;
-    flex-shrink:0;
-    padding-left:14px;
-  }
-  .prize-1st .pc-amount{
-    font-size:2.4rem;
-    border-left:1px dashed var(--light-border);
-    padding-left:28px;
-  }
-
-  /* ---------- TERMS + FOOTER ---------- */
-  .contest-terms{
-    max-width:780px;
-    margin:44px auto 0;
-    text-align:center;
-    font-size:14px;
-    line-height:1.6;
-    color:var(--light-dim);
-  }
-
-  .contest-footer-note{
+  overflow: hidden;
   display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    max-width: 790px;
-    border: 1px solid #bcedf5;
-    margin: 26px auto 0;
-    text-align: start;
-    border: 1px solid var(--border-strong);
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--light-text);
-    background: #ffffff;
-    border-radius: 999px;
-    padding: 16px 30px;
-    border: 1px solid var(--light-border);
-    border-radius: var(--r-lg);
-    padding: 10px;
-    box-shadow: var(--shadow-light-md);
-  }
-  .contest-footer-note svg{ width:20px; height:20px; flex-shrink:0; }
-  .contest-footer-note .accent{
-    color:var(--indigo);
-    font-weight:800;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding: 25px 34px 125px;
+  border-radius: var(--r-xl);
+  background: var(--brand-135);
+  color: #fff;
+  box-shadow: var(--shadow-brand-lg);
+  /* background-image: url(/assets/images/bgtrophy.png); */
+}
+
+.prize-total-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(60% 60% at 50% 0%, rgba(255, 255, 255, 0.22), transparent 60%);
+}
+
+.confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  filter: drop-shadow(0px 1px 2px rgba(68, 68, 68, 0.479));
+  opacity: 0.2;
+}
+
+.prize-total-icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 130px;
+  height: 140px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  margin-bottom: 15px;
+}
+
+.prize-total-icon svg {
+  width: 54px;
+  height: 54px;
+  filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.25));
+}
+
+.prize-total-amount {
+  position: relative;
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.prize-total-label {
+  position: relative;
+  font-size: 0.85rem;
+  opacity: 0.9;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 8px;
+  font-weight: 700;
+}
+
+.prize-total-divider {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background: rgb(255 255 255 / 8%);
+  margin: 15px 0 15px;
+}
+
+.prize-total-window {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.prize-total-window svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+.prize-total-window em {
+  font-style: normal;
+  opacity: 0.7;
+  font-size: 0.8rem;
+}
+
+.banner-gift-scene {
+  position: absolute;
+  width: 100%;
+  left: 25px;
+  bottom: 0px;
+  max-width: 240px;
+  margin-top: auto;
+  /* display: flex; */
+  justify-content: center;
+}
+
+.banner-gift-scene svg {
+  width: 220px;
+  height: 150px;
+}
+
+/* ---------- RIGHT GRID ---------- */
+.prize-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.prize-1st {
+  grid-column: 1 / -1;
+}
+
+.prize-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 26px;
+  border-radius: var(--r-lg);
+  background: var(--light-elev);
+  border: 1px solid var(--light-border);
+  box-shadow: var(--shadow-light-md);
+  transition: transform var(--t-base), box-shadow var(--t-base);
+}
+
+.prize-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-light-md);
+}
+
+.prize-1st {
+  position: relative;
+  overflow: hidden;
+}
+
+.sparkle {
+  position: absolute;
+  color: #c9c2f7;
+}
+
+.pc-badge {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+
+.prize-1st .pc-badge {
+  max-width: 75px;
+}
+
+.prize-2nd .pc-badge,
+.prize-3rd .pc-badge {
+  max-width: 56px;
+}
+
+.prize-4th .pc-badge,
+.prize-5th .pc-badge {
+  max-width: 56px;
+}
+
+.pc-badge svg {
+  width: 70%;
+  height: 70%;
+}
+
+.pc-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.prize-1st .pc-body {
+  padding-left: 4px;
+}
+
+.pc-text strong {
+  display: block;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--light-text);
+  margin-bottom: 3px;
+}
+
+.prize-1st .pc-text strong {
+  font-size: 26px;
+}
+
+.pc-text span {
+  font-size: 13.5px;
+  color: var(--light-dim);
+}
+
+.pc-amount {
+  font-size: 1.6rem;
+  font-weight: 800;
+  background: var(--brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  flex-shrink: 0;
+  padding-left: 14px;
+}
+
+.prize-1st .pc-amount {
+  font-size: 2.4rem;
+  border-left: 1px dashed var(--light-border);
+  padding-left: 28px;
+}
+
+/* ---------- TERMS + FOOTER ---------- */
+.contest-terms {
+  max-width: 780px;
+  margin: 44px auto 0;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--light-dim);
+}
+
+.contest-footer-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: 790px;
+  border: 1px solid #bcedf5;
+  margin: 26px auto 0;
+  text-align: start;
+  border: 1px solid var(--border-strong);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--light-text);
+  background: #ffffff;
+  border-radius: 999px;
+  padding: 16px 30px;
+  border: 1px solid var(--light-border);
+  border-radius: var(--r-lg);
+  padding: 10px;
+  box-shadow: var(--shadow-light-md);
+}
+
+.contest-footer-note svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.contest-footer-note .accent {
+  color: var(--indigo);
+  font-weight: 800;
+}
+
+.contest-footer-note img {
+  max-width: 50px;
+}
+
+/* ---------- CORNER DECORATIONS ---------- */
+.corner-deco {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.deco-rocket {
+  left: 20px;
+  bottom: -10px;
+  width: 130px;
+}
+
+.deco-gift {
+  right: 20px;
+  bottom: -10px;
+  width: 220px;
+}
+
+@media (max-width:900px) {
+  .prize-layout {
+    grid-template-columns: 1fr;
   }
 
-  .contest-footer-note img{
-    max-width: 50px;
+  .prize-grid {
+    grid-template-columns: 1fr;
   }
-  /* ---------- CORNER DECORATIONS ---------- */
-  .corner-deco{
-    position:absolute;
-    pointer-events:none;
-    z-index:0;
-  }
-  .deco-rocket{ left:20px; bottom:-10px; width:130px; }
-  .deco-gift{ right:20px; bottom:-10px; width:220px; }
 
-  @media (max-width:900px){
-    .prize-layout{ grid-template-columns:1fr; }
-    .prize-grid{ grid-template-columns:1fr; }
-    .section-title{ font-size:32px; }
-    .deco-rocket, .deco-gift{ display:none; }
+  .section-title {
+    font-size: 32px;
   }
+
+  .deco-rocket,
+  .deco-gift {
+    display: none;
+  }
+}
+
 /* ── TESTIMONIALS (VIDEO) ───────────────────────────────────── */
 .container-testi {
   display: flex;
@@ -3468,15 +3542,15 @@ h4 {
     height: 2px;
   }
 
-.tl-dot::after {
+  .tl-dot::after {
     bottom: -4px;
     left: 100%;
-}
+  }
 
-.tl-icon {
+  .tl-icon {
     width: 75px;
     height: 75px;
-}
+  }
 
   .tl-icon {
     margin-bottom: 0;
@@ -3592,6 +3666,15 @@ h4 {
 
   .footer-legal {
     gap: 6px 16px;
+  }
+
+  .cta-card-btn {
+    gap: 8px;
+    padding: 14px 17px;
+  }
+
+  .cta-card {
+    padding: 40px 16px;
   }
 }
 
