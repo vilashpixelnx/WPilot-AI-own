@@ -38,6 +38,14 @@
   --d-bg: #0b0816;
   --d-card: linear-gradient(180deg, #0f0b22 0%, #120c26 100%);
   --d-border: linear-gradient(152deg, #8b5cf6 2%, rgba(124, 58, 237, 0.14) 72%);
+
+        --grad: linear-gradient(90deg, #ec4899 0%, #a855f7 45%, #4f46e5 100%);
+    --grad-btn: linear-gradient(90deg, #ec4899 0%, #8b5cf6 50%, #4f46e5 100%);
+    --wp-violet: #8b5cf6;
+    --wp-pink: #ec4899;
+    --wp-blue: #4f46e5;
+    --wp-cyan: #67e8f9;
+    --wp-text-dim: rgba(255,255,255,0.5);
 }
 
 /* 2. RESET & BASE ----------------------------------------------------- */
@@ -105,6 +113,32 @@ a {
   color: var(--indigo);
   text-decoration: none;
   transition: color 0.2s ease;
+}
+
+
+html {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #7c3aed #0b081700; /* Firefox fallback (solid mid-gradient color) */
+}
+
+/* WebKit browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0817;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #4f46e5 0%, #9333ea 100%);
+  border-radius: 999px;
+  border: 1px solid #0b0817; /* creates padding so gradient looks like a pill */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
 }
 
 :focus-visible {
@@ -580,6 +614,10 @@ section {
   isolation: isolate;
   padding: 74px 0 84px;
   background: radial-gradient(120% 90% at 50% -10%, #241a4c 0%, #150d33 40%, #0d0820 70%, var(--d-bg) 100%);
+  background-image: url(assets/banner-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  background-size: cover;
 }
 
 .hero-bg {
@@ -757,7 +795,7 @@ section {
   margin: 0 auto;
   padding: 16px 22px;
   border-radius: var(--radius-lg);
-  background: linear-gradient(180deg, #120c26, #0b0817);
+  background: linear-gradient(180deg, #180b4687, #1d114a9c);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 20px 50px -25px rgba(0, 0, 0, 0.7);
   margin-top: 24px;
@@ -1132,8 +1170,8 @@ section {
 
 .vs-icon {
   flex: none;
-  width: 44px;
-  height: 44px;
+  width: 50px;
+  height: 50px;
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -1143,8 +1181,8 @@ section {
 }
 
 .vs-icon svg {
-  width: 20px;
-  height: 20px;
+  width: 26px;
+  height: 26px;
   stroke: #c9b8ff;
 }
 
@@ -1171,7 +1209,7 @@ section {
 }
 
 .vs-total .vs-item {
-  font-weight: 800;
+  font-weight: 700;
   color: #fff;
 }
 
@@ -1185,14 +1223,18 @@ section {
   margin: 10px -30px -8px;
   padding: 24px 30px;
   border-radius: 0 0 calc(var(--radius-lg) - 1px) calc(var(--radius-lg) - 1px);
-  background: linear-gradient(120deg, rgba(139, 92, 246, 0.30), rgba(6, 182, 212, 0.16));
+  /* background: linear-gradient(120deg, rgba(139, 92, 246, 0.30), rgba(6, 182, 212, 0.16)); */
+  background: var(--gradient-primary);
   border-top: 1px solid rgba(139, 92, 246, 0.45);
 }
 
 .vs-you .vs-icon {
-  background: linear-gradient(160deg, #a78bfa, #7c3aed);
-  border-color: transparent;
+  /* background: linear-gradient(160deg, #a78bfa, #7c3aed); */
+  /* border-color: transparent; */
   box-shadow: 0 6px 18px rgba(124, 58, 237, 0.5);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .vs-you .vs-icon svg {
@@ -1200,9 +1242,9 @@ section {
 }
 
 .vs-you .vs-item {
-  font-weight: 800;
+  font-weight: 700;
   color: #fff;
-  font-size: clamp(16px, 2.2vw, 20px);
+  font-size: clamp(16px, 2.2vw, 22px);
 }
 
 .vs-you .vs-price-wrap {
@@ -1213,10 +1255,11 @@ section {
 }
 
 .vs-you .vs-price {
-  background: linear-gradient(96deg, #c4b5fd 0%, #93c5fd 55%, #67e8f9 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  /* background: linear-gradient(96deg, #c4b5fd 0%, #93c5fd 55%, #67e8f9 100%); */
+  /* -webkit-background-clip: text; */
+  /* background-clip: text; */
+  color: #ffffff;
+  line-height: 38px;
   font-size: clamp(24px, 3.4vw, 44px);
   font-weight: 900;
 }
@@ -1225,7 +1268,7 @@ section {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 20px;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 /* --- bottom callout --- */
@@ -1978,6 +2021,387 @@ section {
     color: #E1FF00;
 }
 
+
+/* ---------------------------------------------------------------- */
+  /* 9. FINAL CTA                                                     */
+  /* ---------------------------------------------------------------- */
+  .final-cta{
+    position:relative;
+    padding: 90px 0;
+    background: #020103;
+    overflow:hidden;
+  }
+
+  .fc-bg{ position:absolute; inset:0; pointer-events:none; z-index:0; }
+  .orb{ position:absolute; border-radius:50%; filter: blur(90px); opacity:0.55; }
+  .fc-orb-1{ width:420px; height:420px; top:-140px; left:-120px; background: radial-gradient(circle, #7c3aed, transparent 70%); }
+  .fc-orb-2{ width:420px; height:420px; bottom:-160px; right:-120px; background: radial-gradient(circle, #2563eb, transparent 70%); }
+
+  .wp_ftr_card{
+    position:relative;
+    z-index:1;
+    max-width:1120px;
+    margin:0 auto;
+    border-radius: 32px;
+    padding: 46px 50px 42px;
+background: linear-gradient(180deg, rgb(18 14 32 / 92%), rgb(8 6 16 / 95%));
+    border: 1px solid rgba(139,92,246,0.25);
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.02) inset,
+      0 40px 100px -40px rgba(0,0,0,0.8),
+      0 0 90px -20px rgba(139,92,246,0.25);
+  }
+
+  /* ---- top row: heading + price card ---- */
+  .wp_ftr_top{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:40px;
+    flex-wrap:wrap;
+    padding-bottom:36px;
+  }
+
+  .wp_ftr_left{ flex:1; min-width:300px; }
+
+  .wp_ftr_badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 16px;
+    border-radius:999px;
+    background: rgba(139,92,246,0.14);
+    border:1px solid rgba(139,92,246,0.4);
+    font-family:'Be Vietnam Pro', sans-serif;
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:#e9d5ff;
+    margin-bottom:22px;
+  }
+
+  .wp_ftr_badge svg{ width:13px; height:13px; fill:#e9d5ff; }
+
+  .wp_ftr_heading{
+    font-family:'Be Vietnam Pro', sans-serif;
+    font-weight:900;
+    font-size: clamp(34px, 4.6vw, 54px);
+    line-height:1.08;
+    margin:0 0 18px;
+    color:#fff;
+    letter-spacing:-0.01em;
+  }
+
+  .wp_ftr_heading .grad-text{
+    background: var(--grad);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+
+  .wp_ftr_divider{
+    display:flex;
+    align-items:center;
+    width:150px;
+    height:3px;
+    border-radius:3px;
+    background: var(--grad);
+    margin-bottom:20px;
+    position:relative;
+  }
+
+  .wp_ftr_divider .spark{
+    position:absolute;
+    right:-6px;
+    top:50%;
+    transform:translateY(-50%);
+    width:10px;
+    height:10px;
+    background:#fff;
+    clip-path: polygon(50% 0%, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0% 50%, 39% 39%);
+  }
+
+  .wp_ftr_sub{
+    font-size:16.5px;
+    line-height:1.6;
+    color: rgba(255,255,255,0.6);
+    max-width:440px;
+    margin:0;
+  }
+
+  /* ---- price card ---- */
+  .wp_ftr_price-card{
+    flex:none;
+    width:300px;
+    text-align:center;
+    padding: 26px 24px 24px;
+    border-radius:22px;
+    background: rgba(139,92,246,0.06);
+    border: 1px solid rgba(139,92,246,0.35);
+    box-shadow: 0 0 50px -10px rgba(139,92,246,0.3);
+  }
+
+  .wp_ftr_save-pill{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    padding:7px 15px;
+    border-radius:999px;
+    background: rgba(139,92,246,0.18);
+    border:1px solid rgba(139,92,246,0.5);
+    font-family:'Be Vietnam Pro', sans-serif;
+    font-weight:700;
+    font-size:11.5px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:#ede3f7;
+    margin-bottom:18px;
+  }
+
+  .wp_ftr_save-pill svg{ width:16px; height:16px; fill:#e9d5ff; }
+
+  .wp_ftr_price-new{
+    font-family:'Be Vietnam Pro', sans-serif;
+    font-weight:900;
+    font-size: 64px;
+    line-height:1;
+    background: var(--grad);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+
+  .wp_ftr_price-old{
+    font-family:'Be Vietnam Pro', sans-serif;
+    font-weight:700;
+    font-size:26px;
+    color: rgba(255,255,255,0.3);
+    text-decoration: line-through;
+    margin: 6px 0 14px;
+  }
+
+  .wp_ftr_price-suffix{
+    font-family:'Be Vietnam Pro', sans-serif;
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+
+  /* ---- features ---- */
+  .wp_ftr_feature-grid{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:18px;
+    padding: 0 0 38px;
+  }
+
+  .wp_ftr_feature{
+    text-align:center;
+    padding: 30px 16px 26px;
+    background: rgba(255,255,255,0.015);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 20px;
+  }
+
+  .wp_ftr_icon-circle{
+    width:115px;
+    height:115px;
+    margin: 0 auto 18px;
+    /* border-radius:50%; */
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    /* background: radial-gradient(circle, rgba(139,92,246,0.22), rgba(139,92,246,0.03) 70%); */
+    /* box-shadow: 0 0 34px -6px rgba(139,92,246,0.55); */
+  }
+
+  .wp_ftr_icon-circle img{
+     width: 100%;
+      /* filter: drop-shadow(0 0 34px -6px rgba(139,92,246,0.55)); */
+      filter: drop-shadow(0 10px 20px rgba(138, 92, 246, 0.603));
+  }
+
+  .wp_ftr_label{
+    display:block;
+    font-family:'Be Vietnam Pro', sans-serif;
+    font-weight:700;
+    font-size:11.5px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:#a78bfa;
+    margin-bottom:8px;
+  }
+
+  .wp_ftr_feature h4{
+    margin:0 0 10px;
+    font-family:'Be Vietnam Pro', sans-serif;
+    font-size:19px;
+    font-weight:700;
+    color:#fff;
+  }
+
+  .wp_ftr_feature p{
+    margin:0 0 0px;
+    font-size:13.5px;
+    line-height:1.55;
+    color: var(--text-dim);
+  }
+
+  .wp_ftr_underline{
+    width:34px;
+    height:3px;
+    margin:0 auto;
+    border-radius:3px;
+    background: var(--grad);
+  }
+
+  /* ---- CTA button ---- */
+  .wp_ftr_cta-wrap{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    margin-bottom:30px;
+  }
+
+  .wp_ftr_cta-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    width:100%;
+    max-width:760px;
+    padding:20px 32px;
+    border-radius:60px;
+    background: var(--grad-btn);
+    color:#fff;
+    font-family:'Be Vietnam Pro', sans-serif;
+    font-weight:800;
+    font-size: clamp(16px, 2.1vw, 26px);
+    text-decoration:none;
+    box-shadow: 0 20px 45px -15px rgba(139,92,246,0.6);
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+
+  .wp_ftr_cta-btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 24px 55px -15px rgba(139,92,246,0.75);
+  }
+
+  .wp_ftr_arrow-note{
+    position:absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-30%);
+    display:flex;
+    align-items:flex-start;
+    gap:6px;
+    pointer-events:none;
+  }
+
+  .wp_ftr_arrow-note svg{ width:46px; height:34px; margin-top:6px; transform: rotate(43deg); }
+
+  .wp_ftr_arrow-note span{
+    font-family:'Caveat', cursive;
+    font-weight:700;
+    font-size:20px;
+    line-height:1.15;
+    color: #e879f9;
+    white-space:nowrap;
+  }
+
+  /* ---- social proof ---- */
+  .wp_ftr_social-proof{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+    margin-bottom:34px;
+  }
+
+  .wp_ftr_avatars{
+    display:flex;
+  }
+
+  .wp_ftr_avatars span{
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    border: 2px solid #0b0817;
+    margin-left:-10px;
+    background: linear-gradient(135deg, #a78bfa, #4f46e5);
+  }
+
+  .wp_ftr_avatars span:first-child{ margin-left:0; }
+
+  .wp_ftr_stars{
+    display:flex;
+    gap:2px;
+    color:#facc15;
+  }
+
+  .wp_ftr_stars svg{ width:16px; height:16px; fill:#facc15; }
+
+  .wp_ftr_social-proof p{
+    margin:0;
+    font-size:14.5px;
+    color: rgba(255,255,255,0.65);
+  }
+
+  /* ---- trust bar ---- */
+  .wp_ftr_trust-bar{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:0;
+    padding: 26px 30px;
+    border-radius:18px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.07);
+    flex-wrap:wrap;
+  }
+
+  .wp_ftr_trust-item{
+    display:flex;
+    align-items:center;
+    text-align: start;
+    gap:12px;
+    flex:1;
+    min-width:230px;
+    justify-content:center;
+  }
+
+  .wp_ftr_trust-item svg{ width:40px; height:40px; flex:none; stroke: #a78bfa; }
+
+  .wp_ftr_trust-item h5{
+    margin:0 0 2px;
+    font-size:14.5px;
+    font-weight:700;
+    color:#fff;
+  }
+
+  .wp_ftr_trust-item p{
+    margin:0;
+    font-size:12.5px;
+    color: var(--text-dim);
+  }
+
+  .wp_ftr_trust-divider{
+    width:1px;
+    align-self:stretch;
+    background: rgba(255,255,255,0.09);
+    margin: 0 6px;
+  }
+
+  .wp_ftr_head_left{
+    text-align: start;
+  }
+
+
+
 /* =====================================================================
    RESPONSIVE
    ===================================================================== */
@@ -2055,7 +2479,31 @@ section {
 .fc-guarantee svg{
   display: none;
 }
+
 }
+
+ @media (max-width: 980px){
+    .wp_ftr_feature-grid{ grid-template-columns: repeat(2, 1fr); }
+    .wp_ftr_top{ justify-content:center; text-align:center; }
+    .wp_ftr_head_left{ text-align:center; }
+    .wp_ftr_divider{ margin-left:auto; margin-right:auto; }
+    .wp_ftr_sub{ margin-left:auto; margin-right:auto; }
+    .wp_ftr_price-card{ width:100%; max-width:340px; margin:0 auto; }
+    .wp_ftr_arrow-note{ display:none; }
+     .wp_ftr_trust-bar{gap: 20px; }
+     .wp_ftr_trust-divider {
+      display: none;
+     }
+  }
+
+  @media (max-width: 640px){
+    .wp_ftr_card{ padding: 32px 20px 30px; border-radius:24px; }
+    .wp_ftr_feature-grid{ grid-template-columns: 1fr; }
+    .wp_ftr_trust-item{ justify-content:flex-start; flex:1 1 100%; }
+    .wp_ftr_trust-divider{ display:none; }
+    .wp_ftr_trust-bar{ align-items:flex-start; }
+    .wp_ftr_cta-btn {padding: 15px 20px;}
+  }
 
 
 @media (max-width: 576px) {
