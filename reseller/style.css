@@ -259,6 +259,8 @@ section {
 }
 
 .btn-yellow {
+  position: relative;
+  overflow: hidden;
   background: linear-gradient(180deg, #FFD01B 0%, #FFA301 100%);
   color: #fff;
   text-shadow: 0 1px 2px rgba(120, 60, 0, 0.28);
@@ -727,6 +729,99 @@ section {
   font-size: 40px !important;
   letter-spacing: 0;
   text-align: center;
+}
+
+/* --------------------------------------------------------------------
+   Premium liquid-gold treatment for .btn-yellow — layered on top of the
+   rules above with zero change to size/padding/radius/font/gradient/text.
+   Every layer here is a pseudo-element or box-shadow so the real box
+   model (and the anchor's own hit area) never moves.
+   -------------------------------------------------------------------- */
+@property --flow-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+.btn-yellow {
+  --flow-angle: 0deg;
+  isolation: isolate;
+  box-shadow:
+    0 18px 44px rgba(255, 163, 1, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65),
+    inset 0 -14px 22px rgba(140, 70, 0, 0.16),
+    0 0 22px rgba(255, 224, 130, 0.28);
+  animation: btn-yellow-breathe 3.6s ease-in-out infinite;
+}
+.btn-yellow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  padding: 3px;
+  background: conic-gradient(from var(--flow-angle),
+    transparent 0%,
+    rgba(255, 248, 213, 0) 2%,
+    #FFF8D5 10%,
+    #FFE27A 22%,
+    #FFD01B 34%,
+    #FFB000 46%,
+    rgba(255, 176, 0, 0) 58%,
+    transparent 100%);
+  opacity: 0.9;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: flow-rotate 3s linear infinite;
+  pointer-events: none;
+  transition: opacity 0.35s ease, filter 0.35s ease;
+}
+/* Shine sweep — clipped by .btn-yellow's own overflow:hidden, so it stays inside the pill */
+.btn-yellow::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -60%; width: 40%; height: 100%;
+  z-index: 0;
+  background: linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  transform: skewX(-20deg);
+  pointer-events: none;
+  animation: btn-yellow-shine 3.6s ease-in-out infinite;
+}
+.btn-yellow-label { position: relative; z-index: 1; }
+.btn-yellow:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow:
+    0 26px 56px rgba(255, 163, 1, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75),
+    inset 0 -14px 22px rgba(140, 70, 0, 0.2),
+    0 0 34px rgba(255, 224, 130, 0.5);
+}
+.btn-yellow:hover::before { opacity: 1; filter: brightness(1.2); }
+@keyframes flow-rotate { to { --flow-angle: 360deg; } }
+@keyframes btn-yellow-shine {
+  0%   { left: -60%; }
+  18%  { left: 130%; }
+  100% { left: 130%; }
+}
+@keyframes btn-yellow-breathe {
+  0%, 100% {
+    box-shadow:
+      0 18px 44px rgba(255, 163, 1, 0.42),
+      inset 0 1px 0 rgba(255, 255, 255, 0.65),
+      inset 0 -14px 22px rgba(140, 70, 0, 0.16),
+      0 0 22px rgba(255, 224, 130, 0.28);
+  }
+  50% {
+    box-shadow:
+      0 20px 48px rgba(255, 163, 1, 0.48),
+      inset 0 1px 0 rgba(255, 255, 255, 0.7),
+      inset 0 -14px 22px rgba(140, 70, 0, 0.18),
+      0 0 36px rgba(255, 224, 130, 0.48);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-yellow, .btn-yellow::before, .btn-yellow::after { animation: none; }
 }
 
 .hero-sub {
