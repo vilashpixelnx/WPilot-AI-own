@@ -229,9 +229,14 @@ section { padding: var(--section-pad) 0; position: relative; }
 /* 5. HERO ------------------------------------------------------------- */
 .hero {
   position: relative; overflow: hidden; text-align: center; isolation: isolate;
-  padding: 95px 0 80px;
-  /* #0a0520 = dominant color of banner_bg.jpg — shows while the image loads (no white flash) */
-  background: #0a0520 url('images/banner/banner_bg.jpg') center top / cover no-repeat;
+  padding: 70px 0 80px;
+  /* #0a0520 = dominant color of banner_bg.png — shows while the image loads (no white flash) */
+  /* Dark overlay (top layer) blends the banner artwork into the page's own dark-violet tone,
+     darkening more toward the center so the headline/CTA always keep strong contrast. */
+  background:
+    linear-gradient(180deg, rgba(10, 5, 32, 0.45) 0%, rgba(10, 5, 32, 0.15) 32%, rgba(10, 5, 32, 0.6) 100%),
+    radial-gradient(120% 90% at 50% 42%, rgba(10, 5, 32, 0) 0%, rgba(10, 5, 32, 0.55) 60%, rgba(10, 5, 32, 0.9) 100%),
+    url('images/banner/banner_bg.webp') center top / cover no-repeat #0a0520;
 }
 
 /* Banner artwork already contains the ambient decorations */
@@ -277,9 +282,9 @@ section { padding: var(--section-pad) 0; position: relative; }
 .hero-vectors .hv { position: absolute; display: block; filter: drop-shadow(0 12px 26px rgba(10, 4, 30, 0.35)); }
 .hv.v1  { top:4%;  left: 3%;   opacity: 0; animation: hvPop 0.5s ease-out both 0.15s, heroFloatB 6s   ease-in-out infinite 0.65s; }
 .hv.v2  { top: 7%;  left: 23%;  opacity: 0; animation: hvPop 0.5s ease-out both 0.27s, heroFloatA 5.5s ease-in-out infinite 0.77s; }
-.hv.v3  { top: 15%; right: 21%; opacity: 0; animation: hvPop 0.5s ease-out both 0.39s, heroFloatC 6.5s ease-in-out infinite 0.89s; }
+.hv.v3  { top: 15%; right: 13%; opacity: 0; animation: hvPop 0.5s ease-out both 0.39s, heroFloatC 6.5s ease-in-out infinite 0.89s; }
 .hv.v4  { top: 5%;  right: 3%;  opacity: 0; animation: hvPop 0.5s ease-out both 0.51s, heroFloatA 6s   ease-in-out infinite 1.01s; }
-.hv.v5  { top: 27%; left: 12%;  opacity: 0; animation: hvPop 0.5s ease-out both 0.63s, heroFloatC 7s   ease-in-out infinite 1.13s; }
+.hv.v5  { top: 27%; left: 7%;  opacity: 0; animation: hvPop 0.5s ease-out both 0.63s, heroFloatC 7s   ease-in-out infinite 1.13s; }
 .hv.v6  { top: 29%; right: 5%;  opacity: 0; animation: hvPop 0.5s ease-out both 0.75s, heroFloatB 6.2s ease-in-out infinite 1.25s; }
 .hv.v7  { top: 47%; left: 2%;   opacity: 0; animation: hvPop 0.5s ease-out both 0.87s, heroFloatA 5.8s ease-in-out infinite 1.37s; }
 .hv.v8  { top: 50%; right: 14%; opacity: 0; animation: hvPop 0.5s ease-out both 0.99s, heroFloatC 6.4s ease-in-out infinite 1.49s; }
@@ -317,7 +322,7 @@ section { padding: var(--section-pad) 0; position: relative; }
   box-shadow: 0 10px 34px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 .hero-pill-text {
-  margin: 0; font-family: "Be Vietnam Pro", sans-serif; font-weight: 700; font-size: clamp(18px, 4vw, 22px);
+  margin: 0; font-family: "Be Vietnam Pro", sans-serif; font-weight: 700; font-size: clamp(16px, 4vw, 22px);
   line-height: 1.45; letter-spacing: -0.03em; text-align: center;
 }
 
@@ -325,7 +330,7 @@ section { padding: var(--section-pad) 0; position: relative; }
 /* Dramatic headline */
 .hero-headline {
   font-family: "Be Vietnam Pro", sans-serif; font-weight: 800;
-  font-size: clamp(24px, 5vw, 60px); line-height: 1.2; letter-spacing: -0.03em; text-align: center;
+  font-size: clamp(24px, 3.5vw, 60px); line-height: 1.2; letter-spacing: -0.03em; text-align: center;
   color: #FFFFFF; margin: 0 auto 34px; max-width: 1180px;
 }
 .hero-headline > span { display: block; margin-bottom: 10px; }
@@ -344,11 +349,11 @@ section { padding: var(--section-pad) 0; position: relative; }
   box-shadow: 0 10px 26px rgba(110, 51, 255, 0.35);
 }
 
-/* Hero video (ported from GEO banner implementation) */
+/* Hero video — glass frame in the site's violet/blue/cyan palette (matches .section-cta-btn's glow) */
 .ma_video_wrapper {
   background-image:
-    linear-gradient(#fff0eb, #fff8f2),
-    linear-gradient(89.09deg, #2887ff -4.43%, #22cfff 40.29%, #ffd106 62.12%, #ff6a35 106.32%);
+    linear-gradient(180deg, rgba(20, 10, 45, 0.92), rgba(12, 6, 30, 0.96)),
+    linear-gradient(120deg, #8F33FF -4.43%, #2575FC 50%, #4CC9FF 106.32%);
   border: 1px solid transparent;
   background-origin: border-box;
   background-clip: padding-box, border-box;
@@ -357,15 +362,16 @@ section { padding: var(--section-pad) 0; position: relative; }
   max-width: 860px;
   border-radius: 20px;
   position: relative;
+  box-shadow: 0 20px 60px rgba(79, 70, 229, 0.28), 0 0 50px rgba(37, 117, 252, 0.16);
 }
 .ma-tutorial-video {
   transition: all 0.5s ease-in-out;
   position: relative;
   z-index: 9;
-  background: linear-gradient(89.09deg, rgba(40, 135, 255, 0.06) -4.43%, rgba(34, 207, 255, 0.06) 40.29%, rgba(255, 209, 6, 0.06) 62.12%, rgba(255, 106, 53, 0.06) 106.32%);
+  background: linear-gradient(120deg, rgba(143, 51, 255, 0.1) -4.43%, rgba(37, 117, 252, 0.1) 50%, rgba(76, 201, 255, 0.1) 106.32%);
   border-radius: 10px;
 }
-div#vimeo-video iframe { border-radius: 10px; }
+.ma-tutorial-video iframe { border-radius: 10px; }
 
 /* Animated "Watch Now" accent */
 .geo_banner_watch_vector {
@@ -1214,6 +1220,22 @@ display: none;
     gap: 28px;
   }
 }
+@media (max-width: 1399px) {
+  .hero-vectors .hv {
+    max-width: 61px;
+}
+.hv.v7 {
+    top: 58%;
+}
+.hv.v9 {
+    top: 67%;
+    left: 13%;
+}
+.hv.v3 {
+    top: 15%;
+    right: 10%;
+}
+}
 /* Below 1300px: hide the side girls, give the table full width */
 @media (max-width: 1300px) {
   .ba-people { display: none; }
@@ -1888,6 +1910,11 @@ display: none;
   .compat-badge { justify-content: center; }
 }
 
+@media (max-width: 1199px) {
+  .ma_video_wrapper {
+    max-width: 75%;
+}
+}
 @media (max-width: 1024px) {
   .ba-grid { grid-template-columns: 1fr; gap: 18px; }
   .ba-people { display: none; }
@@ -1926,6 +1953,9 @@ display: none;
 .hero-offer-line .just-price { font-size: 38px; line-height: 48px; }
   .hero-inner .btn-cta { font-size: 26px; line-height: 1.25; padding: 18px 30px; }
   .hero-pill-box { height: auto; min-height: 91px; padding: 16px 22px; }
+  .geo_banner_watch_vector {
+    max-width: 60px;
+}
 }
 
 @media (max-width: 768px) {
@@ -1985,6 +2015,9 @@ display: none;
   .jv-pric-logo { margin: -26px auto 0; padding: 14px 28px; }
   .jv-pric-list li { padding: 13px 12px 13px 16px; gap: 12px; }
   .guarantee-card { padding: 40px 24px; }
+  .geo_banner_watch_vector {
+    display: none;
+}
 }
 
 @media (max-width: 480px) {
