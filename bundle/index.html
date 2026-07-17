@@ -27,7 +27,7 @@
   </div>
 
   <!-- 1. HERO (dark · Live animated background) -->
-  <header class="hero sec-dark" id="top">
+  <header class="hero sec-dark " id="top">
     <div class="hero-bg" aria-hidden="true">
       <span class="orb orb-1"></span>
       <span class="orb orb-2"></span>
@@ -63,8 +63,7 @@
       </div>
 
       <div class="hero-cta-wrap reveal">
-        <a href="https://launchpadjv.com/product/checkout/3887?page=3243&offer=407&offerProduct=4390" class="btn-cta btn-yellow">Get The Complete Bundle · $197 <span
-            class="btn-arrow">→</span></a>
+        <a href="https://launchpadjv.com/product/checkout/3887?page=3243&offer=407&offerProduct=4390" target="_blank" class="btn-cta btn-yellow">Get The Complete Bundle · $197 </a>
         <div class="hero-note">$247 one-time · $50 OFF with <strong>WPILOT50</strong> · you pay just $197</div>
       </div>
 
@@ -77,7 +76,7 @@
   </header>
 
   <!-- 2. THE PROBLEM (light) -->
-  <section class="problem sec-light">
+  <section class="problem sec-light ">
     <div class="container">
       <div class="section-header">
         <span class="eyebrow">The Real Problem</span>
@@ -120,27 +119,61 @@
     </div>
   </section>
 
-  <!-- 3. WHY BUYING SEPARATELY DOESN'T MAKE SENSE (light) -->
+  <!-- 3. WHY BUYING SEPARATELY DOESN'T MAKE SENSE (dark) -->
   <div class="sec-connector" aria-hidden="true"></div>
-  <section class="sep sec-light">
+  <section class="sep sec-dark ">
     <div class="container">
       <div class="section-header">
-        <span class="eyebrow">The Expensive Way</span>
-        <h2>Buying Each Piece Separately<br><span class="gradient-text">Adds Up Fast.</span></h2>
+        <span class="eyebrow dark-section">The Expensive Way</span>
+        <h2>Buying Each Piece Separately<br><span class="gradient-text-light">Adds Up Fast.</span></h2>
         <p>You could grab each product on its own — four checkouts, four decisions, and the full price on every
           single one.</p>
       </div>
-      <div class="sep-card reveal">
-        <div class="sep-row"><span class="sep-item"><span class="sep-badge fe">FE</span> WPilot AI Starter</span><span
-            class="sep-price">$19</span></div>
-        <div class="sep-row"><span class="sep-item"><span class="sep-badge">OTO 1</span> Unlimited</span><span
-            class="sep-price">$37</span></div>
-        <div class="sep-row"><span class="sep-item"><span class="sep-badge">OTO 2</span> Reseller &amp;
-            Whitelabel</span><span class="sep-price">$297</span></div>
-        <div class="sep-row"><span class="sep-item"><span class="sep-badge">OTO 3</span> Done-For-You Pack</span><span
-            class="sep-price">$97</span></div>
-        <div class="sep-row sep-total"><span class="sep-item">Total if bought separately</span><span
-            class="sep-price">$450</span></div>
+      <div class="cart-compare reveal">
+        <div class="cart-panel cart-panel-old">
+          <div class="cart-panel-head">
+            <span class="cart-panel-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
+            <h3>Your Cart <span>(4 Items)</span></h3>
+          </div>
+          <div class="cart-rows">
+            <div class="cart-row">
+              <span class="cart-row-ico v-purple"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg></span>
+              <span class="cart-row-name">WPilot AI Starter</span>
+              <span class="cart-row-price">$19</span>
+            </div>
+            <div class="cart-row">
+              <span class="cart-row-ico v-blue"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18.178 8c5.096 0 5.096 8 0 8-5.095 0-7.26-8-12.356-8-5.095 0-5.095 8 0 8 5.096 0 7.26-8 12.356-8z"/></svg></span>
+              <span class="cart-row-name">Unlimited</span>
+              <span class="cart-row-price">$37</span>
+            </div>
+            <div class="cart-row">
+              <span class="cart-row-ico v-teal"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
+              <span class="cart-row-name">Reseller &amp; Whitelabel</span>
+              <span class="cart-row-price">$297</span>
+            </div>
+            <div class="cart-row">
+              <span class="cart-row-ico v-pink"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8"/><path d="M16.5 8a2.5 2.5 0 0 0 0-5C13 3 12 8 12 8"/></svg></span>
+              <span class="cart-row-name">Done-For-You Pack</span>
+              <span class="cart-row-price">$97</span>
+            </div>
+          </div>
+          <div class="cart-subtotal">
+            <span>Subtotal <small>(4 Items)</small></span>
+            <span class="cart-subtotal-price">$450</span>
+          </div>
+          <div class="cart-pill cart-pill-bad">✕ 4 Checkouts &amp; 4 Payments</div>
+        </div>
+
+        <span class="cart-arrow" aria-hidden="true">→</span>
+
+        <div class="cart-panel cart-panel-deal">
+          <span class="cart-deal-badge">⭐ Bundle Deal</span>
+          <div class="cart-deal-art"><img src="images/bundle_deal.png" alt="WPilot AI — everything in one complete bundle" loading="lazy"></div>
+          <h3>Everything You Need<br>In One Complete Bundle</h3>
+          <div class="cart-deal-price">$197</div>
+          <div class="cart-pill cart-pill-good">✓ 1 Checkout &amp; 1 Payment</div>
+          <p class="cart-deal-save">You Save $253 (56%)</p>
+        </div>
       </div>
       <div class="sep-note reveal">
         <span class="sep-note-icon" aria-hidden="true">★</span>
@@ -150,63 +183,221 @@
     </div>
   </section>
 
-  <!-- 3. INTRODUCING (dark) -->
+  <!-- 3. INTRODUCING (light) -->
   <div class="sec-connector" aria-hidden="true"></div>
-  <section class="intro sec-dark">
+  <section class="intro sec-light ">
     <div class="container">
       <div class="intro-inner reveal">
-        <span class="eyebrow dark-section">Introducing</span>
-        <h2>The Complete<br><span class="gradient-text-light">WPilot AI Bundle.</span></h2>
+        <span class="eyebrow">Introducing</span>
+        <h2>The Complete<br><span class="gradient-text">WPilot AI Bundle.</span></h2>
         <p class="intro-lead">This isn't four separate products stapled together. It's <strong>one complete
             system</strong> — the AI tools, the freedom to use them anywhere, the assets to move fast, and the rights
           to sell it as your own. Everything the launch has to offer, unlocked in a single click.</p>
         <div class="intro-badges">
-          <span class="intro-badge">🧠 10 AI Plugins</span>
-          <span class="intro-badge">♾️ Unlimited Sites</span>
-          <span class="intro-badge">📋 150+ DFY Assets</span>
-          <span class="intro-badge">💯 Full Reseller Rights</span>
-          <span class="intro-badge">🎁 $2,379 In Bonuses</span>
+          <span class="intro-badge">Unlimited Sites</span>
+          <span class="intro-badge">150+ DFY Assets</span>
+          <span class="intro-badge">Full Reseller Rights</span>
+          <span class="intro-badge">$2,379 In Bonuses</span>
         </div>
       </div>
     </div>
 
+    <div class="pb-wrap">
+    <div class="pb-decor" aria-hidden="true">
+      <span class="ms-spark sp1">✦</span>
+      <span class="ms-spark sp2">✦</span>
+      <span class="ms-spark sp3">✦</span>
+      <span class="ms-spark sp4">✦</span>
+      <span class="ms-dots pbd tl"></span>
+      <span class="ms-dots pbd tr"></span>
+      <span class="ms-dots pbd cl"></span>
+      <span class="ms-dots pbd cr"></span>
+      <span class="ms-dots pbd bl"></span>
+      <span class="ms-dots pbd br"></span>
+    </div>
     <div class="container">
       <p class="ps-eyebrow reveal">All 10 AI plugins — included in the bundle</p>
-    </div>
-    <div class="plugin-slider" aria-label="The 10 AI plugins included">
-      <div class="ps-track">
-        <div class="ps-card"><div class="ps-shot"><img src="images/plugin/1.png" alt="AI Commerce" loading="lazy"></div><span class="ps-name">AI Commerce</span></div>
-        <div class="ps-card"><div class="ps-shot"><img src="images/plugin/2.png" alt="Claude Assistant" loading="lazy"></div><span class="ps-name">Claude Assistant</span></div>
-        <div class="ps-card"><div class="ps-shot"><img src="images/plugin/3.png" alt="GEO Optimizer" loading="lazy"></div><span class="ps-name">GEO Optimizer</span></div>
-        <div class="ps-card"><div class="ps-shot"><img src="images/plugin/4.png" alt="Image Optimizer" loading="lazy"></div><span class="ps-name">Image Optimizer</span></div>
-        <div class="ps-card"><div class="ps-shot"><img src="images/plugin/5.png" alt="Affiliate System" loading="lazy"></div><span class="ps-name">Affiliate System</span></div>
-        <div class="ps-card"><div class="ps-shot"><img src="images/plugin/6.png" alt="WhatsApp Notifier" loading="lazy"></div><span class="ps-name">WhatsApp Notifier</span></div>
-        <div class="ps-card"><div class="ps-shot"><img src="images/plugin/7.png" alt="Security" loading="lazy"></div><span class="ps-name">Security</span></div>
-        <div class="ps-card"><div class="ps-shot"><img src="images/plugin/8.png" alt="TryIt Virtual Try-On" loading="lazy"></div><span class="ps-name">TryIt Virtual Try-On</span></div>
-        <div class="ps-card"><div class="ps-shot"><img src="images/plugin/9.png" alt="Uptime Monitor" loading="lazy"></div><span class="ps-name">Uptime Monitor</span></div>
-        <div class="ps-card"><div class="ps-shot"><img src="images/plugin/10.png" alt="Custom Checkout Fields" loading="lazy"></div><span class="ps-name">Custom Checkout Fields</span></div>
-        <!-- duplicate set for seamless loop -->
-        <div class="ps-card" aria-hidden="true"><div class="ps-shot"><img src="images/plugin/1.png" alt="" loading="lazy"></div><span class="ps-name">AI Commerce</span></div>
-        <div class="ps-card" aria-hidden="true"><div class="ps-shot"><img src="images/plugin/2.png" alt="" loading="lazy"></div><span class="ps-name">Claude Assistant</span></div>
-        <div class="ps-card" aria-hidden="true"><div class="ps-shot"><img src="images/plugin/3.png" alt="" loading="lazy"></div><span class="ps-name">GEO Optimizer</span></div>
-        <div class="ps-card" aria-hidden="true"><div class="ps-shot"><img src="images/plugin/4.png" alt="" loading="lazy"></div><span class="ps-name">Image Optimizer</span></div>
-        <div class="ps-card" aria-hidden="true"><div class="ps-shot"><img src="images/plugin/5.png" alt="" loading="lazy"></div><span class="ps-name">Affiliate System</span></div>
-        <div class="ps-card" aria-hidden="true"><div class="ps-shot"><img src="images/plugin/6.png" alt="" loading="lazy"></div><span class="ps-name">WhatsApp Notifier</span></div>
-        <div class="ps-card" aria-hidden="true"><div class="ps-shot"><img src="images/plugin/7.png" alt="" loading="lazy"></div><span class="ps-name">Security</span></div>
-        <div class="ps-card" aria-hidden="true"><div class="ps-shot"><img src="images/plugin/8.png" alt="" loading="lazy"></div><span class="ps-name">TryIt Virtual Try-On</span></div>
-        <div class="ps-card" aria-hidden="true"><div class="ps-shot"><img src="images/plugin/9.png" alt="" loading="lazy"></div><span class="ps-name">Uptime Monitor</span></div>
-        <div class="ps-card" aria-hidden="true"><div class="ps-shot"><img src="images/plugin/10.png" alt="" loading="lazy"></div><span class="ps-name">Custom Checkout Fields</span></div>
+
+      <div class="plugin-cards">
+        <article class="plugin-card reveal">
+          <div class="pc-content">
+            <span class="p-step">Plugins #1</span>
+            <div class="pc-plugin-logo"><img src="images/plugin/logo1.png" alt="AI Commerce" loading="lazy"></div>
+            <p class="tagline">17 AI features that turn WooCommerce into a selling machine.</p>
+            <ul class="p-features">
+              <li>AI writes product descriptions in seconds</li>
+              <li>Smart search — "warm for winter" finds jackets</li>
+              <li>24/7 AI chatbot on real store data</li>
+              <li>Fraud scoring 0-100 on every order</li>
+            </ul>
+            <span class="p-replaces">REPLACES Nosto + Tidio + Signifyd + Weglot</span>
+          </div>
+          <div class="pc-mockup"><img src="images/plugin/1.png" alt="AI Commerce preview" loading="lazy"></div>
+        </article>
+
+        <article class="plugin-card reveal">
+          <div class="pc-content">
+            <span class="p-step">Plugins #2</span>
+            <div class="pc-plugin-logo"><img src="images/plugin/logo2.png" alt="Claude Assistant" loading="lazy"></div>
+            <p class="tagline">Run WordPress by typing. Zero clicks needed.</p>
+            <ul class="p-features">
+              <li>"Publish my AI trends draft" — done in 5 sec</li>
+              <li>"Add Sarah as editor" — instant user create</li>
+              <li>"Show me pending comments" — manages moderation</li>
+              <li>Safe: only admins, hackers can't fake commands</li>
+            </ul>
+            <span class="p-replaces">REPLACES a $500-$1,800/mo VA</span>
+          </div>
+          <div class="pc-mockup"><img src="images/plugin/2.png" alt="Claude Assistant preview" loading="lazy"></div>
+        </article>
+
+        <article class="plugin-card reveal">
+          <div class="pc-content">
+            <span class="p-step">Plugins #3</span>
+            <div class="pc-plugin-logo"><img src="images/plugin/logo3.png" alt="GEO Optimizer" loading="lazy"></div>
+            <p class="tagline">Rank inside ChatGPT, Claude &amp; Perplexity — not just Google.</p>
+            <ul class="p-features">
+              <li>Auto-rewrites old posts for AI engines</li>
+              <li>Autopilot mode — keeps optimizing forever</li>
+              <li>Tracks AI visitors from 9 engines</li>
+              <li>Scores every post 0-100</li>
+            </ul>
+            <span class="p-replaces">REPLACES Yoast Premium + GEO consultant</span>
+          </div>
+          <div class="pc-mockup"><img src="images/plugin/3.png" alt="GEO Optimizer preview" loading="lazy"></div>
+        </article>
+
+        <article class="plugin-card reveal">
+          <div class="pc-content">
+            <span class="p-step">Plugins #4</span>
+            <div class="pc-plugin-logo"><img src="images/plugin/logo4.png" alt="Image Optimizer" loading="lazy"></div>
+            <p class="tagline">Same image, 92% smaller. Faster site, better SEO.</p>
+            <ul class="p-features">
+              <li>Auto-compresses every upload</li>
+              <li>Bulk-fixes all old images</li>
+              <li>WebP &amp; AVIF (Google/YouTube format)</li>
+              <li>Originals always safe — 1-click restore</li>
+            </ul>
+            <span class="p-replaces">REPLACES ShortPixel, Smush Pro, Imagify</span>
+          </div>
+          <div class="pc-mockup"><img src="images/plugin/4.png" alt="Image Optimizer preview" loading="lazy"></div>
+        </article>
+
+        <article class="plugin-card reveal">
+          <div class="pc-content">
+            <span class="p-step">Plugins #5</span>
+            <div class="pc-plugin-logo"><img src="images/plugin/logo5.png" alt="Affiliate System" loading="lazy"></div>
+            <p class="tagline">Others sell your products for commission. You count the money.</p>
+            <ul class="p-features">
+              <li>Auto-tracks every sale</li>
+              <li>Auto-pays via PayPal — one click</li>
+              <li>Leaderboard shows top affiliates</li>
+              <li>Custom commission rates per tier</li>
+            </ul>
+            <span class="p-replaces">REPLACES AffiliateWP + Refersion</span>
+          </div>
+          <div class="pc-mockup"><img src="images/plugin/5.png" alt="Affiliate System preview" loading="lazy"></div>
+        </article>
+
+        <article class="plugin-card reveal">
+          <div class="pc-content">
+            <span class="p-step">Plugins #6</span>
+            <div class="pc-plugin-logo"><img src="images/plugin/logo6.png" alt="WhatsApp Notifier" loading="lazy"></div>
+            <p class="tagline">98% open rate. Email is dead — WhatsApp delivers.</p>
+            <ul class="p-features">
+              <li>7 auto messages — payment, shipped, delivered</li>
+              <li>Cart recovery 1 hour after abandon</li>
+              <li>1,000 free messages/month from Meta</li>
+              <li>Direct connection — no middleman</li>
+            </ul>
+            <span class="p-replaces">REPLACES Wati + Interakt</span>
+          </div>
+          <div class="pc-mockup"><img src="images/plugin/6.png" alt="WhatsApp Notifier preview" loading="lazy"></div>
+        </article>
+
+        <article class="plugin-card reveal">
+          <div class="pc-content">
+            <span class="p-step">Plugins #7</span>
+            <div class="pc-plugin-logo"><img src="images/plugin/logo7.png" alt="Security Plugin" loading="lazy"></div>
+            <p class="tagline">Bank-grade protection. Without the bank-grade price.</p>
+            <ul class="p-features">
+              <li>Auto-blocks hackers 24/7</li>
+              <li>Scans for 20+ malware types weekly</li>
+              <li>Login protection with custom hidden URL</li>
+              <li>100% on your server — no data leaves</li>
+            </ul>
+            <span class="p-replaces">REPLACES Wordfence Premium + Sucuri</span>
+          </div>
+          <div class="pc-mockup"><img src="images/plugin/7.png" alt="Security Plugin preview" loading="lazy"></div>
+        </article>
+
+        <article class="plugin-card reveal">
+          <div class="pc-content">
+            <span class="p-step">Plugins #8</span>
+            <div class="pc-plugin-logo"><img src="images/plugin/logo8.png" alt="TryIt Virtual Try-On" loading="lazy"></div>
+            <p class="tagline">Customers wear your products before they buy.</p>
+            <ul class="p-features">
+              <li>AI puts customer photos in products</li>
+              <li>Works for clothing, glasses, accessories, decor</li>
+              <li>Cuts returns by 30-40%</li>
+              <li>Customer photos never stored</li>
+            </ul>
+            <span class="p-replaces">REPLACES custom AI services ($199-$499/mo)</span>
+          </div>
+          <div class="pc-mockup"><img src="images/plugin/8.png" alt="TryIt Virtual Try-On preview" loading="lazy"></div>
+        </article>
+
+        <article class="plugin-card reveal">
+          <div class="pc-content">
+            <span class="p-step">Plugins #9</span>
+            <div class="pc-plugin-logo"><img src="images/plugin/logo9.png" alt="Uptime Monitor" loading="lazy"></div>
+            <p class="tagline">Know the second your site goes down.</p>
+            <ul class="p-features">
+              <li>Checks every 1, 5, or 10 minutes</li>
+              <li>4 alerts — down, up, slow, SSL expiring</li>
+              <li>Email or Slack notifications</li>
+              <li>Smart false-alarm protection</li>
+            </ul>
+            <span class="p-replaces">REPLACES UptimeRobot, Pingdom, Better Uptime</span>
+          </div>
+          <div class="pc-mockup"><img src="images/plugin/9.png" alt="Uptime Monitor preview" loading="lazy"></div>
+        </article>
+
+        <article class="plugin-card reveal">
+          <div class="pc-content">
+            <span class="p-step">Plugins #10</span>
+            <div class="pc-plugin-logo"><img src="images/plugin/logo10.png" alt="Custom Checkout Fields" loading="lazy"></div>
+            <p class="tagline">Drag. Drop. Done. Any field, no code.</p>
+            <ul class="p-features">
+              <li>12 field types (text, date, dropdown, file)</li>
+              <li>Smart show/hide logic</li>
+              <li>Data flows to admin + emails</li>
+              <li>Backup/restore across sites</li>
+            </ul>
+            <span class="p-replaces">REPLACES Checkout Field Editor ($79/yr)</span>
+          </div>
+          <div class="pc-mockup"><img src="images/plugin/10.png" alt="Custom Checkout Fields preview" loading="lazy"></div>
+        </article>
       </div>
+    </div>
     </div>
   </section>
 
   <!-- 4. EVERYTHING INCLUDED (light) -->
   <div class="sec-connector" aria-hidden="true"></div>
-  <section class="included sec-light">
+  <section class="included sec-dark ">
+    <div class="inc-decor" aria-hidden="true">
+      <span class="inc-dots dt-tl"></span>
+      <span class="inc-dots dt-r"></span>
+      <span class="inc-spark s1">✦</span>
+      <span class="inc-spark s2">✦</span>
+      <span class="inc-spark s3">✦</span>
+      <span class="inc-spark s4">✦</span>
+    </div>
     <div class="container">
       <div class="section-header">
-        <span class="eyebrow">🎁 Everything Inside</span>
-        <h2>Four Products.<br><span class="gradient-text">One Unstoppable Bundle.</span></h2>
+        <span class="eyebrow dark-section">🎁 Everything Inside</span>
+        <h2>Four Products.<br><span class="gradient-text-light">One Unstoppable Bundle.</span></h2>
         <p>Here's every piece of the ecosystem you unlock the moment you grab the bundle.</p>
       </div>
       <div class="bundle-grid">
@@ -300,51 +491,68 @@
         </div>
         <span class="cb-divider" aria-hidden="true"></span>
         <div class="cb-right">
-          <a href="https://launchpadjv.com/product/checkout/3887?page=3243&offer=407&offerProduct=4390" class="btn-cta btn-yellow cb-btn">Get The Complete Bundle </a>
+          <a href="https://launchpadjv.com/product/checkout/3887?page=3243&offer=407&offerProduct=4390" target="_blank" class="btn-cta cb-btn">Get The Complete Bundle </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 5. HOW IT WORKS TOGETHER (dark) -->
+  <!-- 5. HOW IT WORKS TOGETHER (light) -->
   <div class="sec-connector" aria-hidden="true"></div>
-  <section class="system sec-dark">
+  <section class="system sec-light ">
+    <div class="sys-decor" aria-hidden="true">
+      <span class="sys-dots dt-tl"></span>
+      <span class="sys-dots dt-tr"></span>
+      <span class="sys-dots dt-bl"></span>
+      <span class="sys-dots dt-br"></span>
+      <span class="sys-blob bl-l"></span>
+      <span class="sys-blob bl-r"></span>
+      <span class="sys-spark s1">✦</span>
+      <span class="sys-spark s2">✦</span>
+      <span class="sys-spark s3">✦</span>
+      <span class="sys-spark s4">✦</span>
+      <span class="sys-spark s5">✦</span>
+    </div>
     <div class="container">
       <div class="section-header">
-        <span class="eyebrow dark-section">Better Together</span>
-        <h2>Not Four Products —<br><span class="gradient-text-light">One Complete Machine.</span></h2>
+        <span class="eyebrow">Better Together</span>
+        <h2>Not Four Products —<br><span class="gradient-text">One Complete Machine.</span></h2>
         <p>Each piece makes the others more powerful. Alone they're useful. Together they're a business.</p>
       </div>
       <div class="flow">
-        <div class="flow-step reveal">
+        <div class="flow-step v-purple reveal">
           <span class="fs-num">1</span>
+          <div class="fs-icon"><img src="images/better/2.png" alt="The Tools" loading="lazy"></div>
           <h4>The Tools</h4>
           <p>Starter gives you 10 AI plugins that run any WordPress site on autopilot.</p>
         </div>
         <span class="flow-arrow">→</span>
-        <div class="flow-step reveal">
+        <div class="flow-step v-blue reveal">
           <span class="fs-num">2</span>
+          <div class="fs-icon"><img src="images/better/1.png" alt="Everywhere" loading="lazy"></div>
           <h4>Everywhere</h4>
           <p>Unlimited unlocks them on every site — yours and your clients'.</p>
         </div>
         <span class="flow-arrow">→</span>
-        <div class="flow-step reveal">
+        <div class="flow-step v-teal reveal">
           <span class="fs-num">3</span>
+          <div class="fs-icon"><img src="images/better/4.png" alt="Done Fast" loading="lazy"></div>
           <h4>Done Fast</h4>
           <p>DFY hands you the prompts and assets to get results the same day.</p>
         </div>
         <span class="flow-arrow">→</span>
-        <div class="flow-step reveal">
+        <div class="flow-step v-orange reveal">
           <span class="fs-num">4</span>
+          <div class="fs-icon"><img src="images/better/3.png" alt="Sell It" loading="lazy"></div>
           <h4>Sell It</h4>
           <p>Reseller lets you brand it, sell it, and keep 100% of the profit.</p>
         </div>
       </div>
       <div class="outcomes reveal">
-        <span class="outcome">⚙️ Automate any site</span>
-        <span class="outcome">👥 Serve unlimited clients</span>
-        <span class="outcome">⚡ Launch in a day</span>
-        <span class="outcome">💸 Sell it as your own</span>
+        <span class="outcome v-purple"><span class="outcome-ico"><img src="images/better/icon-1.png" alt="" loading="lazy"></span> Automate any site</span>
+        <span class="outcome v-blue"><span class="outcome-ico"><img src="images/better/icon-2.png" alt="" loading="lazy"></span> Serve unlimited clients</span>
+        <span class="outcome v-teal"><span class="outcome-ico"><img src="images/better/icon-3.png" alt="" loading="lazy"></span> Launch in a day</span>
+        <span class="outcome v-orange"><span class="outcome-ico"><img src="images/better/icon-4.png" alt="" loading="lazy"></span> Sell it as your own</span>
       </div>
       <p class="system-punch reveal">Buy the pieces one by one and you get four tools. Buy the bundle and you get
         <strong>a complete AI business — ready to run.</strong></p>
@@ -353,7 +561,7 @@
 
   <!-- 6. LAUNCH BONUSES (dark · Live style) -->
   <div class="sec-connector" aria-hidden="true"></div>
-  <section class="bonuses sec-dark">
+  <section class="bonuses sec-dark ">
     <div class="container">
       <div class="fb-head reveal">
         <span class="fb-pill eyebrow dark-section">🎁 Free Launch Bonuses</span>
@@ -492,7 +700,7 @@
 
   <!-- 7. PRICING + COUPON (light) -->
   <div class="sec-connector" aria-hidden="true"></div>
-  <section class="pricing sec-light" id="pricing">
+  <section class="pricing sec-light " id="pricing">
     <div class="container">
       <div class="section-header">
         <span class="eyebrow">The Bundle Deal</span>
@@ -555,7 +763,7 @@
   </section>
 
   <!-- 7. TESTIMONIALS (dark) -->
-  <section class="testimonials sec-dark">
+  <section class="testimonials sec-dark ">
     <div class="container">
       <div class="section-header">
         <span class="eyebrow dark-section">Loved By Operators</span>
@@ -613,7 +821,7 @@
   </section>
 
   <!-- 8. GUARANTEE (light) -->
-  <section class="guarantee sec-light">
+  <section class="guarantee sec-light ">
     <div class="container">
       <div class="section-header">
         <span class="eyebrow">Zero Risk</span>
@@ -635,7 +843,7 @@
   </section>
 
   <!-- 9. FINAL CTA (dark) -->
-  <section class="final-cta sec-dark">
+  <section class="final-cta sec-dark ">
     <div class="fc-bg" aria-hidden="true">
       <span class="orb fc-orb-1"></span>
       <span class="orb fc-orb-2"></span>
@@ -662,8 +870,7 @@
             <li>🎁 7 Bonuses</li>
           </ul>
           <div class="fc-coupon-note">🎟️ Code <strong>WPILOT50</strong> applied — $50 OFF</div>
-          <a href="#pricing" class="btn-cta btn-yellow fc-btn">Yes — Unlock Everything · $197 <span
-              class="btn-arrow">→</span></a>
+          <a href="https://launchpadjv.com/product/checkout/3887?page=3243&offer=407&offerProduct=4390" target="_blank" class="btn-cta btn-yellow fc-btn">Yes — Unlock Everything · $197</a>
           <div class="fc-guarantee">🛡️ 30-day money-back guarantee · One-time payment · Instant access</div>
         </div>
       </div>
@@ -671,7 +878,7 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="site-foot">
+  <footer class="site-foot ">
     <div class="container">
       <h2 class="disc-title">Important Disclaimer</h2>
       <div class="disc-text">
