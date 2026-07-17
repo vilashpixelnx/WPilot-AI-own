@@ -190,8 +190,17 @@ section { padding: var(--section-pad) 0; position: relative; }
 /* 4. TOP BAR ---------------------------------------------------------- */
 .top-bar {
   background: linear-gradient(60.59deg, #6E33FF 70.69%, #0BB7D3 111.66%), #090922;
-  color: #fff; padding: 6px 20px; position: relative; z-index: 110;
+  color: #fff; padding: 10px 24px; position: relative; z-index: 110;
   box-shadow: 0 2px 20px rgba(79, 70, 229, 0.3);
+}
+/* Subtle dot texture fading in from the right, echoing the reference bar */
+.top-bar::after {
+  content: ''; position: absolute; inset: 0 0 0 auto; width: 220px;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.28) 1px, transparent 1px);
+  background-size: 14px 14px;
+  -webkit-mask-image: linear-gradient(to left, #000 0%, transparent 100%);
+  mask-image: linear-gradient(to left, #000 0%, transparent 100%);
+  pointer-events: none;
 }
 .top-bar-vector {
   position: absolute; left: 50%; bottom: 0;
@@ -199,32 +208,36 @@ section { padding: var(--section-pad) 0; position: relative; }
   width: 126px; height: 46px; display: block;
   pointer-events: none;
 }
-.top-bar-inner { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-.tb-flash { display: inline-flex; align-items: center; gap: 10px; }
-.tb-dot { color: rgba(255, 255, 255, 0.85); font-size: 8px; line-height: 1; }
-.tb-text { font-size: 14px; color: rgba(255, 255, 255, 0.9); white-space: nowrap; }
-.tb-text strong { color: #fff; font-weight: 500; }
-.tb-text .code {
-  display: inline-block; margin: 0 4px; background: #fff; color: #4f46e5;
-  padding: 3px 12px; border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
-  font-family: 'Be Vietnam Pro', sans-serif; font-weight: 900; letter-spacing: 1.5px; font-size: 13px;
+.top-bar-inner { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; position: relative; z-index: 1; }
+
+.tb-block { display: inline-flex; align-items: center; gap: 10px; }
+.tb-coupon-group { display: inline-flex; align-items: center; gap: 10px; }
+.tb-line-main { font-size: 14px; font-weight: 700; color: #fff; white-space: nowrap; }
+
+.tb-coupon-row { display: inline-flex; align-items: center; gap: 8px; color: rgba(255, 255, 255, 0.7); font-weight: 500; }
+.tb-coupon-row .code {
+  display: inline-block; padding: 4px 14px; border-radius: 7px;
+  background: rgba(255, 255, 255, 0.06); border: 1.5px dashed rgba(255, 255, 255, 0.55);
+  color: #fff; font-family: 'Be Vietnam Pro', sans-serif; font-weight: 800; letter-spacing: 1.5px; font-size: 13px;
 }
-.tb-text .tb-save { color: #ffd055; font-weight: 500; }
+
+.tb-save-block .tb-save { color: #ffd055; font-weight: 800; }
+
 .tb-countdown-wrap { display: inline-flex; align-items: center; gap: 10px; }
-.tb-countdown-label { font-size: 14px; font-weight: 500; color: rgba(255, 255, 255, 0.85); white-space: nowrap; }
+.tb-countdown-label { font-size: 13px; font-weight: 500; color: rgba(255, 255, 255, 0.6); white-space: nowrap; }
 .tb-countdown { display: inline-flex; gap: 8px; }
 .tb-count-box {
-  background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px;
-  padding: 6px 10px; min-width: 46px; text-align: center;
+  background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 10px;
+  padding: 6px 12px; min-width: 48px; text-align: center;
 }
 .tb-count-num { font-family: 'Be Vietnam Pro', sans-serif; font-weight: 900; font-size: 18px; color: #fff; line-height: 1; }
-.tb-count-label { font-size: 9px; color: rgba(255, 255, 255, 0.7); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-top: 2px; }
+.tb-count-label { font-size: 9px; color: rgba(255, 255, 255, 0.55); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-top: 3px; }
 .tb-buy {
-  background: #fff; color: #4c1d95; padding: 10px 20px; border-radius: var(--radius-full);
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #fff; color: #4c1d95; padding: 11px 22px; border-radius: var(--radius-full);
   font-weight: 800; font-size: 14px; white-space: nowrap;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); transition: transform 0.25s ease, background 0.25s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2); transition: transform 0.25s ease, background 0.25s ease;
 }
 .tb-buy:hover { transform: translateY(-1px); background: #fbbf24; color: #4c1d95; }
 
@@ -465,7 +478,7 @@ section { padding: var(--section-pad) 0; position: relative; }
   -webkit-mask-composite: xor;
   mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   mask-composite: exclude;
-  animation: flow-rotate 3.8s linear infinite;
+  animation: flow-rotate 3s linear infinite;
   pointer-events: none;
   transition: opacity 0.35s ease, filter 0.35s ease;
 }
@@ -1961,7 +1974,7 @@ display: none;
    the Buy Now button to overflow the viewport on small laptop/tablet-landscape sizes. */
 @media (max-width: 1099px) and (min-width: 901px) {
   .top-bar-inner { flex-wrap: wrap; justify-content: center; gap: 12px; }
-  .tb-text { display: none; }
+  .tb-deal { display: none; }
 }
 
 @media (max-width: 900px) {
@@ -1969,7 +1982,7 @@ display: none;
   .fe_mback_list { grid-template-columns: 1fr; gap: 12px; padding: 20px 22px; }
   .hero-char { display: none; }
   .top-bar-inner { flex-wrap: wrap; justify-content: center; gap: 12px; }
-  .tb-text { display: none; }
+  .tb-deal { display: none; }
   .philo-grid, .philo-grid.reverse { grid-template-columns: 1fr; gap: 40px; }
   .philo-grid.reverse .philo-content { order: 1; }
   .philo-grid.reverse .philo-visual { order: 2; }
@@ -2021,7 +2034,7 @@ display: none;
   .era-card { flex: 0 0 100%; }
   .container { padding-inline: 18px; }
   .top-bar { padding: 10px 12px; }
-  .tb-text .code { font-size: 11px; padding: 3px 10px; }
+  .tb-coupon-row .code { font-size: 11px; padding: 3px 10px; }
   .tb-countdown { gap: 6px; }
   .tb-count-box { padding: 4px 8px; min-width: 38px; }
   .tb-count-num { font-size: 15px; }
@@ -2098,7 +2111,7 @@ display: none;
   .container { padding-inline: 14px; }
   .hero-brand-mark { width: 50px; height: 50px; font-size: 22px; }
   .hero-brand-text { font-size: 42px; }
-  .tb-text .code { font-size: 10px; }
+  .tb-coupon-row .code { font-size: 10px; }
   .damage-amount { font-size: 44px; }
 }
 
