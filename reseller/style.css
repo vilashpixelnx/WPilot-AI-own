@@ -954,6 +954,10 @@ section {
   margin: 0 18px;
 }
 
+.jv-pric-prod {
+    margin-top: 15px;
+}
+
 /* ---- responsive ---- */
 @media (max-width: 900px) {
   .fs-bar {

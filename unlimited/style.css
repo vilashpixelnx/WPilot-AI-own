@@ -3940,7 +3940,7 @@ h1 .wplt_the_catch_grad {
   height: 580px;
   top: -220px;
   left: -160px;
-  background: radial-gradient(circle, var(--violet), transparent 68%);
+  background: radial-gradient(circle, #7857ff45, transparent 68%);
   animation: float1 24s ease-in-out infinite;
 }
 
@@ -3949,7 +3949,7 @@ h1 .wplt_the_catch_grad {
   height: 560px;
   top: -180px;
   right: -170px;
-  background: radial-gradient(circle, var(--cyan), transparent 68%);
+  background: radial-gradient(circle, #20cbe536, transparent 68%);
   animation: float2 28s ease-in-out infinite;
 }
 
