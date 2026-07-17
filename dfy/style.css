@@ -1641,8 +1641,6 @@ h1 .wplt_the_catch_grad {
 }
 
 
-
-
 /* ---------- GRID ---------- */
 .diy-grid {
   display: grid;
@@ -1741,6 +1739,10 @@ h1 .wplt_the_catch_grad {
   background-clip: text;
   color: transparent;
   font-weight: 800;
+}
+
+.jv-pric-prod {
+    margin-top: 15px;
 }
 
 @media (max-width:980px) {
