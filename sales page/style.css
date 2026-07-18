@@ -565,7 +565,7 @@ section { padding: var(--section-pad) 0; position: relative; }
 .social-proof-pop {
   position: fixed; bottom: 24px; left: 24px; z-index: 90;
   background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--indigo);
-  border-radius: 12px; padding: 14px 40px 14px 16px; max-width: 300px; font-size: 13px;
+  border-radius: 12px; padding:10px 22px 10px 12px; max-width: 300px; font-size: 13px;
   box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15);
   opacity: 0; transform: translateX(-120%); pointer-events: none;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -580,7 +580,7 @@ section { padding: var(--section-pad) 0; position: relative; }
   display: inline-flex; align-items: center; justify-content: center;
 }
 .spp-close:hover { background: var(--paper-2); }
-.spp-row { padding: 3px 0; color: var(--body); font-size: 13px; }
+.spp-row { padding: 3px 0; color: var(--body); font-size: 10px; }
 .spp-row strong { color: var(--ink); }
 .spp-row .spp-loc { color: var(--indigo); }
 .spp-row .spp-verified { color: var(--emerald); }
