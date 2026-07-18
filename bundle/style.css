@@ -805,7 +805,7 @@ section { padding: var(--section-pad) 0; position: relative; }
 .fc-offer-badge { display: inline-flex; align-items: center; margin-bottom: 20px; padding: 8px 18px; border-radius: var(--radius-full); font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #fff; background: var(--gradient-primary); box-shadow: 0 8px 22px rgba(124,58,237,0.5); }
 .fc-offer-name { display: block; font-family: 'Be Vietnam Pro', sans-serif; font-weight: 800; font-size: 19px; color: #fff; margin-bottom: 10px; }
 .fc-offer-price { display: flex; align-items: baseline; justify-content: center; gap: 12px; }
-.fc-now { font-family: 'Be Vietnam Pro', sans-serif; font-weight: 900; font-size: 58px; color: #fff; line-height: 1; }
+.fc-now { font-family: 'Be Vietnam Pro', sans-serif; font-weight: 900; font-size: 58px;     background: linear-gradient(90deg, #ffe58a, #ffb01f);-webkit-background-clip: text;background-clip: text;color: transparent;; line-height: 1; }
 .fc-old { font-size: 24px; color: rgba(255, 255, 255, 0.4); text-decoration: line-through; font-weight: 700; }
 .fc-offer-once { display: block; margin-top: 10px; font-size: 14px; color: rgba(255, 255, 255, 0.6); }
 .fc-offer-once strong { color: #6ee7b7; font-weight: 800; }
