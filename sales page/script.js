@@ -388,6 +388,62 @@
     scheduleNext(2000); // first appearance ~2s after load
   })();
 
+  /* --- Exit-intent offer popup -----------------------------------------
+     Desktop only (pointer: fine) — shows once per browser tab session,
+     triggered by whichever of these happens first:
+       1) the classic exit-intent signal: the mouse leaving the top of the
+          viewport toward the browser's tab bar / close button (armed after
+          a short delay so a stray cursor flick right after load can't
+          trigger it before the visitor has actually read anything), or
+       2) a flat 20-second fallback timer, so visitors who never trigger
+          exit-intent (e.g. they never move the mouse near the top) still
+          see the offer.
+     Both share the same "shown" guard, so only the first one to fire
+     actually opens it.
+  ---------------------------------------------------------------------- */
+  (function initExitPopup() {
+    var overlay = document.getElementById('exitPopupOverlay');
+    if (!overlay) return;
+    if (!window.matchMedia('(pointer: fine)').matches) return; // no hover/mouse-leave on touch devices
+
+    var closeBtn = document.getElementById('exitPopupClose');
+    var STORAGE_KEY = 'wpilot_exit_popup_shown';
+    var shown = false;
+    var armed = false;
+
+    try {
+      if (sessionStorage.getItem(STORAGE_KEY)) shown = true;
+    } catch (_) {}
+
+    function openPopup() {
+      if (shown) return;
+      shown = true;
+      try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch (_) {}
+      overlay.classList.add('is-visible');
+      overlay.setAttribute('aria-hidden', 'false');
+    }
+
+    function closePopup() {
+      overlay.classList.remove('is-visible');
+      overlay.setAttribute('aria-hidden', 'true');
+    }
+
+    document.documentElement.addEventListener('mouseleave', function (e) {
+      if (armed && !shown && e.clientY <= 0) openPopup();
+    });
+
+    setTimeout(function () { armed = true; }, 3000);
+    setTimeout(function () { if (!shown) openPopup(); }, 20000); // 20s fallback trigger
+
+    if (closeBtn) closeBtn.addEventListener('click', closePopup);
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closePopup();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && overlay.classList.contains('is-visible')) closePopup();
+    });
+  })();
+
   /* --- Fallback: force reveals visible if GSAP failed ---------------- */
   window.setTimeout(function () {
     document.querySelectorAll('.reveal').forEach(function (el) {
