@@ -353,7 +353,7 @@ section { padding: var(--section-pad) 0; position: relative; }
 .hph-tag { font-size: 14px; color: rgba(255,255,255,0.7); }
 .hph-tag strong { color: #FFD01B; }
 
-.hero-cta-wrap { margin-top: 30px; }
+.hero-cta-wrap { margin-top: 30px; text-align: center; }
 .hero-note { margin-top: 16px; font-size: 15px; font-weight: 600; color: rgba(255, 255, 255, 0.62); }
 .hero-note strong { color: #FFD01B; }
 .hero-trust { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 14px 26px; margin-top: 28px; }
