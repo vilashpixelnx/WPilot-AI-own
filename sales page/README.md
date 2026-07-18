@@ -32,7 +32,7 @@ The page is a long-form direct-response sales page: hero hook → pain agitation
 
 The CSS header documents the section order. The main sections are:
 
-1. **Top bar** — flash-sale banner, discount code (`WPILOT2`), and live countdown timer
+1. **Top bar** — flash-sale banner, discount code (`GET35`), and live countdown timer
 2. **Hero** — brand lockup, headline, primary CTA, trust badges
 3. **Trust stats** — animated count-up metrics
 4. **Social proof bar** — compatibility / trust logos
@@ -93,7 +93,7 @@ Then visit `http://localhost:8000` (if serving).
 
 - **Design tokens** live at the top of [`style.css`](style.css) under `:root` — edit colors, fonts, and spacing there.
 - **Copy** is all inline in [`index.html`](index.html); sections are clearly commented (e.g. `<!-- PRICING -->`).
-- **Pricing / discount code** — update in the top bar, pricing card, and coupon box (`WPILOT2`).
+- **Pricing / discount code** — update in the top bar, pricing card, and coupon box (`GET35`).
 - **Checkout link** — the pricing CTA currently points to `#`; wire it to your real checkout URL.
 - **Countdown** — the starting time is hardcoded in `script.js` (`initCountdown`) and resets on each page load.
 
