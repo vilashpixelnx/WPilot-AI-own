@@ -192,6 +192,30 @@ section { padding: var(--section-pad) 0; position: relative; }
   background: linear-gradient(60.59deg, #6E33FF 70.69%, #0BB7D3 111.66%), #090922;
   color: #fff; padding: 10px 24px; position: relative; z-index: 110;
   box-shadow: 0 2px 20px rgba(79, 70, 229, 0.3);
+  transition: transform 380ms cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 380ms cubic-bezier(0.4, 0, 0.2, 1),
+              background 380ms ease,
+              backdrop-filter 380ms ease;
+  transform: translateY(0) translateZ(0);
+  will-change: transform;
+}
+/* Placeholder keeps page flow from jumping while the bar is position:fixed */
+.top-bar-placeholder { height: 0; }
+/* While this is present, the transform jump to/from off-screen happens
+   instantly (no transition) — only .tb-visible toggling should animate. */
+.top-bar.tb-no-anim { transition: none !important; }
+/* Sticky state: pinned to the viewport, starts translated fully off-screen
+   above so it can slide down smoothly instead of snapping into place. */
+.top-bar.tb-fixed {
+  position: fixed; top: 0; left: 0; right: 0;
+  transform: translateY(-100%) translateZ(0);
+}
+.top-bar.tb-fixed.tb-visible {
+  transform: translateY(0) translateZ(0);
+  background: linear-gradient(60.59deg, rgba(110, 51, 255, 0.92) 70.69%, rgba(11, 183, 211, 0.92) 111.66%), rgba(9, 9, 34, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 28px rgba(9, 9, 34, 0.28);
 }
 /* Subtle dot texture fading in from the right, echoing the reference bar */
 .top-bar::after {
@@ -208,10 +232,11 @@ section { padding: var(--section-pad) 0; position: relative; }
   width: 126px; height: 46px; display: block;
   pointer-events: none;
 }
+.top-bar.tb-fixed .top-bar-vector { display: none; }
 .top-bar-inner { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; position: relative; z-index: 1; }
 
 .tb-block { display: inline-flex; align-items: center; gap: 10px; }
-.tb-coupon-group { display: inline-flex; align-items: center; gap: 10px; }
+.tb-coupon-group { display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 10px; }
 .tb-line-main { font-size: 14px; font-weight: 700; color: #fff; white-space: nowrap; }
 
 .tb-coupon-row { display: inline-flex; align-items: center; gap: 8px; color: rgba(255, 255, 255, 0.7); font-weight: 500; }
@@ -2111,7 +2136,8 @@ display: none;
   .container { padding-inline: 14px; }
   .hero-brand-mark { width: 50px; height: 50px; font-size: 22px; }
   .hero-brand-text { font-size: 42px; }
-  .tb-coupon-row .code { font-size: 10px; }
+  .tb-line-main { font-size: 12px; }
+  .tb-coupon-row .code { font-size: 10px; padding: 3px 8px; }
   .damage-amount { font-size: 44px; }
 }
 

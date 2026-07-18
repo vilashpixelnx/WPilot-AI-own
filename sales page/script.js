@@ -5,6 +5,7 @@
    - Count-up number animations
    - 3D tilt on plugin cards
    - Flash-sale countdown timer
+   - Sticky-on-scroll top bar
    - Social proof popup dismissal
    - Graceful fallback if GSAP fails to load
    ===================================================================== */
@@ -13,6 +14,97 @@
 
   var hasGSAP = typeof window.gsap !== 'undefined';
   var hasScrollTrigger = hasGSAP && typeof window.ScrollTrigger !== 'undefined';
+
+  /* --- Sticky top bar --------------------------------------------------
+     Stays in normal flow until the user has scrolled past the full height
+     of the hero/banner section. Then it's switched to position:fixed
+     while still translated fully off-screen
+     (transform: translateY(-100%)) in the SAME tick that a placeholder
+     takes over its height — so nothing below it jumps — and only on the
+     next animation frame do we add .tb-visible, which slides it down via
+     a CSS transition. Reversing does the same in reverse: the slide-up
+     transition plays first, and only once it's finished do we drop
+     position:fixed and collapse the placeholder back to 0.
+  ---------------------------------------------------------------------- */
+  (function initStickyTopBar() {
+    var topBar = document.querySelector('.top-bar');
+    if (!topBar) return;
+
+    var placeholder = document.createElement('div');
+    placeholder.className = 'top-bar-placeholder';
+    topBar.parentNode.insertBefore(placeholder, topBar);
+
+    // Sticky only kicks in once the hero/banner has been fully scrolled past —
+    // recomputed on resize since the hero's height is responsive.
+    var heroEl = document.querySelector('.hero');
+    var stickAt = 100; // fallback if there's no .hero on the page
+    function computeThreshold() {
+      if (heroEl) stickAt = heroEl.getBoundingClientRect().bottom + window.scrollY;
+    }
+    computeThreshold();
+    var resizeTimer = null;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(computeThreshold, 150);
+    });
+
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var isSticky = false;
+    var ticking = false;
+    var hideTimer = null;
+
+    function makeSticky() {
+      if (isSticky) return;
+      isSticky = true;
+      clearTimeout(hideTimer);
+      placeholder.style.height = topBar.offsetHeight + 'px';
+      // .tb-no-anim disables the transition so the jump from "normal flow"
+      // to "fixed + translated off-screen" is instant — without it, that
+      // jump itself would animate (fighting the slide-down we add next).
+      topBar.classList.add('tb-no-anim');
+      topBar.classList.add('tb-fixed');
+      void topBar.offsetHeight; // force the browser to commit + paint that frame
+      topBar.classList.remove('tb-no-anim');
+      // Double rAF: the first guarantees the "no-anim, off-screen" frame has
+      // actually painted before we re-enable the transition and trigger the
+      // slide-down on the frame after — a single rAF can still land before
+      // that paint and skip the animation.
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          topBar.classList.add('tb-visible');
+        });
+      });
+    }
+
+    function removeSticky() {
+      if (!isSticky) return;
+      isSticky = false;
+      topBar.classList.remove('tb-visible');
+      var duration = reduceMotion ? 0 : 380;
+      hideTimer = setTimeout(function () {
+        topBar.classList.remove('tb-fixed');
+        placeholder.style.height = '0px';
+      }, duration);
+    }
+
+    function onScroll() {
+      if (window.scrollY > stickAt) {
+        makeSticky();
+      } else {
+        removeSticky();
+      }
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        requestAnimationFrame(onScroll);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    onScroll();
+  })();
 
   /* --- Reveal animations --------------------------------------------- */
   if (hasScrollTrigger) {
